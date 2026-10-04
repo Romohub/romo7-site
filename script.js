@@ -65,17 +65,25 @@
     if (updateUrl) updateLanguageUrl(isFa ? 'fa' : 'en');
   };
 
+  const staticLang = root.dataset.staticLang;
   const queryLang = new URLSearchParams(window.location.search).get('lang');
   const savedLang = localStorage.getItem('romo7-lang');
-  const initialLang = queryLang === 'fa' || queryLang === 'en'
-    ? queryLang
-    : (savedLang === 'fa' ? 'fa' : 'en');
+  const initialLang = staticLang === 'fa' || staticLang === 'en'
+    ? staticLang
+    : (queryLang === 'fa' || queryLang === 'en'
+      ? queryLang
+      : (savedLang === 'fa' ? 'fa' : 'en'));
   applyLanguage(initialLang);
 
   languageLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       const lang = link.dataset.lang;
       if (lang !== 'fa' && lang !== 'en') return;
+
+      // Localized /fa/ and /en/ pages use real links for SEO and no-JS fallback.
+      if (staticLang === 'fa' || staticLang === 'en') return;
+      if (!link.getAttribute('href')?.startsWith('?lang=')) return;
+
       event.preventDefault();
       applyLanguage(lang, { updateUrl: true });
     });
