@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://romohub.github.io/romo7-site/sitemap.xml
