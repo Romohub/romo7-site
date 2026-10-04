@@ -3853,3 +3853,37 @@ html[lang="en"] .lang-switch{
     display:none!important;
   }
 }
+
+
+/* ===== Navigation state polish ===== */
+.main-nav a.active,
+.main-nav a[aria-current="page"]{
+  color:var(--ink);
+  background:color-mix(in srgb,var(--paper) 78%,transparent);
+}
+
+.mode-nav nav a.active,
+.mode-nav nav a[aria-current="page"]{
+  color:var(--m-ink);
+  background:rgba(7,75,58,.09);
+}
+
+html[data-theme="dark"] .main-nav a.active,
+html[data-theme="dark"] .main-nav a[aria-current="page"],
+html[data-theme="dark"] .mode-nav nav a.active,
+html[data-theme="dark"] .mode-nav nav a[aria-current="page"]{
+  color:#f0eedf!important;
+  background:rgba(196,232,104,.10)!important;
+}
+
+@media(max-width:760px){
+  .main-nav,
+  .mode-nav nav{
+    scrollbar-width:none;
+    -ms-overflow-style:none;
+  }
+  .main-nav::-webkit-scrollbar,
+  .mode-nav nav::-webkit-scrollbar{
+    display:none;
+  }
+}
