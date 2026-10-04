@@ -3757,3 +3757,99 @@ html[data-theme="dark"] button:focus-visible{
     text-decoration:none!important;
   }
 }
+
+
+/* ===== Lightweight i18n switch — V12 ===== */
+.lang-switch{
+  display:inline-flex;
+  align-items:center;
+  gap:2px;
+  padding:3px;
+  border:1px solid var(--line,rgba(18,20,22,.13));
+  border-radius:999px;
+  background:color-mix(in srgb,var(--paper,#f8f6ef) 72%,transparent);
+  direction:ltr;
+  flex:0 0 auto;
+}
+.lang-switch a{
+  min-width:34px;
+  height:30px;
+  padding:0 9px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted,#667078);
+  font-size:.68rem;
+  font-weight:800;
+  line-height:1;
+  text-decoration:none;
+  transition:background-color .18s ease,color .18s ease,transform .18s ease;
+}
+.lang-switch a:hover{
+  color:var(--ink,#121416);
+}
+.lang-switch a.active,
+.lang-switch a[aria-current="true"]{
+  background:var(--ink,#121416);
+  color:var(--bg,#f1efe8);
+}
+.lang-switch a:focus-visible{
+  outline:2px solid var(--green,#2f6f5e);
+  outline-offset:2px;
+}
+
+.mode-nav .lang-switch{
+  border-color:rgba(7,75,58,.16);
+  background:rgba(255,255,255,.16);
+}
+.mode-nav .lang-switch a{
+  color:rgba(13,53,43,.62);
+}
+.mode-nav .lang-switch a:hover{
+  color:var(--m-ink,#0d352b);
+}
+.mode-nav .lang-switch a.active,
+.mode-nav .lang-switch a[aria-current="true"]{
+  background:var(--m-forest,#074b3a);
+  color:var(--m-cream,#f1f1dd);
+}
+
+html[data-theme="dark"] .lang-switch{
+  border-color:rgba(240,238,223,.14);
+  background:rgba(255,255,255,.035);
+}
+html[data-theme="dark"] .lang-switch a{
+  color:#9eada5;
+}
+html[data-theme="dark"] .lang-switch a:hover{
+  color:#f0eedf;
+}
+html[data-theme="dark"] .lang-switch a.active,
+html[data-theme="dark"] .lang-switch a[aria-current="true"]{
+  background:#c4e868;
+  color:#0d352b;
+}
+
+html[lang="fa"] .lang-switch,
+html[lang="en"] .lang-switch{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+}
+
+@media(max-width:760px){
+  .lang-switch{
+    padding:2px;
+  }
+  .lang-switch a{
+    min-width:31px;
+    height:28px;
+    padding-inline:7px;
+    font-size:.64rem;
+  }
+}
+
+@media print{
+  .lang-switch{
+    display:none!important;
+  }
+}
