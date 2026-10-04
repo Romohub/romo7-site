@@ -13,10 +13,17 @@
   }
 
   const setThemeIcon = () => {
-    if (!themeToggle) return;
     const dark = root.dataset.theme !== 'light';
-    themeToggle.textContent = dark ? '☼' : '◐';
-    themeToggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+
+    if (themeToggle) {
+      themeToggle.textContent = dark ? '☼' : '◐';
+      themeToggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) {
+      themeMeta.setAttribute('content', dark ? '#073b31' : '#f1f1dd');
+    }
   };
 
   setThemeIcon();
