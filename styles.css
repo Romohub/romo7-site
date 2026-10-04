@@ -4330,3 +4330,38 @@ html[lang="fa"] .skip-link{
     max-width:calc(100vw - 12px)!important;
   }
 }
+
+
+/* ===== Capability chips: static, not fake tabs ===== */
+.v5-tabs span{
+  min-height:34px;
+  padding:0 11px;
+  border:1px solid var(--v5-line);
+  border-radius:999px;
+  background:transparent;
+  color:var(--v5-muted);
+  display:inline-flex;
+  align-items:center;
+  font-size:.7rem;
+  font-weight:750;
+  line-height:1;
+}
+.v5-tabs span.active{
+  background:transparent;
+  color:var(--v5-forest);
+  border-color:rgba(11,74,59,.34);
+}
+html[data-theme="dark"] .v5-section.cream .v5-tabs span{
+  color:#a5b3ab;
+  border-color:rgba(240,238,223,.13);
+  background:transparent;
+}
+html[data-theme="dark"] .v5-section.cream .v5-tabs span.active{
+  color:#c4e868;
+  border-color:rgba(196,232,104,.28);
+  background:rgba(196,232,104,.04);
+}
+html[lang="fa"] .v5-tabs span{
+  font-family:"Vazirmatn",Tahoma,sans-serif;
+  font-weight:560;
+}
