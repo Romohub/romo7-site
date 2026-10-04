@@ -1,175 +1,119 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#080a0f" />
-  <meta name="description" content="Romo7 projects — software, AI research, multilingual audio and on-chain field intelligence." />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0d0f12" />
+  <meta name="description" content="Romo7 projects: AI products, research and experiments with clear paths to real-world value and revenue." />
   <title>Projects — Romo7</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="studio-v2.css" />
+  <link rel="stylesheet" href="studio-v3.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="ambient ambient-a" aria-hidden="true"></div>
-  <div class="ambient ambient-b" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">R7</span><span class="brand-copy"><strong>ROMO7</strong><small>independent studio</small></span></a>
-    <nav class="nav">
-      <a href="index.html" data-en="Studio" data-fa="استودیو">Studio</a>
-      <a class="active" href="projects.html" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
-      <a href="collaborate.html" data-en="Collaborate" data-fa="همکاری">Collaborate</a>
-      <a href="notes.html" data-en="Field Notes" data-fa="یادداشت‌ها">Field Notes</a>
+  <header class="topbar">
+    <a class="logo" href="index.html"><span class="logo-mark">R7</span><span>ROMO7</span></a>
+    <nav class="main-nav">
+      <a href="index.html#ai" data-en="AI" data-fa="هوش مصنوعی">AI</a>
+      <a href="index.html#research" data-en="Research" data-fa="پژوهش">Research</a>
+      <a class="active" href="projects.html" data-en="Work" data-fa="پروژه‌ها">Work</a>
+      <a href="index.html#revenue" data-en="Revenue" data-fa="درآمد">Revenue</a>
+      <a href="notes.html" data-en="Notes" data-fa="یادداشت‌ها">Notes</a>
     </nav>
-    <div class="header-actions"><button class="icon-button" id="themeToggle" type="button">☼</button><button class="lang-button" id="langToggle" type="button">FA</button></div>
+    <div class="top-actions"><button id="themeToggle" class="plain-control" type="button">☼</button><button id="langToggle" class="lang-control" type="button">FA</button></div>
   </header>
 
   <main>
-    <section class="page-hero section-shell">
-      <div class="page-kicker">ROMO7 / PROJECTS</div>
-      <h1 data-en="Every project must earn its right to exist." data-fa="هر پروژه باید ثابت کند ارزش ادامه‌دادن دارد.">Every project must earn its right to exist.</h1>
-      <p data-en="We track usefulness, user pull, cost, learning value and a believable path to revenue. Projects can grow, pause, pivot or die."
-         data-fa="مفید بودن، تقاضای واقعی، هزینه، ارزش یادگیری و مسیر قابل‌باور درآمد را می‌سنجیم. پروژه می‌تواند رشد کند، متوقف شود، تغییر مسیر دهد یا کنار گذاشته شود.">
-        We track usefulness, user pull, cost, learning value and a believable path to revenue. Projects can grow, pause, pivot or die.
+    <section class="page-hero-v3 wrap">
+      <span class="kicker" data-en="SELECTED WORK" data-fa="پروژه‌ها">SELECTED WORK</span>
+      <h1 data-en="Every project should prove something."
+          data-fa="هر پروژه باید چیزی را ثابت کند.">
+        Every project should prove something.
+      </h1>
+      <p data-en="A Romo7 project is not finished when it looks good. It should answer a real question, create something useful and show a believable path to sustainability."
+         data-fa="در Romo7 یک پروژه وقتی تمام نمی‌شود که فقط خوب به نظر برسد. باید به یک پرسش واقعی جواب بدهد، چیز مفیدی بسازد و مسیر قابل‌باوری برای پایداری و درآمد داشته باشد.">
+        A Romo7 project is not finished when it looks good.
       </p>
     </section>
 
-    <section class="section section-shell project-ledger">
-      <div class="project-detail reveal" id="romo-diary">
-        <div class="project-detail-head">
-          <div><span class="status live" data-en="BUILDING" data-fa="در حال ساخت">BUILDING</span><span class="project-kicker" data-en="01 / PERSONAL SOFTWARE" data-fa="۰۱ / نرم‌افزار شخصی">01 / PERSONAL SOFTWARE</span></div>
-          <span class="project-index">R7-001</span>
-        </div>
-        <div class="project-detail-grid">
+    <section class="section wrap case-list">
+      <article class="case-card" id="romo-diary">
+        <div class="case-top"><span>01</span><span data-en="FLAGSHIP PRODUCT" data-fa="محصول اصلی">FLAGSHIP PRODUCT</span></div>
+        <div class="case-title"><h2>Romo Diary</h2><span class="case-state" data-en="BUILDING" data-fa="در حال ساخت">BUILDING</span></div>
+        <div class="case-columns">
           <div>
-            <h2>Romo Diary</h2>
-            <p class="lead" data-en="A life-recording app designed to stay simple enough for everyday use, including people with different accessibility needs."
-               data-fa="اپ ثبت زندگی که آن‌قدر ساده طراحی می‌شود که برای استفاده روزمره مناسب باشد؛ از جمله برای افرادی با نیازهای دسترس‌پذیری متفاوت.">
-              A life-recording app designed to stay simple enough for everyday use, including people with different accessibility needs.
+            <small data-en="THE QUESTION" data-fa="پرسش">THE QUESTION</small>
+            <p data-en="How can people preserve the story of their lives without turning memory-keeping into complicated work?"
+               data-fa="چطور می‌شود آدم‌ها داستان زندگی‌شان را ثبت کنند، بدون اینکه خاطره‌نویسی به یک کار پیچیده و خسته‌کننده تبدیل شود؟">
+              How can people preserve the story of their lives?
             </p>
-            <div class="tag-row"><span>Flutter</span><span>Accessibility</span><span>Memory</span><span>Media</span></div>
           </div>
-          <div class="project-economics">
-            <span class="overline" data-en="BUSINESS MODEL" data-fa="مدل درآمد">BUSINESS MODEL</span>
-            <ul>
-              <li><b data-en="Free core:" data-fa="هسته رایگان:">Free core:</b> <span data-en="basic life recording and local-first use" data-fa="ثبت پایه زندگی و استفاده محلی">basic life recording and local-first use</span></li>
-              <li><b data-en="Paid layer:" data-fa="لایه پولی:">Paid layer:</b> <span data-en="backup, advanced search, AI-assisted organization and family/archive features" data-fa="بکاپ، جست‌وجوی پیشرفته، سازمان‌دهی با AI و امکانات آرشیو/خانواده">backup, advanced search, AI-assisted organization and family/archive features</span></li>
-              <li><b data-en="Collaborator upside:" data-fa="سهم همکار:">Collaborator upside:</b> <span data-en="project-specific split for core contributors" data-fa="سهم مخصوص پروژه برای همکارهای اصلی">project-specific split for core contributors</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="project-footer"><span data-en="Current focus: stable Android test build, attachments, multilingual UX." data-fa="تمرکز فعلی: نسخه تست پایدار اندروید، پیوست فایل و رابط چندزبانه.">Current focus: stable Android test build, attachments, multilingual UX.</span><a href="collaborate.html">Build with us ↗</a></div>
-      </div>
-
-      <div class="project-detail reveal" id="podify">
-        <div class="project-detail-head">
-          <div><span class="status live" data-en="BUILDING" data-fa="در حال ساخت">BUILDING</span><span class="project-kicker" data-en="02 / AI AUDIO" data-fa="۰۲ / صوت با هوش مصنوعی">02 / AI AUDIO</span></div>
-          <span class="project-index">R7-002</span>
-        </div>
-        <div class="project-detail-grid">
           <div>
-            <h2>Podify</h2>
-            <p class="lead" data-en="A multilingual text-to-audio product for turning documents, books and scripts into spoken listening experiences."
-               data-fa="محصول چندزبانه تبدیل متن به صوت برای تبدیل سند، کتاب و اسکریپت به تجربه شنیداری.">
-              A multilingual text-to-audio product for turning documents, books and scripts into spoken listening experiences.
+            <small data-en="WHAT WE'RE BUILDING" data-fa="چیزی که می‌سازیم">WHAT WE'RE BUILDING</small>
+            <p data-en="A simple, multilingual and accessible life-recording app for memories, people, photos, video and voice."
+               data-fa="یک اپ ساده، چندزبانه و دسترس‌پذیر برای ثبت خاطره‌ها، آدم‌ها، عکس، ویدیو و صدا.">
+              A simple, multilingual and accessible life-recording app.
             </p>
-            <div class="tag-row"><span>AI</span><span>TTS</span><span>Android</span><span>Multilingual</span></div>
           </div>
-          <div class="project-economics">
-            <span class="overline" data-en="BUSINESS MODEL" data-fa="مدل درآمد">BUSINESS MODEL</span>
-            <ul>
-              <li><b data-en="Free tier:" data-fa="پلن رایگان:">Free tier:</b> <span data-en="limited generation for real product discovery" data-fa="تولید محدود برای تجربه واقعی محصول">limited generation for real product discovery</span></li>
-              <li><b data-en="Paid tier:" data-fa="پلن پولی:">Paid tier:</b> <span data-en="higher limits, longer documents, premium voices and export options" data-fa="محدودیت بالاتر، اسناد طولانی‌تر، صداهای بهتر و خروجی‌های بیشتر">higher limits, longer documents, premium voices and export options</span></li>
-              <li><b data-en="Cost discipline:" data-fa="کنترل هزینه:">Cost discipline:</b> <span data-en="AI/API cost must stay below sustainable unit economics" data-fa="هزینه AI/API باید با اقتصاد پایدار هر کاربر سازگار باشد">AI/API cost must stay below sustainable unit economics</span></li>
-            </ul>
-          </div>
-        </div>
-        <div class="project-footer"><span data-en="Current focus: reliable generation, Persian support and cost control." data-fa="تمرکز فعلی: تولید پایدار، پشتیبانی فارسی و کنترل هزینه.">Current focus: reliable generation, Persian support and cost control.</span><a href="collaborate.html">Build with us ↗</a></div>
-      </div>
-
-      <div class="project-detail reveal" id="paib">
-        <div class="project-detail-head">
-          <div><span class="status research" data-en="RESEARCH" data-fa="پژوهش">RESEARCH</span><span class="project-kicker" data-en="03 / AI EVALUATION" data-fa="۰۳ / ارزیابی هوش مصنوعی">03 / AI EVALUATION</span></div>
-          <span class="project-index">R7-003</span>
-        </div>
-        <div class="project-detail-grid">
           <div>
-            <h2>PAIB</h2>
-            <p class="lead" data-en="Persian Agent Integrity Benchmark — research infrastructure for testing how AI agents behave under realistic Persian-language conditions."
-               data-fa="Persian Agent Integrity Benchmark؛ زیرساخت پژوهشی برای سنجش رفتار عامل‌های هوش مصنوعی در شرایط واقعی فارسی‌زبان.">
-              Persian Agent Integrity Benchmark — research infrastructure for testing how AI agents behave under realistic Persian-language conditions.
+            <small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small>
+            <p data-en="Free core product with paid backup, stronger search, larger media, AI organization and family/archive features."
+               data-fa="هسته‌ی اصلی رایگان؛ درآمد از پشتیبان‌گیری، جست‌وجوی قوی‌تر، رسانه‌ی بیشتر، سازمان‌دهی با AI و امکانات خانوادگی و آرشیو.">
+              Free core with paid backup, search and AI organization.
             </p>
-            <div class="tag-row"><span>AI Research</span><span>Evaluation</span><span>Persian</span><span>Open Work</span></div>
-          </div>
-          <div class="project-economics">
-            <span class="overline" data-en="POSSIBLE REVENUE" data-fa="مسیرهای درآمد">POSSIBLE REVENUE</span>
-            <ul>
-              <li><b data-en="Open research:" data-fa="پژوهش باز:">Open research:</b> <span data-en="public benchmark, methodology and credibility" data-fa="بنچمارک عمومی، روش‌شناسی و اعتبار پژوهشی">public benchmark, methodology and credibility</span></li>
-              <li><b data-en="Commercial layer:" data-fa="لایه تجاری:">Commercial layer:</b> <span data-en="private evaluations, reports, custom test suites and language-market research" data-fa="ارزیابی خصوصی، گزارش، تست سفارشی و تحقیق بازار زبانی">private evaluations, reports, custom test suites and language-market research</span></li>
-              <li><b data-en="Rule:" data-fa="قاعده:">Rule:</b> <span data-en="commercial work must not compromise benchmark integrity" data-fa="کار تجاری نباید اعتبار بنچمارک را خراب کند">commercial work must not compromise benchmark integrity</span></li>
-            </ul>
           </div>
         </div>
-        <div class="project-footer"><span data-en="Current focus: benchmark quality, documentation and reproducibility." data-fa="تمرکز فعلی: کیفیت بنچمارک، مستندسازی و بازتولیدپذیری.">Current focus: benchmark quality, documentation and reproducibility.</span><a href="https://github.com/Romohub" target="_blank" rel="noreferrer">GitHub ↗</a></div>
-      </div>
+        <div class="case-proof"><span data-en="WHY IT MATTERS" data-fa="چرا مهم است">WHY IT MATTERS</span><strong data-en="A human problem first. Technology second."
+          data-fa="اول مسئله‌ی انسانی؛ بعد فناوری.">A human problem first. Technology second.</strong></div>
+      </article>
 
-      <div class="project-detail reveal" id="onchain-lab">
-        <div class="project-detail-head">
-          <div><span class="status active" data-en="ACTIVE" data-fa="فعال">ACTIVE</span><span class="project-kicker" data-en="04 / FIELD INTELLIGENCE" data-fa="۰۴ / تحقیق میدانی">04 / FIELD INTELLIGENCE</span></div>
-          <span class="project-index">R7-004</span>
+      <article class="case-card" id="paib">
+        <div class="case-top"><span>02</span><span data-en="AI RESEARCH" data-fa="پژوهش هوش مصنوعی">AI RESEARCH</span></div>
+        <div class="case-title"><h2>PAIB</h2><span class="case-state" data-en="RESEARCH" data-fa="پژوهش">RESEARCH</span></div>
+        <div class="case-columns">
+          <div><small data-en="THE QUESTION" data-fa="پرسش">THE QUESTION</small><p data-en="How do Persian-speaking AI agents behave when instructions, incentives and integrity come into conflict?"
+          data-fa="عامل‌های هوش مصنوعی فارسی وقتی دستور، انگیزه و یکپارچگی با هم در تضاد قرار می‌گیرند، چطور رفتار می‌کنند؟">How do Persian-speaking AI agents behave under conflict?</p></div>
+          <div><small data-en="WHAT WE'RE BUILDING" data-fa="چیزی که می‌سازیم">WHAT WE'RE BUILDING</small><p data-en="A Persian-focused agent integrity benchmark with reproducible tests and documented failure modes."
+          data-fa="یک بنچمارک فارسی برای سنجش یکپارچگی عامل‌های AI، با تست‌های قابل‌تکرار و ثبت دقیق نقاط شکست.">A Persian-focused agent integrity benchmark.</p></div>
+          <div><small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small><p data-en="Open research can lead to paid private evaluations, language-market reports and custom test suites."
+          data-fa="پژوهش باز می‌تواند به ارزیابی خصوصی، گزارش بازار فارسی و مجموعه تست سفارشی تبدیل شود.">Private evaluations, reports and custom test suites.</p></div>
         </div>
-        <div class="project-detail-grid">
-          <div>
-            <h2>On-chain Lab</h2>
-            <p class="lead" data-en="A disciplined way to test protocols, campaigns and crypto-native products with real usage before publishing conclusions."
-               data-fa="روش منظم برای تست واقعی پروتکل‌ها، کمپین‌ها و محصولات کریپتویی قبل از انتشار نتیجه.">
-              A disciplined way to test protocols, campaigns and crypto-native products with real usage before publishing conclusions.
-            </p>
-            <div class="tag-row"><span>Web3</span><span>DeFi</span><span>Research</span><span>Risk</span></div>
-          </div>
-          <div class="project-economics">
-            <span class="overline" data-en="BUSINESS MODEL" data-fa="مدل درآمد">BUSINESS MODEL</span>
-            <ul>
-              <li><b data-en="Public layer:" data-fa="لایه عمومی:">Public layer:</b> <span data-en="field notes, practical explainers and useful community content" data-fa="یادداشت میدانی، توضیح کاربردی و محتوای مفید">field notes, practical explainers and useful community content</span></li>
-              <li><b data-en="Paid work:" data-fa="کار پولی:">Paid work:</b> <span data-en="research briefs, product testing, selective bounties and partnerships" data-fa="گزارش تحقیق، تست محصول، بونتی انتخابی و همکاری تجاری">research briefs, product testing, selective bounties and partnerships</span></li>
-              <li><b data-en="Integrity rule:" data-fa="قاعده اعتبار:">Integrity rule:</b> <span data-en="sponsorship never buys a positive conclusion" data-fa="اسپانسرینگ نتیجه مثبت نمی‌خرد">sponsorship never buys a positive conclusion</span></li>
-            </ul>
-          </div>
+        <div class="case-proof"><span data-en="WHY IT MATTERS" data-fa="چرا مهم است">WHY IT MATTERS</span><strong data-en="Research can become infrastructure."
+          data-fa="پژوهش می‌تواند به زیرساخت تبدیل شود.">Research can become infrastructure.</strong></div>
+      </article>
+
+      <article class="case-card" id="podify">
+        <div class="case-top"><span>03</span><span data-en="AI PRODUCT" data-fa="محصول هوش مصنوعی">AI PRODUCT</span></div>
+        <div class="case-title"><h2>Podify</h2><span class="case-state" data-en="BUILDING" data-fa="در حال ساخت">BUILDING</span></div>
+        <div class="case-columns">
+          <div><small data-en="THE QUESTION" data-fa="پرسش">THE QUESTION</small><p data-en="Can long text become genuinely useful audio without forcing users through a complicated AI workflow?"
+          data-fa="آیا می‌شود متن‌های طولانی را به صوت واقعاً کاربردی تبدیل کرد، بدون اینکه کاربر وارد یک فرایند پیچیده‌ی هوش مصنوعی شود؟">Can long text become genuinely useful audio?</p></div>
+          <div><small data-en="WHAT WE'RE BUILDING" data-fa="چیزی که می‌سازیم">WHAT WE'RE BUILDING</small><p data-en="A multilingual text-to-audio product with a strong focus on reliable generation and Persian support."
+          data-fa="یک محصول چندزبانه برای تبدیل متن به صوت، با تمرکز جدی روی تولید قابل‌اعتماد و پشتیبانی فارسی.">A multilingual text-to-audio product.</p></div>
+          <div><small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small><p data-en="Free trial with paid usage limits, longer documents, premium voices, export controls and creator workflows."
+          data-fa="نسخه‌ی آزمایشی رایگان؛ درآمد از سقف بالاتر، سندهای طولانی‌تر، صدای پریمیوم، کنترل خروجی و گردش‌کار حرفه‌ای.">Free trial with paid usage and premium features.</p></div>
         </div>
-        <div class="project-footer"><span data-en="Current focus: fewer opportunities, higher expected value, better documentation." data-fa="تمرکز فعلی: فرصت کمتر، ارزش موردانتظار بالاتر و مستندسازی بهتر.">Current focus: fewer opportunities, higher expected value, better documentation.</span><a href="notes.html">Read field notes ↗</a></div>
-      </div>
-    </section>
+        <div class="case-proof"><span data-en="WHY IT MATTERS" data-fa="چرا مهم است">WHY IT MATTERS</span><strong data-en="AI should reduce friction, not add it."
+          data-fa="AI باید اصطکاک را کم کند، نه بیشتر.">AI should reduce friction, not add it.</strong></div>
+      </article>
 
-    <section class="section section-shell decision-system">
-      <div class="section-label reveal"><span>05</span><span data-en="PROJECT FILTER" data-fa="فیلتر پروژه">PROJECT FILTER</span></div>
-      <div class="section-heading reveal delay-1">
-        <h2 data-en="What gets more of our time?" data-fa="چه چیزی زمان بیشتری از ما می‌گیرد؟">What gets more of our time?</h2>
-        <p data-en="We prefer evidence over attachment. A project earns more resources when these signals improve." data-fa="شواهد مهم‌تر از وابستگی احساسی به ایده است. پروژه وقتی منابع بیشتری می‌گیرد که این سیگنال‌ها بهتر شوند.">We prefer evidence over attachment. A project earns more resources when these signals improve.</p>
-      </div>
-      <div class="score-grid">
-        <article><strong>USEFULNESS</strong><span data-en="Does someone actually need it?" data-fa="آیا واقعاً کسی به آن نیاز دارد؟">Does someone actually need it?</span></article>
-        <article><strong>PULL</strong><span data-en="Do users come back or ask for it?" data-fa="آیا کاربر برمی‌گردد یا خودش درخواستش می‌کند؟">Do users come back or ask for it?</span></article>
-        <article><strong>UNIT ECONOMICS</strong><span data-en="Can revenue exceed delivery cost?" data-fa="آیا درآمد می‌تواند از هزینه ارائه بیشتر شود؟">Can revenue exceed delivery cost?</span></article>
-        <article><strong>LEVERAGE</strong><span data-en="Can software, AI or distribution compound the work?" data-fa="آیا نرم‌افزار، AI یا توزیع اثر کار را چندبرابر می‌کند؟">Can software, AI or distribution compound the work?</span></article>
-        <article><strong>DEFENSIBILITY</strong><span data-en="Do we build knowledge, data, trust or product advantage?" data-fa="آیا دانش، داده، اعتماد یا مزیت محصول می‌سازیم؟">Do we build knowledge, data, trust or product advantage?</span></article>
-      </div>
-    </section>
-
-    <section class="section section-shell contact-section">
-      <div class="contact-card reveal">
-        <div class="contact-copy"><span class="overline">NEXT PROJECT</span><h2 data-en="See a place where you can create real value?" data-fa="جایی می‌بینی که بتوانی ارزش واقعی بسازی؟">See a place where you can create real value?</h2><p data-en="The collaboration page explains how scope, compensation and revenue share work before anyone commits serious time." data-fa="در صفحه همکاری توضیح داده‌ایم که محدوده کار، جبران و سهم درآمد قبل از شروع جدی چطور مشخص می‌شود.">The collaboration page explains how scope, compensation and revenue share work before anyone commits serious time.</p></div>
-        <div class="contact-actions"><a class="button primary" href="collaborate.html">Collaborate ↗</a><a class="button ghost" href="index.html">Back to studio</a></div>
-      </div>
+      <article class="case-card lab-card" id="onchain-lab">
+        <div class="case-top"><span>LAB</span><span data-en="FIELD EXPERIMENTS" data-fa="آزمایش میدانی">FIELD EXPERIMENTS</span></div>
+        <div class="case-title"><h2>On-chain Lab</h2><span class="case-state muted" data-en="SECONDARY" data-fa="فرعی">SECONDARY</span></div>
+        <div class="case-columns">
+          <div><small data-en="ROLE" data-fa="نقش">ROLE</small><p data-en="A test ground for incentives, markets, protocols and internet-native products."
+          data-fa="محیطی برای آزمایش انگیزه‌ها، بازارها، پروتکل‌ها و محصولات بومی اینترنت.">A test ground for internet-native markets.</p></div>
+          <div><small data-en="OUTPUT" data-fa="خروجی">OUTPUT</small><p data-en="Field notes, product testing, risk observations and selective high-value bounties."
+          data-fa="یادداشت میدانی، تست محصول، مشاهده‌ی ریسک و بونتی‌های انتخابی با ارزش بالا.">Field notes, testing and selective bounties.</p></div>
+          <div><small data-en="PLACE IN ROMO7" data-fa="جایگاه در Romo7">PLACE IN ROMO7</small><p data-en="Useful experience, but not the main identity. AI and research remain the center."
+          data-fa="تجربه‌ی مفید است، اما هویت اصلی نیست. مرکز Romo7 همچنان هوش مصنوعی و پژوهش است.">Useful experience, not the main identity.</p></div>
+        </div>
+      </article>
     </section>
   </main>
 
-  <footer class="site-footer section-shell">
-    <div><strong>ROMO7</strong><span>Independent research, AI & product studio.</span></div>
-    <div class="footer-links"><a href="index.html">Studio</a><a href="collaborate.html">Collaborate</a><a href="notes.html">Field Notes</a></div>
-    <small>© <span id="year"></span> Romo7.</small>
+  <footer class="footer wrap">
+    <div><strong>ROMO7</strong><span data-en="AI + Research + Real Value" data-fa="هوش مصنوعی + پژوهش + ارزش واقعی">AI + Research + Real Value</span></div>
+    <div class="footer-nav"><a href="index.html">Studio</a><a href="notes.html" data-en="Notes" data-fa="یادداشت‌ها">Notes</a><a href="collaborate.html" data-en="Collaborate" data-fa="همکاری">Collaborate</a></div>
+    <small>© <span id="year"></span> Romo7</small>
   </footer>
   <script src="script.js"></script>
-</body>
-</html>
+</body></html>
