@@ -381,3 +381,138 @@ body:not(.mode-home) .topbar{
   .v8-live-dot,.v8-status-icon.done svg path,.v8-status-icon.active{animation:none!important}
   .v8-status-icon.done svg path{stroke-dashoffset:0}
 }
+
+
+/* V8.1 — final micro-adjustments */
+
+/* 1) Consistent section rhythm across desktop/tablet/mobile */
+:root{
+  --r8-section-space:104px;
+  --r8-section-space-fa:82px;
+}
+.v5-section#capabilities,
+.v5-section#research,
+.v5-section#work{
+  padding-top:var(--r8-section-space)!important;
+  padding-bottom:var(--r8-section-space)!important;
+}
+html[lang="fa"] .v5-section#capabilities,
+html[lang="fa"] .v5-section#research,
+html[lang="fa"] .v5-section#work{
+  padding-top:var(--r8-section-space-fa)!important;
+  padding-bottom:var(--r8-section-space-fa)!important;
+}
+.v5-section-head{
+  margin-bottom:42px!important;
+}
+html[lang="fa"] .v5-section-head{
+  margin-bottom:30px!important;
+}
+
+/* 2) Softer status-card motion */
+.v8-step-card{
+  transition:
+    transform .3s cubic-bezier(.2,.7,.2,1),
+    border-color .3s ease,
+    background-color .3s ease,
+    box-shadow .3s ease;
+  will-change:transform;
+}
+.v8-step-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(201,239,103,.26)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+  box-shadow:0 12px 28px rgba(0,0,0,.10);
+}
+.v8-step-card:hover .v8-status-icon{
+  transform:scale(1.04);
+}
+.v8-status-icon{
+  transition:transform .3s ease,box-shadow .3s ease,background-color .3s ease;
+}
+.v8-step-card:nth-child(2){transition-delay:25ms}
+.v8-step-card:nth-child(3){transition-delay:50ms}
+
+/* 3) Robust RTL for mixed Persian / Latin content */
+html[lang="fa"] .v5-intro p,
+html[lang="fa"] .v5-metrics strong,
+html[lang="fa"] .v5-cap-query strong,
+html[lang="fa"] .v5-cap-rows p,
+html[lang="fa"] .v8-project-copy p,
+html[lang="fa"] .v8-revenue-box code,
+html[lang="fa"] .v5-revenue-grid p,
+html[lang="fa"] .case-columns p,
+html[lang="fa"] .article-stack p,
+html[lang="fa"] .process-list p,
+html[lang="fa"] .collab-models p{
+  direction:rtl;
+  unicode-bidi:plaintext;
+  text-align:right;
+}
+
+/* Keep standalone Latin product/brand names stable inside RTL layouts */
+html[lang="fa"] .v5-dash-head h2,
+html[lang="fa"] .v8-project-copy h3,
+html[lang="fa"] .case-title h2{
+  unicode-bidi:isolate;
+}
+
+/* Monospace-style business paths stay technical without bidi glitches */
+html[lang="fa"] .v8-revenue-box{
+  direction:rtl;
+}
+html[lang="fa"] .v8-revenue-box code{
+  display:block;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+
+/* Avoid odd arrow placement in RTL */
+html[lang="fa"] .v8-card-arrow{
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+html[lang="fa"] .v5-research-flow{
+  direction:rtl;
+}
+html[lang="fa"] .v5-research-flow i{
+  direction:ltr;
+  unicode-bidi:isolate;
+}
+
+/* Slightly calmer mixed-language labels in Persian */
+html[lang="fa"] .v5-product-bar>span,
+html[lang="fa"] .v8-project-meta small,
+html[lang="fa"] .v8-revenue-box small,
+html[lang="fa"] .v5-cap-top span{
+  letter-spacing:0!important;
+  line-height:1.8;
+}
+
+@media(max-width:980px){
+  :root{
+    --r8-section-space:86px;
+    --r8-section-space-fa:72px;
+  }
+}
+@media(max-width:760px){
+  :root{
+    --r8-section-space:60px;
+    --r8-section-space-fa:56px;
+  }
+  .v8-step-card:hover{
+    transform:none;
+  }
+}
+@media(hover:none){
+  .v8-step-card:hover{
+    transform:none;
+    box-shadow:none;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .v8-step-card,
+  .v8-status-icon{
+    transition:none!important;
+  }
+}
