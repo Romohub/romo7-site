@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="mode-v5.css" />
   <link rel="stylesheet" href="persian-v6.css" />
   <link rel="stylesheet" href="persian-v7.css" />
+  <link rel="stylesheet" href="v8-enhancements.css" />
 </head>
 <body class="mode-home">
   <div class="mode-announcement">
@@ -127,13 +128,37 @@
             The goal is not to make everything look AI-powered.
           </p>
         </div>
-        <div class="v5-cap-ui">
-          <div class="v5-cap-top"><span>romo7://workbench</span><b>● LIVE</b></div>
-          <div class="v5-cap-query"><small data-en="QUESTION" data-fa="پرسش">QUESTION</small><strong data-en="Does this make the product easier to use?" data-fa="آیا این تغییر استفاده از محصول را ساده‌تر می‌کند؟">Does this make the product easier to use?</strong></div>
-          <div class="v5-cap-rows">
-            <div><span>01</span><p data-en="Observe the user problem" data-fa="مسئله‌ی کاربر را مشاهده کن">Observe the user problem</p><b>✓</b></div>
-            <div><span>02</span><p data-en="Test the AI intervention" data-fa="مداخله‌ی AI را آزمایش کن">Test the AI intervention</p><b>✓</b></div>
-            <div><span>03</span><p data-en="Measure usefulness and cost" data-fa="فایده و هزینه را بسنج">Measure usefulness and cost</p><b>→</b></div>
+        <div class="v5-cap-ui v8-workbench">
+          <div class="v5-cap-top v8-workbench-top">
+            <span>romo7://workbench</span>
+            <b><i class="v8-live-dot"></i><span data-en="LIVE" data-fa="زنده">LIVE</span></b>
+          </div>
+          <div class="v5-cap-query v8-glass-card v8-query-card">
+            <small data-en="QUESTION" data-fa="پرسش">QUESTION</small>
+            <strong data-en="Does this make the product easier to use?" data-fa="آیا این تغییر استفاده از محصول را ساده‌تر می‌کند؟">Does this make the product easier to use?</strong>
+          </div>
+          <div class="v5-cap-rows v8-step-grid">
+            <div class="v8-step-card">
+              <span>01</span>
+              <p data-en="Observe the user problem" data-fa="مسئله‌ی کاربر را مشاهده کن">Observe the user problem</p>
+              <span class="v8-status-icon done" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 12.5l4.1 4.1L19 6.8"/></svg>
+              </span>
+            </div>
+            <div class="v8-step-card">
+              <span>02</span>
+              <p data-en="Test the AI intervention" data-fa="مداخله‌ی AI را آزمایش کن">Test the AI intervention</p>
+              <span class="v8-status-icon done" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 12.5l4.1 4.1L19 6.8"/></svg>
+              </span>
+            </div>
+            <div class="v8-step-card">
+              <span>03</span>
+              <p data-en="Measure usefulness and cost" data-fa="فایده و هزینه را بسنج">Measure usefulness and cost</p>
+              <span class="v8-status-icon active" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 12h10M13 8l4 4-4 4"/></svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -189,24 +214,52 @@
         </h2>
       </div>
 
-      <div class="v5-projects">
-        <a href="projects.html#romo-diary" class="v5-project featured">
-          <span class="v5-proj-num">01</span>
-          <div><small data-en="FLAGSHIP PRODUCT" data-fa="محصول اصلی">FLAGSHIP PRODUCT</small><h3>Romo Diary</h3><p data-en="A multilingual, accessible place to preserve memories, people and personal history." data-fa="فضایی چندزبانه و دسترس‌پذیر برای ثبت خاطره‌ها، آدم‌ها و تاریخ شخصی.">A multilingual, accessible place to preserve memories.</p></div>
-          <aside><small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small><strong data-en="Free core → paid backup, search, AI organization and family archive." data-fa="هسته‌ی رایگان ← پشتیبان‌گیری، جست‌وجو، سازمان‌دهی AI و آرشیو خانوادگی.">Free core → paid backup and AI organization.</strong></aside>
-          <b>↗</b>
+      <div class="v8-project-grid">
+        <a href="projects.html#romo-diary" class="v8-project-card v8-project-featured">
+          <div class="v8-project-meta"><span>01</span><small data-en="FLAGSHIP PRODUCT" data-fa="محصول اصلی">FLAGSHIP PRODUCT</small></div>
+          <div class="v8-project-copy">
+            <h3>Romo Diary</h3>
+            <p data-en="A multilingual, accessible place to preserve memories, people and personal history."
+               data-fa="فضایی چندزبانه و دسترس‌پذیر برای ثبت خاطره‌ها، آدم‌ها و تاریخ شخصی.">
+              A multilingual, accessible place to preserve memories, people and personal history.
+            </p>
+          </div>
+          <aside class="v8-revenue-box">
+            <small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small>
+            <code data-en="FREE CORE → BACKUP / SEARCH / AI ORGANIZATION / FAMILY ARCHIVE"
+                  data-fa="هسته‌ی رایگان ← پشتیبان‌گیری / جست‌وجو / سازمان‌دهی AI / آرشیو خانوادگی">FREE CORE → BACKUP / SEARCH / AI ORGANIZATION / FAMILY ARCHIVE</code>
+          </aside>
+          <span class="v8-card-arrow">↗</span>
         </a>
-        <a href="projects.html#paib" class="v5-project">
-          <span class="v5-proj-num">02</span>
-          <div><small data-en="AI RESEARCH" data-fa="پژوهش AI">AI RESEARCH</small><h3>PAIB</h3><p data-en="Persian-focused agent integrity evaluation." data-fa="ارزیابی یکپارچگی عامل‌های هوش مصنوعی فارسی.">Persian-focused agent integrity evaluation.</p></div>
-          <aside><small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small><strong data-en="Open benchmark → private evaluations and custom test suites." data-fa="بنچمارک باز ← ارزیابی خصوصی و تست سفارشی.">Open benchmark → private evaluation.</strong></aside>
-          <b>↗</b>
+
+        <a href="projects.html#paib" class="v8-project-card v8-project-small">
+          <div class="v8-project-meta"><span>02</span><small data-en="AI RESEARCH" data-fa="پژوهش AI">AI RESEARCH</small></div>
+          <div class="v8-project-copy">
+            <h3>PAIB</h3>
+            <p data-en="Persian-focused agent integrity evaluation."
+               data-fa="ارزیابی یکپارچگی عامل‌های هوش مصنوعی فارسی.">Persian-focused agent integrity evaluation.</p>
+          </div>
+          <aside class="v8-revenue-box">
+            <small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small>
+            <code data-en="OPEN BENCHMARK → PRIVATE EVALUATION / CUSTOM TESTS"
+                  data-fa="بنچمارک باز ← ارزیابی خصوصی / تست سفارشی">OPEN BENCHMARK → PRIVATE EVALUATION / CUSTOM TESTS</code>
+          </aside>
+          <span class="v8-card-arrow">↗</span>
         </a>
-        <a href="projects.html#podify" class="v5-project">
-          <span class="v5-proj-num">03</span>
-          <div><small data-en="AI PRODUCT" data-fa="محصول AI">AI PRODUCT</small><h3>Podify</h3><p data-en="Multilingual text-to-audio with Persian support." data-fa="تبدیل متن به صوت چندزبانه با پشتیبانی فارسی.">Multilingual text-to-audio with Persian support.</p></div>
-          <aside><small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small><strong data-en="Free trial → paid usage, premium voices and export." data-fa="نسخه‌ی آزمایشی ← مصرف بیشتر، صدای پریمیوم و خروجی.">Free trial → paid usage.</strong></aside>
-          <b>↗</b>
+
+        <a href="projects.html#podify" class="v8-project-card v8-project-small">
+          <div class="v8-project-meta"><span>03</span><small data-en="AI PRODUCT" data-fa="محصول AI">AI PRODUCT</small></div>
+          <div class="v8-project-copy">
+            <h3>Podify</h3>
+            <p data-en="Multilingual text-to-audio with Persian support."
+               data-fa="تبدیل متن به صوت چندزبانه با پشتیبانی فارسی.">Multilingual text-to-audio with Persian support.</p>
+          </div>
+          <aside class="v8-revenue-box">
+            <small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small>
+            <code data-en="FREE TRIAL → PAID USAGE / PREMIUM VOICES / EXPORT"
+                  data-fa="نسخه‌ی آزمایشی ← مصرف بیشتر / صدای پریمیوم / خروجی">FREE TRIAL → PAID USAGE / PREMIUM VOICES / EXPORT</code>
+          </aside>
+          <span class="v8-card-arrow">↗</span>
         </a>
       </div>
     </section>
