@@ -3900,3 +3900,28 @@ button:focus-visible{
   outline:2px solid currentColor;
   outline-offset:3px;
 }
+
+
+/* ===== Skip link ===== */
+.skip-link{
+  position:fixed;
+  top:10px;
+  left:10px;
+  z-index:9999;
+  padding:10px 14px;
+  border-radius:10px;
+  background:#c4e868;
+  color:#0d352b;
+  font-weight:800;
+  font-size:.78rem;
+  text-decoration:none;
+  transform:translateY(-160%);
+  transition:transform .18s ease;
+}
+.skip-link:focus{
+  transform:translateY(0);
+}
+html[lang="fa"] .skip-link{
+  left:auto;
+  right:10px;
+}
