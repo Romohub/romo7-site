@@ -569,11 +569,7 @@ body[dir="rtl"] .collab-cta h2{letter-spacing:0;line-height:1.35}
 }
 
 /* ===== mode-v4.css ===== */
-@font-face{
-  font-family:"Vazirmatn";
-  src:url("https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/fonts/webfonts/Vazirmatn%5Bwght%5D.woff2") format("woff2");
-  font-style:normal;font-weight:100 900;font-display:swap;
-}
+
 
 :root{
   --m-forest:#074b3a;
