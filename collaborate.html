@@ -1,157 +1,86 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#080a0f" />
-  <meta name="description" content="Collaborate with Romo7 — clear scope, transparent project economics and project-based revenue sharing." />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0d0f12" />
+  <meta name="description" content="Collaborate with Romo7 on AI, research and product projects with clear scope, ownership and economics." />
   <title>Collaborate — Romo7</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="studio-v2.css" />
+  <link rel="stylesheet" href="studio-v3.css" />
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="ambient ambient-a" aria-hidden="true"></div>
-  <div class="ambient ambient-b" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">R7</span><span class="brand-copy"><strong>ROMO7</strong><small>independent studio</small></span></a>
-    <nav class="nav">
-      <a href="index.html" data-en="Studio" data-fa="استودیو">Studio</a>
-      <a href="projects.html" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
-      <a class="active" href="collaborate.html" data-en="Collaborate" data-fa="همکاری">Collaborate</a>
-      <a href="notes.html" data-en="Field Notes" data-fa="یادداشت‌ها">Field Notes</a>
+  <header class="topbar">
+    <a class="logo" href="index.html"><span class="logo-mark">R7</span><span>ROMO7</span></a>
+    <nav class="main-nav">
+      <a href="index.html#ai" data-en="AI" data-fa="هوش مصنوعی">AI</a>
+      <a href="index.html#research" data-en="Research" data-fa="پژوهش">Research</a>
+      <a href="projects.html" data-en="Work" data-fa="پروژه‌ها">Work</a>
+      <a href="index.html#revenue" data-en="Revenue" data-fa="درآمد">Revenue</a>
+      <a href="notes.html" data-en="Notes" data-fa="یادداشت‌ها">Notes</a>
     </nav>
-    <div class="header-actions"><button class="icon-button" id="themeToggle" type="button">☼</button><button class="lang-button" id="langToggle" type="button">FA</button></div>
+    <div class="top-actions"><button id="themeToggle" class="plain-control" type="button">☼</button><button id="langToggle" class="lang-control" type="button">FA</button></div>
   </header>
-
   <main>
-    <section class="page-hero section-shell">
-      <div class="page-kicker">ROMO7 / COLLABORATE</div>
-      <h1 data-en="No vague promises. Define the work and the upside." data-fa="همکاری باید از اول روشن باشد: کار، سهم و نتیجه.">No vague promises. Define the work and the upside.</h1>
-      <p data-en="Romo7 can work with contributors, specialists, partners and co-builders. The structure depends on the project, but the economics should be understandable before serious work begins."
-         data-fa="در Romo7 می‌توانی به‌عنوان همکار، متخصص یا سازنده‌ی اصلی وارد یک پروژه شوی. قبل از شروع کار جدی، دقیق مشخص می‌کنیم چه چیزی می‌سازی، چه مسئولیتی داری و سهمت چطور حساب می‌شود.">
-        Romo7 can work with contributors, specialists, partners and co-builders. The structure depends on the project, but the economics should be understandable before serious work begins.
+    <section class="page-hero-v3 wrap">
+      <span class="kicker" data-en="COLLABORATE" data-fa="همکاری">COLLABORATE</span>
+      <h1 data-en="Clear work. Clear ownership. Clear upside."
+          data-fa="کار روشن. مالکیت روشن. سهم روشن.">Clear work. Clear ownership. Clear upside.</h1>
+      <p data-en="If your work materially helps a project create value, compensation should be explicit before serious work begins."
+         data-fa="اگر کارت واقعاً به یک پروژه ارزش اضافه می‌کند، جبرانش هم باید قبل از شروع کار جدی روشن باشد.">
+        If your work materially helps a project create value, compensation should be explicit.
       </p>
     </section>
 
-    <section class="section section-shell">
-      <div class="section-label reveal"><span>01</span><span data-en="THE RULE" data-fa="قاعده اصلی">THE RULE</span></div>
-      <div class="big-rule reveal delay-1">
-        <span class="rule-prefix">R7 //</span>
-        <blockquote data-en="If your work materially helps a project create value, your compensation should be explicit."
-                    data-fa="اگر کار تو به‌طور واقعی به ساخت ارزش در پروژه کمک می‌کند، جبران آن باید شفاف باشد.">
-          If your work materially helps a project create value, your compensation should be explicit.
-        </blockquote>
+    <section class="section wrap collab-page">
+      <div class="collab-models">
+        <article><span>01</span><h2 data-en="Fixed pay" data-fa="دستمزد ثابت">Fixed pay</h2><p data-en="Best for clearly scoped work with a defined deliverable."
+          data-fa="برای کاری که محدوده و خروجی مشخص دارد.">Best for clearly scoped work.</p></article>
+        <article><span>02</span><h2 data-en="Project revenue share" data-fa="سهم از درآمد پروژه">Project revenue share</h2><p data-en="For meaningful contributions that materially affect a project's long-term outcome."
+          data-fa="برای مشارکت مهمی که واقعاً روی نتیجه‌ی بلندمدت همان پروژه اثر می‌گذارد.">For meaningful long-term contribution.</p></article>
+        <article><span>03</span><h2 data-en="Hybrid" data-fa="مدل ترکیبی">Hybrid</h2><p data-en="A smaller fixed fee plus defined upside when both sides want shared risk and reward."
+          data-fa="بخشی دستمزد ثابت و بخشی سهم از نتیجه، وقتی هر دو طرف می‌خواهند ریسک و پاداش را تقسیم کنند.">Fixed fee plus defined upside.</p></article>
       </div>
-    </section>
 
-    <section class="section section-shell">
-      <div class="section-label reveal"><span>02</span><span data-en="COMPENSATION MODES" data-fa="مدل‌های جبران">COMPENSATION MODES</span></div>
-      <div class="comp-grid">
-        <article class="comp-card reveal">
-          <span>01</span><h3 data-en="Fixed pay" data-fa="پرداخت ثابت">Fixed pay</h3>
-          <p data-en="Best for clearly scoped tasks where the value and effort are known upfront." data-fa="برای تسک‌هایی که محدوده، ارزش و حجم کار از اول مشخص است.">Best for clearly scoped tasks where the value and effort are known upfront.</p>
-          <small>EXAMPLE: testing, translation, a defined implementation</small>
-        </article>
-        <article class="comp-card reveal delay-1">
-          <span>02</span><h3 data-en="Revenue share" data-fa="سهم درآمد">Revenue share</h3>
-          <p data-en="A documented percentage of defined project revenue for meaningful ongoing contribution." data-fa="درصد مکتوب از درآمد تعریف‌شده پروژه برای همکاری مهم و مستمر.">A documented percentage of defined project revenue for meaningful ongoing contribution.</p>
-          <small>EXAMPLE: core engineering, distribution, product ownership</small>
-        </article>
-        <article class="comp-card reveal delay-2">
-          <span>03</span><h3 data-en="Capped upside" data-fa="سهم سقف‌دار">Capped upside</h3>
-          <p data-en="A share continues until a fixed payout cap is reached. Useful for medium-sized contributions." data-fa="سهم تا زمانی ادامه دارد که سقف پرداخت مشخصی پر شود؛ مناسب همکاری متوسط.">A share continues until a fixed payout cap is reached. Useful for medium-sized contributions.</p>
-          <small>EXAMPLE: earn 4% until a defined total payout</small>
-        </article>
-        <article class="comp-card reveal delay-3">
-          <span>04</span><h3 data-en="Time-limited share" data-fa="سهم زمان‌دار">Time-limited share</h3>
-          <p data-en="Revenue share for a defined period when the contribution matters but should not create permanent dilution." data-fa="سهم درآمد برای مدت مشخص، وقتی همکاری مهم است ولی نباید سهم دائمی ایجاد کند.">Revenue share for a defined period when the contribution matters but should not create permanent dilution.</p>
-          <small>EXAMPLE: 12 or 24 months after launch</small>
-        </article>
-        <article class="comp-card reveal">
-          <span>05</span><h3 data-en="Recoup + share" data-fa="بازپرداخت + سهم">Recoup + share</h3>
-          <p data-en="Approved project expenses are paid back from project revenue before the normal split begins." data-fa="هزینه‌های تأییدشده پروژه ابتدا از درآمد برمی‌گردد و بعد تقسیم عادی شروع می‌شود.">Approved project expenses are paid back from project revenue before the normal split begins.</p>
-          <small>EXAMPLE: server, API, launch or production costs</small>
-        </article>
-        <article class="comp-card reveal delay-1">
-          <span>06</span><h3 data-en="Hybrid" data-fa="ترکیبی">Hybrid</h3>
-          <p data-en="Fixed pay plus smaller upside when both immediate compensation and long-term alignment make sense." data-fa="پرداخت ثابت همراه با سهم کوچک‌تر وقتی هم جبران فوری و هم هم‌راستایی بلندمدت منطقی است.">Fixed pay plus smaller upside when both immediate compensation and long-term alignment make sense.</p>
-          <small>EXAMPLE: fee + small revenue share</small>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-shell">
-      <div class="section-label reveal"><span>03</span><span data-en="BEFORE WORK STARTS" data-fa="قبل از شروع کار">BEFORE WORK STARTS</span></div>
-      <div class="agreement-grid reveal delay-1">
-        <div class="agreement-item"><span>01</span><div><strong data-en="Scope" data-fa="محدوده">Scope</strong><p data-en="What exactly are we building or delivering?" data-fa="دقیقاً قرار است چه چیزی ساخته یا تحویل شود؟">What exactly are we building or delivering?</p></div></div>
-        <div class="agreement-item"><span>02</span><div><strong data-en="Ownership" data-fa="مالکیت">Ownership</strong><p data-en="Who owns code, data, media, accounts and IP?" data-fa="کد، داده، رسانه، حساب‌ها و مالکیت فکری متعلق به چه کسی است؟">Who owns code, data, media, accounts and IP?</p></div></div>
-        <div class="agreement-item"><span>03</span><div><strong data-en="Revenue definition" data-fa="تعریف درآمد">Revenue definition</strong><p data-en="Which revenue is included, and what direct costs are deducted first?" data-fa="کدام درآمد شامل تقسیم است و چه هزینه‌های مستقیمی اول کم می‌شود؟">Which revenue is included, and what direct costs are deducted first?</p></div></div>
-        <div class="agreement-item"><span>04</span><div><strong data-en="Split" data-fa="تقسیم">Split</strong><p data-en="Percentage, cap, duration, milestones and payment timing." data-fa="درصد، سقف، مدت، مراحل و زمان پرداخت.">Percentage, cap, duration, milestones and payment timing.</p></div></div>
-        <div class="agreement-item"><span>05</span><div><strong data-en="Exit" data-fa="خروج">Exit</strong><p data-en="What happens if someone stops contributing or the project pauses?" data-fa="اگر کسی همکاری را متوقف کرد یا پروژه متوقف شد چه می‌شود؟">What happens if someone stops contributing or the project pauses?</p></div></div>
-        <div class="agreement-item"><span>06</span><div><strong data-en="Reporting" data-fa="گزارش‌دهی">Reporting</strong><p data-en="How contributors can understand project revenue and payouts." data-fa="همکارها چطور درآمد و پرداخت‌های پروژه را می‌بینند و درک می‌کنند؟">How contributors can understand project revenue and payouts.</p></div></div>
-      </div>
-    </section>
-
-    <section class="section section-shell">
-      <div class="section-label reveal"><span>04</span><span data-en="PROJECT ECONOMICS" data-fa="اقتصاد پروژه">PROJECT ECONOMICS</span></div>
-      <div class="economics-example reveal delay-1">
-        <div class="economics-head">
-          <div><span class="overline" data-en="ILLUSTRATIVE FLOW" data-fa="یک مثال ساده">ILLUSTRATIVE FLOW</span><h2 data-en="Simple enough to audit." data-fa="آن‌قدر ساده که قابل بررسی باشد.">Simple enough to audit.</h2></div>
-          <span class="not-a-promise" data-en="EXAMPLE — NOT A PROMISE OF RETURNS" data-fa="فقط مثال — نه تضمین درآمد">EXAMPLE — NOT A PROMISE OF RETURNS</span>
+      <div class="collab-process">
+        <div class="section-mini-head"><span class="kicker" data-en="BEFORE WORK STARTS" data-fa="قبل از شروع">BEFORE WORK STARTS</span><h2 data-en="Six things should be written down."
+        data-fa="شش چیز باید از اول مکتوب باشد.">Six things should be written down.</h2></div>
+        <div class="process-list">
+          <div><span>01</span><strong data-en="Scope" data-fa="محدوده">Scope</strong><p data-en="What is being done, by whom and by when." data-fa="چه کاری، توسط چه کسی و تا چه زمانی انجام می‌شود.">What is being done.</p></div>
+          <div><span>02</span><strong data-en="Ownership" data-fa="مالکیت">Ownership</strong><p data-en="Who owns the work, code, research and assets." data-fa="مالک کد، پژوهش، فایل‌ها و خروجی‌ها چه کسی است.">Who owns the work.</p></div>
+          <div><span>03</span><strong data-en="Revenue definition" data-fa="تعریف درآمد">Revenue definition</strong><p data-en="Exactly which revenue is included in the agreement." data-fa="دقیقاً کدام درآمد داخل توافق حساب می‌شود.">Which revenue is included.</p></div>
+          <div><span>04</span><strong data-en="Compensation" data-fa="جبران">Compensation</strong><p data-en="Fixed pay, share, cap, duration or hybrid." data-fa="دستمزد، سهم، سقف، مدت یا مدل ترکیبی.">Pay, share, cap or hybrid.</p></div>
+          <div><span>05</span><strong data-en="Exit" data-fa="خروج">Exit</strong><p data-en="What happens if the project or collaboration stops." data-fa="اگر همکاری یا پروژه متوقف شد چه می‌شود.">What happens if work stops.</p></div>
+          <div><span>06</span><strong data-en="Reporting" data-fa="گزارش">Reporting</strong><p data-en="How project revenue and costs are reported." data-fa="درآمد و هزینه‌ی پروژه چطور گزارش می‌شود.">How money is reported.</p></div>
         </div>
-        <div class="economics-lines">
-          <div><span>Gross revenue</span><strong>$1,000</strong></div>
-          <div><span>Payment / refund / direct delivery costs</span><strong>− $120</strong></div>
-          <div><span>Approved recoupment</span><strong>− $80</strong></div>
-          <div class="total"><span>Defined distributable project revenue</span><strong>$800</strong></div>
+      </div>
+
+      <div class="economics-v3">
+        <div>
+          <span class="kicker" data-en="SIMPLE EXAMPLE" data-fa="یک مثال ساده">SIMPLE EXAMPLE</span>
+          <h2 data-en="Share what is actually distributable."
+              data-fa="چیزی را تقسیم کن که واقعاً قابل‌تقسیم است.">Share what is actually distributable.</h2>
         </div>
-        <p data-en="The actual project agreement defines what happens next: studio allocation, reinvestment and contributor shares. We avoid pretending one universal percentage fits every project."
-           data-fa="توافق واقعی پروژه مشخص می‌کند بعد از این چه می‌شود: سهم استودیو، سرمایه‌گذاری مجدد و سهم همکارها. یک درصد ثابت برای همه پروژه‌ها منطقی نیست.">
-          The actual project agreement defines what happens next: studio allocation, reinvestment and contributor shares. We avoid pretending one universal percentage fits every project.
+        <div class="econ-table">
+          <div><span data-en="Gross project revenue" data-fa="درآمد ناخالص پروژه">Gross project revenue</span><b>$1,000</b></div>
+          <div><span data-en="Payment, refund & direct costs" data-fa="هزینه پرداخت، بازپرداخت و هزینه مستقیم">Payment, refund & direct costs</span><b>−$120</b></div>
+          <div><span data-en="Approved recoupment" data-fa="بازپرداخت هزینه‌های توافق‌شده">Approved recoupment</span><b>−$80</b></div>
+          <div class="econ-total"><span data-en="Distributable project revenue" data-fa="درآمد قابل‌تقسیم پروژه">Distributable project revenue</span><b>$800</b></div>
+        </div>
+        <p class="econ-note" data-en="The real split is defined per project. This example is not a promise of returns, equity or employment."
+           data-fa="سهم واقعی برای هر پروژه جداگانه تعیین می‌شود. این مثال تضمین درآمد، سهام یا استخدام نیست.">
+          The real split is defined per project.
         </p>
       </div>
-    </section>
 
-    <section class="section section-shell">
-      <div class="section-label reveal"><span>05</span><span data-en="WHO FITS" data-fa="چه کسی مناسب است">WHO FITS</span></div>
-      <div class="fit-grid">
-        <article class="fit-card reveal"><h3 data-en="Researchers" data-fa="پژوهشگرها">Researchers</h3><p data-en="People who can verify claims, structure messy information and find signal." data-fa="کسانی که می‌توانند ادعاها را بررسی کنند، اطلاعات شلوغ را ساختار بدهند و سیگنال پیدا کنند.">People who can verify claims, structure messy information and find signal.</p></article>
-        <article class="fit-card reveal delay-1"><h3 data-en="Builders" data-fa="سازنده‌ها">Builders</h3><p data-en="Engineers and technical operators who can ship reliable systems." data-fa="مهندس‌ها و افراد فنی که می‌توانند سیستم پایدار تحویل دهند.">Engineers and technical operators who can ship reliable systems.</p></article>
-        <article class="fit-card reveal delay-2"><h3 data-en="Operators" data-fa="اپراتورها">Operators</h3><p data-en="People who can turn a project into a repeatable process, distribution channel or business." data-fa="کسانی که می‌توانند پروژه را به فرآیند، کانال توزیع یا کسب‌وکار قابل تکرار تبدیل کنند.">People who can turn a project into a repeatable process, distribution channel or business.</p></article>
-        <article class="fit-card reveal delay-3"><h3 data-en="Domain specialists" data-fa="متخصص‌های حوزه">Domain specialists</h3><p data-en="People with deep knowledge we do not have and cannot fake." data-fa="افرادی با دانش عمیقی که ما نداریم و نمی‌شود وانمود کرد داریم.">People with deep knowledge we do not have and cannot fake.</p></article>
+      <div class="collab-cta">
+        <div><span class="kicker" data-en="GOOD FIT" data-fa="مناسب برای">GOOD FIT</span><h2 data-en="Research. Engineering. Product. Distribution. Domain expertise."
+        data-fa="پژوهش. فنی. محصول. توزیع. تخصص حوزه‌ای.">Research. Engineering. Product. Distribution. Domain expertise.</h2></div>
+        <div><p data-en="Bring work that can materially improve a project. Tiny tasks should not create permanent economic rights."
+          data-fa="کاری بیاور که بتواند واقعاً پروژه را بهتر کند. کارهای کوچک نباید حق اقتصادی دائمی بسازند.">Bring work that can materially improve a project.</p>
+        <a class="btn primary" href="https://x.com/trita_a"><span data-en="Start a conversation" data-fa="شروع گفتگو">Start a conversation</span><span>↗</span></a></div>
       </div>
-    </section>
-
-    <section class="section section-shell contact-section">
-      <div class="contact-card reveal">
-        <div class="contact-copy">
-          <span class="overline" data-en="START A CONVERSATION" data-fa="شروع همکاری">START A CONVERSATION</span>
-          <h2 data-en="Bring something specific." data-fa="با یک پیشنهاد مشخص بیا.">Bring something specific.</h2>
-          <p data-en="Tell us which project, what you can contribute, what outcome you can own, and what compensation structure you think makes sense."
-             data-fa="بگو کدام پروژه، چه چیزی می‌توانی اضافه کنی، مسئول چه نتیجه‌ای می‌شوی و چه مدل جبرانی از نظرت منطقی است.">
-            Tell us which project, what you can contribute, what outcome you can own, and what compensation structure you think makes sense.
-          </p>
-        </div>
-        <div class="contact-actions">
-          <a class="button primary" href="https://x.com/trita_a" target="_blank" rel="noreferrer">Message on X ↗</a>
-          <a class="button ghost" href="projects.html">Choose a project</a>
-        </div>
-      </div>
-      <p class="fine-print" data-en="Romo7 revenue-share collaborations are not investments and do not guarantee income. Legal, tax and payment details can depend on the contributor's jurisdiction and the specific agreement."
-         data-fa="همکاری‌های سهم‌درآمد Romo7 سرمایه‌گذاری نیستند و درآمد را تضمین نمی‌کنند. جزئیات حقوقی، مالیاتی و پرداخت می‌تواند به کشور همکار و توافق مشخص پروژه بستگی داشته باشد.">
-        Romo7 revenue-share collaborations are not investments and do not guarantee income. Legal, tax and payment details can depend on the contributor's jurisdiction and the specific agreement.
-      </p>
     </section>
   </main>
-
-  <footer class="site-footer section-shell">
-    <div><strong>ROMO7</strong><span>Build useful things. Share the upside.</span></div>
-    <div class="footer-links"><a href="index.html">Studio</a><a href="projects.html">Projects</a><a href="notes.html">Field Notes</a></div>
-    <small>© <span id="year"></span> Romo7.</small>
-  </footer>
+  <footer class="footer wrap"><div><strong>ROMO7</strong><span data-en="AI + Research + Real Value" data-fa="هوش مصنوعی + پژوهش + ارزش واقعی">AI + Research + Real Value</span></div><div class="footer-nav"><a href="projects.html" data-en="Projects" data-fa="پروژه‌ها">Projects</a><a href="notes.html" data-en="Notes" data-fa="یادداشت‌ها">Notes</a></div><small>© <span id="year"></span> Romo7</small></footer>
   <script src="script.js"></script>
-</body>
-</html>
+</body></html>
