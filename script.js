@@ -17,7 +17,13 @@
 
     if (themeToggle) {
       themeToggle.textContent = dark ? '☼' : '◐';
-      themeToggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      const fa = root.lang === 'fa';
+      themeToggle.setAttribute(
+        'aria-label',
+        dark
+          ? (fa ? 'تغییر به حالت روشن' : 'Switch to light theme')
+          : (fa ? 'تغییر به حالت تیره' : 'Switch to dark theme')
+      );
     }
 
     const themeMeta = document.querySelector('meta[name="theme-color"]');
@@ -61,6 +67,7 @@
 
     syncLanguageLinks(isFa ? 'fa' : 'en');
     localStorage.setItem('romo7-lang', isFa ? 'fa' : 'en');
+    setThemeIcon();
 
     if (updateUrl) updateLanguageUrl(isFa ? 'fa' : 'en');
   };
