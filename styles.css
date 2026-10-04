@@ -3485,3 +3485,275 @@ html[data-theme="dark"] button:focus-visible{
     border-color:rgba(240,238,223,.20)!important;
   }
 }
+
+
+/* ===== Print / Save as PDF — V11 ===== */
+@page{
+  size:A4;
+  margin:16mm 15mm 18mm;
+}
+
+@media print{
+  html,
+  html[data-theme="dark"],
+  html[data-theme="light"]{
+    color-scheme:light!important;
+    background:#fff!important;
+  }
+
+  body,
+  body.mode-home,
+  body:not(.mode-home){
+    background:#fff!important;
+    color:#111!important;
+    font-size:10.5pt!important;
+    line-height:1.65!important;
+    -webkit-print-color-adjust:economy;
+    print-color-adjust:economy;
+  }
+
+  /* Print is content-first: remove navigation, controls and web-only UI. */
+  .topbar,
+  .mode-nav,
+  .mode-announcement,
+  .top-actions,
+  #themeToggle,
+  #langToggle,
+  .mode-actions,
+  .footer-nav,
+  .mode-footer,
+  .footer,
+  .v8-card-arrow,
+  .v8-live-dot{
+    display:none!important;
+  }
+
+  main,
+  .wrap,
+  .section,
+  .notes-page,
+  .case-list{
+    width:100%!important;
+    max-width:none!important;
+    margin:0!important;
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+
+  /* Page titles */
+  .page-hero-v3{
+    padding:0 0 10mm!important;
+    margin:0 0 7mm!important;
+    background:#fff!important;
+    color:#111!important;
+    border-bottom:1px solid #c9c9c9;
+  }
+  .page-hero-v3 .kicker{
+    color:#555!important;
+    font-size:8pt!important;
+    letter-spacing:.04em!important;
+  }
+  .page-hero-v3 h1{
+    max-width:165mm!important;
+    margin:3mm 0 3mm!important;
+    color:#111!important;
+    font-size:25pt!important;
+    line-height:1.25!important;
+    letter-spacing:0!important;
+  }
+  .page-hero-v3 p{
+    max-width:160mm!important;
+    margin:0!important;
+    color:#444!important;
+    font-size:10pt!important;
+    line-height:1.7!important;
+  }
+
+  /* Notes */
+  .notes-filter{
+    margin:0 0 8mm!important;
+    padding:0 0 4mm!important;
+    border-bottom:1px solid #d5d5d5!important;
+  }
+  .notes-filter>span{
+    color:#555!important;
+  }
+  .notes-filter b{
+    background:transparent!important;
+    color:#333!important;
+    border:1px solid #bbb!important;
+  }
+
+  .article-stack{
+    border-color:#bbb!important;
+  }
+  .article-stack article{
+    display:grid!important;
+    grid-template-columns:35mm 1fr!important;
+    gap:7mm!important;
+    padding:7mm 0!important;
+    background:#fff!important;
+    color:#111!important;
+    border-color:#d0d0d0!important;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .article-side span,
+  .article-side small{
+    color:#555!important;
+  }
+  .article-stack h2{
+    color:#111!important;
+    font-size:15pt!important;
+    line-height:1.35!important;
+    margin:0 0 2.5mm!important;
+  }
+  .article-stack p{
+    color:#444!important;
+    font-size:9.5pt!important;
+    line-height:1.7!important;
+    margin:0!important;
+  }
+
+  .research-rules{
+    margin-top:10mm!important;
+    padding:7mm!important;
+    background:#fff!important;
+    color:#111!important;
+    border:1px solid #c9c9c9!important;
+    box-shadow:none!important;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .rules-grid{
+    margin-top:4mm!important;
+  }
+  .rules-grid p{
+    min-height:0!important;
+    color:#333!important;
+    border-color:#d6d6d6!important;
+    padding:4mm!important;
+    font-size:9pt!important;
+    line-height:1.6!important;
+  }
+
+  /* Project / research case studies */
+  .case-card{
+    margin:0 0 9mm!important;
+    padding:7mm!important;
+    background:#fff!important;
+    color:#111!important;
+    border:1px solid #bfc4c1!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .case-card:last-child{
+    margin-bottom:0!important;
+  }
+  .case-top{
+    color:#555!important;
+    border-color:#d2d2d2!important;
+  }
+  .case-title{
+    margin-top:4mm!important;
+  }
+  .case-title h2{
+    color:#111!important;
+    font-size:22pt!important;
+    line-height:1.2!important;
+    margin:0!important;
+  }
+  .case-state{
+    color:#333!important;
+    border-color:#aaa!important;
+    background:transparent!important;
+  }
+  .case-columns{
+    margin-top:6mm!important;
+    border-color:#d5d5d5!important;
+  }
+  .case-columns>div{
+    padding:5mm!important;
+    border-color:#d5d5d5!important;
+  }
+  .case-columns small{
+    color:#555!important;
+    font-size:7.5pt!important;
+  }
+  .case-columns p{
+    color:#333!important;
+    font-size:9pt!important;
+    line-height:1.65!important;
+  }
+  .case-proof{
+    margin-top:5mm!important;
+    padding-top:5mm!important;
+    border-color:#d5d5d5!important;
+  }
+  .case-proof span{
+    color:#555!important;
+  }
+  .case-proof strong{
+    color:#111!important;
+    font-size:13pt!important;
+    line-height:1.45!important;
+  }
+
+  /* Remove web-only visual effects everywhere in printable content. */
+  .case-card,
+  .research-rules,
+  .article-stack article,
+  .economics-v3,
+  .collab-models article{
+    filter:none!important;
+    text-shadow:none!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+
+  /* Clean handling for RTL / mixed Persian and Latin text. */
+  html[lang="fa"] body{
+    direction:rtl!important;
+    font-family:"Vazirmatn",Tahoma,sans-serif!important;
+  }
+  html[lang="fa"] h1,
+  html[lang="fa"] h2,
+  html[lang="fa"] h3,
+  html[lang="fa"] .page-hero-v3 h1,
+  html[lang="fa"] .case-title h2,
+  html[lang="fa"] .article-stack h2{
+    font-family:"Estedad","Vazirmatn",Tahoma,sans-serif!important;
+  }
+  html[lang="fa"] p,
+  html[lang="fa"] .case-columns p,
+  html[lang="fa"] .article-stack p{
+    direction:rtl!important;
+    unicode-bidi:plaintext;
+    text-align:right!important;
+  }
+
+  /* Better pagination and reading rhythm. */
+  h1,h2,h3{
+    break-after:avoid;
+    page-break-after:avoid;
+  }
+  p,li{
+    orphans:3;
+    widows:3;
+  }
+  img,svg,table,pre,blockquote{
+    max-width:100%!important;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+
+  /* Links remain readable on paper without browser default blue. */
+  a,
+  a:visited{
+    color:#111!important;
+    text-decoration:none!important;
+  }
+}
