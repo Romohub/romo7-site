@@ -2,7 +2,7 @@
   const root = document.documentElement;
   const body = document.body;
   const themeToggle = document.getElementById('themeToggle');
-  const langToggle = document.getElementById('langToggle');
+  const languageLinks = [...document.querySelectorAll('[data-lang]')];
   const year = document.getElementById('year');
 
   const savedTheme = localStorage.getItem('romo7-theme');
@@ -34,7 +34,21 @@
     setThemeIcon();
   });
 
-  const applyLanguage = (lang) => {
+  const syncLanguageLinks = (lang) => {
+    languageLinks.forEach((link) => {
+      const active = link.dataset.lang === lang;
+      link.classList.toggle('active', active);
+      link.setAttribute('aria-current', active ? 'true' : 'false');
+    });
+  };
+
+  const updateLanguageUrl = (lang) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', lang);
+    history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+  };
+
+  const applyLanguage = (lang, { updateUrl = false } = {}) => {
     const isFa = lang === 'fa';
     root.lang = isFa ? 'fa' : 'en';
     root.dir = isFa ? 'rtl' : 'ltr';
@@ -45,12 +59,10 @@
       if (typeof value === 'string') el.textContent = value;
     });
 
-    if (langToggle) {
-      langToggle.textContent = isFa ? 'EN' : 'FA';
-      langToggle.setAttribute('aria-label', isFa ? 'Switch to English' : 'تغییر به فارسی');
-    }
-
+    syncLanguageLinks(isFa ? 'fa' : 'en');
     localStorage.setItem('romo7-lang', isFa ? 'fa' : 'en');
+
+    if (updateUrl) updateLanguageUrl(isFa ? 'fa' : 'en');
   };
 
   const queryLang = new URLSearchParams(window.location.search).get('lang');
@@ -60,8 +72,13 @@
     : (savedLang === 'fa' ? 'fa' : 'en');
   applyLanguage(initialLang);
 
-  langToggle?.addEventListener('click', () => {
-    applyLanguage(root.lang === 'fa' ? 'en' : 'fa');
+  languageLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const lang = link.dataset.lang;
+      if (lang !== 'fa' && lang !== 'en') return;
+      event.preventDefault();
+      applyLanguage(lang, { updateUrl: true });
+    });
   });
 
   if (year) year.textContent = new Date().getFullYear();
