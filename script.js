@@ -107,7 +107,7 @@
   }
 
   const current = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav a').forEach((link) => {
+  document.querySelectorAll('.main-nav a, .mode-nav nav a').forEach((link) => {
     const href = (link.getAttribute('href') || '').split('#')[0];
     if (href && href === current) link.classList.add('active');
   });
