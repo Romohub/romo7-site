@@ -3887,3 +3887,16 @@ html[data-theme="dark"] .mode-nav nav a[aria-current="page"]{
     display:none;
   }
 }
+
+
+/* ===== Semantic hero + baseline accessibility ===== */
+h1.v5-title,
+h1.v5-title-fa{
+  margin:0;
+}
+
+a:focus-visible,
+button:focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:3px;
+}
