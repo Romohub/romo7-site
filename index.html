@@ -2,347 +2,230 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0d0f12" />
-  <meta name="description" content="Romo7 is an independent AI and research studio. We study real problems, build useful products and design clear paths to revenue." />
-  <meta property="og:title" content="Romo7 — AI, Research, Real Value" />
-  <meta property="og:description" content="Research what matters. Build with AI. Turn useful work into real value." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <title>Romo7 — AI, Research, Real Value</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#074c3d" />
+  <meta name="description" content="Romo7 is an independent AI and research studio building useful products with real paths to revenue." />
+  <title>Romo7 — AI + Research + Real Value</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="studio-v3.css" />
+  <link rel="stylesheet" href="mode-v4.css" />
 </head>
-<body>
-  <header class="topbar">
-    <a class="logo" href="index.html" aria-label="Romo7 home">
-      <span class="logo-mark">R7</span><span>ROMO7</span>
-    </a>
-    <nav class="main-nav" aria-label="Primary navigation">
+<body class="mode-home">
+  <div class="mode-announcement">
+    <span data-en="ROMO7 / AI + RESEARCH + REAL VALUE" data-fa="ROMO7 / هوش مصنوعی + پژوهش + ارزش واقعی">ROMO7 / AI + RESEARCH + REAL VALUE</span>
+    <a href="#work" data-en="See what we're building →" data-fa="ببین چه می‌سازیم ←">See what we're building →</a>
+  </div>
+
+  <header class="mode-nav">
+    <a class="mode-logo" href="index.html"><span>Romo7</span></a>
+    <nav>
       <a href="#ai" data-en="AI" data-fa="هوش مصنوعی">AI</a>
       <a href="#research" data-en="Research" data-fa="پژوهش">Research</a>
-      <a href="#work" data-en="Work" data-fa="پروژه‌ها">Work</a>
+      <a href="#work" data-en="Projects" data-fa="پروژه‌ها">Projects</a>
       <a href="#revenue" data-en="Revenue" data-fa="درآمد">Revenue</a>
       <a href="notes.html" data-en="Notes" data-fa="یادداشت‌ها">Notes</a>
     </nav>
-    <div class="top-actions">
-      <button id="themeToggle" class="plain-control" type="button" aria-label="Toggle theme">☼</button>
-      <button id="langToggle" class="lang-control" type="button" aria-label="Switch language">FA</button>
+    <div class="mode-nav-actions">
+      <button id="themeToggle" type="button" aria-label="Toggle theme">☼</button>
+      <button id="langToggle" type="button" aria-label="Switch language">FA</button>
+      <a class="mode-nav-cta" href="collaborate.html" data-en="Work with us" data-fa="همکاری">Work with us</a>
     </div>
   </header>
 
   <main>
-    <section class="hero wrap">
-      <div class="hero-copy">
-        <div class="eyebrow" data-en="INDEPENDENT AI + RESEARCH STUDIO" data-fa="استودیوی مستقل هوش مصنوعی + پژوهش">INDEPENDENT AI + RESEARCH STUDIO</div>
-        <h1>
-          <span data-en="Research what matters." data-fa="مسئله‌های مهم را بررسی می‌کنیم.">Research what matters.</span>
-          <span data-en="Build with AI." data-fa="با هوش مصنوعی می‌سازیم.">Build with AI.</span>
-          <span class="accent-line" data-en="Create real value." data-fa="و به ارزش واقعی تبدیلش می‌کنیم.">Create real value.</span>
-        </h1>
-        <p class="hero-lead"
-           data-en="Romo7 studies real problems, tests emerging technology and turns the strongest ideas into useful products, research and businesses."
-           data-fa="Romo7 مسئله‌های واقعی را بررسی می‌کند، فناوری‌های تازه را می‌آزماید و بهترین ایده‌ها را به محصول، پژوهش و کسب‌وکار واقعی تبدیل می‌کند.">
-          Romo7 studies real problems, tests emerging technology and turns the strongest ideas into useful products, research and businesses.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#work"><span data-en="Explore the work" data-fa="دیدن پروژه‌ها">Explore the work</span><span>↘</span></a>
-          <a class="btn secondary" href="collaborate.html"><span data-en="Work with Romo7" data-fa="همکاری با Romo7">Work with Romo7</span><span>↗</span></a>
+    <section class="mode-hero" id="top">
+      <div class="mode-hero-grid">
+        <div class="mode-headline">
+          <div class="headline-block" data-en="AI," data-fa="هوش مصنوعی،">AI,</div>
+          <div class="headline-block indent-a" data-en="built around" data-fa="برای ساختن">built around</div>
+          <div class="headline-block indent-b" data-en="real questions." data-fa="چیزهای مفید.">real questions.</div>
         </div>
-      </div>
 
-      <div class="hero-system" aria-label="Romo7 operating system">
-        <div class="system-head">
-          <span>ROMO7 / SYSTEM</span><span class="system-live"><i></i> ACTIVE</span>
-        </div>
-        <div class="system-stack">
-          <article>
-            <span class="system-num">01</span>
-            <div><small data-en="RESEARCH" data-fa="پژوهش">RESEARCH</small><strong data-en="Find the real problem" data-fa="مسئله‌ی واقعی را پیدا کن">Find the real problem</strong></div>
-          </article>
-          <article>
-            <span class="system-num">02</span>
-            <div><small data-en="AI" data-fa="هوش مصنوعی">AI</small><strong data-en="Build and test" data-fa="بساز و آزمایش کن">Build and test</strong></div>
-          </article>
-          <article>
-            <span class="system-num">03</span>
-            <div><small data-en="VALUE" data-fa="ارزش">VALUE</small><strong data-en="Make it useful" data-fa="مفیدش کن">Make it useful</strong></div>
-          </article>
-          <article class="system-result">
-            <span class="system-num">04</span>
-            <div><small data-en="REVENUE" data-fa="درآمد">REVENUE</small><strong data-en="Make it sustainable" data-fa="پایدارش کن">Make it sustainable</strong></div>
-          </article>
-        </div>
-        <div class="system-foot">
-          <span>ROMO DIARY</span><span>PAIB</span><span>PODIFY</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="statement">
-      <div class="wrap statement-inner">
-        <p data-en="The site is not a résumé. It is evidence."
-           data-fa="این سایت رزومه نیست؛ مدرکِ کار واقعی است.">
-          The site is not a résumé. It is evidence.
-        </p>
-        <span data-en="What we learned → what we built → what changed"
-              data-fa="چه فهمیدیم ← چه ساختیم ← چه چیزی تغییر کرد">
-          What we learned → what we built → what changed
-        </span>
-      </div>
-    </section>
-
-    <section class="section wrap" id="ai">
-      <div class="section-intro">
-        <span class="section-index">01</span>
-        <div>
-          <div class="kicker" data-en="THE FIRST PILLAR" data-fa="ستون اول">THE FIRST PILLAR</div>
-          <h2 data-en="AI is a tool for doing better work."
-              data-fa="هوش مصنوعی ابزاری برای انجام کار بهتر است.">
-            AI is a tool for doing better work.
-          </h2>
-        </div>
-        <p data-en="We use AI where it creates leverage: building products, evaluating systems, automating repetitive work and making information easier to use."
-           data-fa="از هوش مصنوعی جایی استفاده می‌کنیم که واقعاً قدرت بیشتری بدهد: ساخت محصول، ارزیابی سیستم‌ها، خودکارسازی کارهای تکراری و قابل‌استفاده‌تر کردن اطلاعات.">
-          We use AI where it creates leverage: building products, evaluating systems, automating repetitive work and making information easier to use.
-        </p>
-      </div>
-
-      <div class="capability-stage">
-        <div class="capability-tabs">
-          <button class="active" type="button" data-en="Products" data-fa="محصول">Products</button>
-          <button type="button" data-en="Evaluation" data-fa="ارزیابی">Evaluation</button>
-          <button type="button" data-en="Automation" data-fa="اتوماسیون">Automation</button>
-          <button type="button" data-en="Language" data-fa="زبان">Language</button>
-        </div>
-        <div class="capability-visual">
-          <div class="terminal">
-            <div class="terminal-top"><span></span><span></span><span></span><b>romo7://ai/workbench</b></div>
-            <div class="terminal-body">
-              <small data-en="CURRENT QUESTION" data-fa="پرسش فعلی">CURRENT QUESTION</small>
-              <h3 data-en="Can AI make a useful product simpler — not noisier?"
-                  data-fa="آیا هوش مصنوعی می‌تواند یک محصول را ساده‌تر کند، نه شلوغ‌تر؟">
-                Can AI make a useful product simpler — not noisier?
-              </h3>
-              <div class="terminal-rows">
-                <div><span>01</span><p data-en="Define the user problem" data-fa="مسئله‌ی کاربر را دقیق تعریف کن">Define the user problem</p><b>✓</b></div>
-                <div><span>02</span><p data-en="Test the AI workflow" data-fa="گردش‌کار AI را آزمایش کن">Test the AI workflow</p><b>✓</b></div>
-                <div><span>03</span><p data-en="Measure usefulness and cost" data-fa="فایده و هزینه را اندازه بگیر">Measure usefulness and cost</p><b>→</b></div>
-                <div><span>04</span><p data-en="Keep only what helps" data-fa="فقط چیزی را نگه دار که کمک می‌کند">Keep only what helps</p><b>○</b></div>
-              </div>
-            </div>
+        <div class="mode-hero-side">
+          <p data-en="Romo7 is an independent studio for researching real problems, building with AI and turning useful work into products, evidence and sustainable income."
+             data-fa="Romo7 یک استودیوی مستقل است؛ مسئله‌های واقعی را بررسی می‌کنیم، با هوش مصنوعی می‌سازیم و کار مفید را به محصول، شواهد و درآمد پایدار تبدیل می‌کنیم.">
+            Romo7 is an independent studio for researching real problems, building with AI and turning useful work into products, evidence and sustainable income.
+          </p>
+          <div class="mode-actions">
+            <a class="mode-btn light" href="#work" data-en="Explore projects" data-fa="دیدن پروژه‌ها">Explore projects</a>
+            <a class="mode-btn outline" href="collaborate.html" data-en="Collaborate" data-fa="همکاری">Collaborate</a>
           </div>
-          <aside class="capability-note">
-            <span>AI ≠ FEATURE COUNT</span>
-            <p data-en="We are more interested in useful outcomes than adding AI labels to everything."
-               data-fa="برای ما نتیجه‌ی مفید مهم‌تر از چسباندن برچسب AI به همه‌چیز است.">
-              We are more interested in useful outcomes than adding AI labels to everything.
+        </div>
+
+        <div class="mode-visual">
+          <div class="mode-photo">
+            <img src="assets/romo-avatar.png" alt="Romo7" />
+          </div>
+          <div class="mode-floating-card card-a">
+            <small>RESEARCH</small>
+            <strong data-en="Ask better questions" data-fa="پرسش بهتر بساز">Ask better questions</strong>
+          </div>
+          <div class="mode-floating-card card-b">
+            <small>AI</small>
+            <strong data-en="Build useful systems" data-fa="سیستم مفید بساز">Build useful systems</strong>
+          </div>
+          <div class="mode-floating-card card-c">
+            <small>REVENUE</small>
+            <strong data-en="Make it sustainable" data-fa="پایدارش کن">Make it sustainable</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mode-strip">
+      <div class="mode-strip-track">
+        <span>ROMO DIARY</span><i>●</i><span>PAIB</span><i>●</i><span>PODIFY</span><i>●</i><span>AI RESEARCH</span><i>●</i><span>PRODUCTS</span><i>●</i><span>REVENUE</span>
+      </div>
+    </section>
+
+    <section class="mode-section cream" id="ai">
+      <div class="mode-section-head">
+        <div><span class="mode-number">01</span><span class="mode-kicker" data-en="AI" data-fa="هوش مصنوعی">AI</span></div>
+        <h2 data-en="Use AI where it makes the work meaningfully better."
+            data-fa="از هوش مصنوعی جایی استفاده می‌کنیم که واقعاً کار را بهتر کند.">
+          Use AI where it makes the work meaningfully better.
+        </h2>
+      </div>
+
+      <div class="mode-feature-grid">
+        <article class="mode-feature big">
+          <div class="feature-copy">
+            <small data-en="PRODUCTS" data-fa="محصول">PRODUCTS</small>
+            <h3 data-en="Build with AI, not around the label."
+                data-fa="با AI می‌سازیم؛ نه برای خودِ برچسب AI.">Build with AI, not around the label.</h3>
+            <p data-en="We care about faster workflows, better access, clearer decisions and useful output—not feature-count theater."
+               data-fa="چیزی که مهم است سرعت بیشتر، دسترسی بهتر، تصمیم روشن‌تر و خروجی مفید است؛ نه زیادکردن قابلیت‌های نمایشی.">
+              We care about useful output—not feature-count theater.
             </p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section research-section" id="research">
-      <div class="wrap">
-        <div class="section-intro">
-          <span class="section-index">02</span>
-          <div>
-            <div class="kicker" data-en="THE SECOND PILLAR" data-fa="ستون دوم">THE SECOND PILLAR</div>
-            <h2 data-en="Research turns curiosity into evidence."
-                data-fa="پژوهش، کنجکاوی را به شواهد تبدیل می‌کند.">
-              Research turns curiosity into evidence.
-            </h2>
           </div>
-          <p data-en="Instead of collecting courses and credentials, each learning cycle should leave behind something inspectable: a test, a benchmark, a note, a dataset or a better product decision."
-             data-fa="به‌جای جمع‌کردن دوره و مدرک، هر چرخه‌ی یادگیری باید یک خروجی قابل‌بررسی بسازد: تست، بنچمارک، یادداشت، داده یا یک تصمیم بهتر برای محصول.">
-            Instead of collecting courses and credentials, each learning cycle should leave behind something inspectable: a test, a benchmark, a note, a dataset or a better product decision.
-          </p>
-        </div>
+          <div class="feature-ui dark-ui">
+            <div class="ui-top"><span></span><span></span><span></span><b>romo7 / ai</b></div>
+            <div class="ui-content">
+              <div class="ui-query">What is the real user problem?</div>
+              <div class="ui-result"><b>01</b><span>Observe</span><i>✓</i></div>
+              <div class="ui-result"><b>02</b><span>Test</span><i>✓</i></div>
+              <div class="ui-result"><b>03</b><span>Build</span><i>→</i></div>
+              <div class="ui-result"><b>04</b><span>Measure</span><i>○</i></div>
+            </div>
+          </div>
+        </article>
 
-        <div class="research-grid">
-          <article>
-            <span>ASK</span>
-            <h3 data-en="Start with a question worth answering."
-                data-fa="با پرسشی شروع کن که ارزش جواب‌دادن دارد.">Start with a question worth answering.</h3>
-          </article>
-          <article>
-            <span>TEST</span>
-            <h3 data-en="Use the product, data or system yourself."
-                data-fa="محصول، داده یا سیستم را خودت امتحان کن.">Use the product, data or system yourself.</h3>
-          </article>
-          <article>
-            <span>SHOW</span>
-            <h3 data-en="Publish what worked, what failed and what remains unknown."
-                data-fa="شفاف بگو چه چیزی جواب داد، چه چیزی نه و هنوز چه چیزهایی را نمی‌دانیم.">Publish what worked, what failed and what remains unknown.</h3>
-          </article>
-        </div>
+        <article class="mode-feature small">
+          <small>PAIB</small>
+          <h3 data-en="Evaluate AI in Persian." data-fa="هوش مصنوعی را در فارسی ارزیابی می‌کنیم.">Evaluate AI in Persian.</h3>
+          <p data-en="Integrity, behavior and language-market evaluation." data-fa="سنجش یکپارچگی، رفتار و عملکرد در بازار فارسی.">Integrity, behavior and language-market evaluation.</p>
+        </article>
+
+        <article class="mode-feature small lime">
+          <small>PODIFY</small>
+          <h3 data-en="Turn text into listening." data-fa="متن را به تجربه‌ی شنیداری تبدیل می‌کنیم.">Turn text into listening.</h3>
+          <p data-en="Multilingual AI audio with Persian support as a first-class requirement." data-fa="صوت چندزبانه با پشتیبانی واقعی از فارسی، نه به‌عنوان قابلیت فرعی.">Multilingual AI audio with Persian support.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section wrap" id="work">
-      <div class="section-intro work-intro">
-        <span class="section-index">03</span>
-        <div>
-          <div class="kicker" data-en="SELECTED WORK" data-fa="پروژه‌های منتخب">SELECTED WORK</div>
-          <h2 data-en="Projects that prove the idea."
-              data-fa="پروژه‌هایی که این نگاه را ثابت می‌کنند.">Projects that prove the idea.</h2>
-        </div>
-        <p data-en="Each project should make three things clear: the human problem, the work we are doing and a credible path to becoming sustainable."
-           data-fa="هر پروژه باید سه چیز را روشن کند: مسئله‌ی انسانی چیست، چه کاری انجام می‌دهیم و مسیر منطقی درآمد و پایداری کجاست.">
-          Each project should make three things clear: the human problem, the work we are doing and a credible path to becoming sustainable.
+    <section class="mode-section forest" id="research">
+      <div class="mode-section-head inverse">
+        <div><span class="mode-number">02</span><span class="mode-kicker" data-en="RESEARCH" data-fa="پژوهش">RESEARCH</span></div>
+        <h2 data-en="Turn learning into evidence people can inspect."
+            data-fa="یادگیری را به شواهدی تبدیل می‌کنیم که دیگران بتوانند بررسی کنند.">
+          Turn learning into evidence people can inspect.
+        </h2>
+      </div>
+
+      <div class="research-mode-grid">
+        <article><span>ASK</span><strong data-en="Start with a question worth answering." data-fa="با پرسشی شروع کن که ارزش جواب‌دادن دارد.">Start with a question worth answering.</strong></article>
+        <article><span>TEST</span><strong data-en="Use the product, system or data yourself." data-fa="محصول، سیستم یا داده را خودت امتحان کن.">Use it yourself.</strong></article>
+        <article><span>SHOW</span><strong data-en="Publish what worked, failed and remains unknown." data-fa="شفاف بگو چه چیزی جواب داد، چه چیزی نه و هنوز چه چیزهایی نامعلوم است.">Publish what worked and failed.</strong></article>
+      </div>
+
+      <div class="mode-quote">
+        <p data-en="The goal is not to look educated. The goal is to leave behind work that proves you learned something useful."
+           data-fa="هدف این نیست که تحصیل‌کرده به نظر برسیم؛ هدف این است که کاری باقی بماند که ثابت کند چیزی مفید یاد گرفته‌ایم.">
+          The goal is not to look educated. The goal is to leave behind work that proves you learned something useful.
         </p>
       </div>
+    </section>
 
-      <div class="work-list">
-        <a class="work-item flagship" href="projects.html#romo-diary">
-          <div class="work-meta"><span>01</span><span data-en="FLAGSHIP PRODUCT" data-fa="محصول اصلی">FLAGSHIP PRODUCT</span></div>
-          <div class="work-main">
-            <div>
-              <h3>Romo Diary</h3>
-              <p data-en="A simple, multilingual and accessible way to preserve memories, people and personal history."
-                 data-fa="راهی ساده، چندزبانه و دسترس‌پذیر برای ثبت خاطره‌ها، آدم‌ها و تاریخ شخصی.">
-                A simple, multilingual and accessible way to preserve memories, people and personal history.
-              </p>
-            </div>
-            <div class="work-path">
-              <small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small>
-              <strong data-en="Free core → paid backup, search, AI organization & family features"
-                      data-fa="هسته‌ی رایگان ← پشتیبان‌گیری، جست‌وجو، سازمان‌دهی AI و امکانات خانوادگی">
-                Free core → paid backup, search, AI organization & family features
-              </strong>
-            </div>
-          </div>
-          <span class="work-arrow">↗</span>
-        </a>
-
-        <a class="work-item" href="projects.html#paib">
-          <div class="work-meta"><span>02</span><span data-en="AI RESEARCH" data-fa="پژوهش هوش مصنوعی">AI RESEARCH</span></div>
-          <div class="work-main">
-            <div>
-              <h3>PAIB</h3>
-              <p data-en="A Persian-focused benchmark for evaluating integrity and behavior in AI agents."
-                 data-fa="یک بنچمارک فارسی برای ارزیابی یکپارچگی و رفتار عامل‌های هوش مصنوعی.">
-                A Persian-focused benchmark for evaluating integrity and behavior in AI agents.
-              </p>
-            </div>
-            <div class="work-path">
-              <small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small>
-              <strong data-en="Open benchmark → private evaluations, reports & custom test suites"
-                      data-fa="بنچمارک باز ← ارزیابی خصوصی، گزارش و مجموعه تست سفارشی">
-                Open benchmark → private evaluations, reports & custom test suites
-              </strong>
-            </div>
-          </div>
-          <span class="work-arrow">↗</span>
-        </a>
-
-        <a class="work-item" href="projects.html#podify">
-          <div class="work-meta"><span>03</span><span data-en="AI PRODUCT" data-fa="محصول هوش مصنوعی">AI PRODUCT</span></div>
-          <div class="work-main">
-            <div>
-              <h3>Podify</h3>
-              <p data-en="Turn documents and scripts into useful spoken audio across languages."
-                 data-fa="تبدیل سند و متن به صوت کاربردی در زبان‌های مختلف.">
-                Turn documents and scripts into useful spoken audio across languages.
-              </p>
-            </div>
-            <div class="work-path">
-              <small data-en="REVENUE PATH" data-fa="مسیر درآمد">REVENUE PATH</small>
-              <strong data-en="Free trial → paid limits, longer documents, premium voices & export"
-                      data-fa="نسخه‌ی آزمایشی ← سقف بالاتر، اسناد طولانی‌تر، صدای پریمیوم و خروجی">
-                Free trial → paid limits, longer documents, premium voices & export
-              </strong>
-            </div>
-          </div>
-          <span class="work-arrow">↗</span>
-        </a>
+    <section class="mode-section cream" id="work">
+      <div class="mode-section-head">
+        <div><span class="mode-number">03</span><span class="mode-kicker" data-en="PROJECTS" data-fa="پروژه‌ها">PROJECTS</span></div>
+        <h2 data-en="Products and research with a reason to exist."
+            data-fa="محصول و پژوهش؛ با دلیل واقعی برای وجود داشتن.">
+          Products and research with a reason to exist.
+        </h2>
       </div>
 
-      <div class="secondary-work">
-        <span data-en="FIELD EXPERIMENTS" data-fa="آزمایش‌های میدانی">FIELD EXPERIMENTS</span>
-        <p data-en="On-chain and Web3 work stays in the lab: useful for testing incentives, markets and internet-native products, but not the center of the Romo7 identity."
-           data-fa="کارهای آن‌چین و Web3 در بخش آزمایش می‌مانند؛ برای بررسی انگیزه‌ها، بازارها و محصولات اینترنتی مفیدند، اما هویت اصلی Romo7 نیستند.">
-          On-chain and Web3 work stays in the lab: useful for testing incentives, markets and internet-native products, but not the center of the Romo7 identity.
-        </p>
-        <a href="projects.html#onchain-lab" data-en="View the lab ↗" data-fa="دیدن آزمایشگاه ↗">View the lab ↗</a>
+      <div class="project-mode-list">
+        <a href="projects.html#romo-diary" class="project-mode flagship">
+          <div class="project-label"><span>01</span><small data-en="FLAGSHIP" data-fa="پروژه‌ی اصلی">FLAGSHIP</small></div>
+          <div class="project-mode-main">
+            <h3>Romo Diary</h3>
+            <p data-en="A multilingual, accessible place to preserve memories, people and personal history."
+               data-fa="فضایی چندزبانه و دسترس‌پذیر برای ثبت خاطره‌ها، آدم‌ها و تاریخ شخصی.">
+              A multilingual, accessible place to preserve memories.
+            </p>
+          </div>
+          <div class="project-revenue">
+            <small data-en="BUSINESS" data-fa="درآمد">BUSINESS</small>
+            <strong data-en="Free core → paid backup, search, AI organization and family archive."
+                    data-fa="هسته‌ی رایگان ← پشتیبان‌گیری، جست‌وجو، سازمان‌دهی AI و آرشیو خانوادگی.">
+              Free core → paid backup, search and AI organization.
+            </strong>
+          </div>
+          <span class="project-go">↗</span>
+        </a>
+
+        <a href="projects.html#paib" class="project-mode">
+          <div class="project-label"><span>02</span><small>AI RESEARCH</small></div>
+          <div class="project-mode-main"><h3>PAIB</h3><p data-en="Persian agent integrity evaluation." data-fa="ارزیابی یکپارچگی عامل‌های هوش مصنوعی فارسی.">Persian agent integrity evaluation.</p></div>
+          <div class="project-revenue"><small data-en="BUSINESS" data-fa="درآمد">BUSINESS</small><strong data-en="Open benchmark → private evaluations & custom test suites." data-fa="بنچمارک باز ← ارزیابی خصوصی و تست سفارشی.">Open benchmark → private evaluation.</strong></div>
+          <span class="project-go">↗</span>
+        </a>
+
+        <a href="projects.html#podify" class="project-mode">
+          <div class="project-label"><span>03</span><small>AI PRODUCT</small></div>
+          <div class="project-mode-main"><h3>Podify</h3><p data-en="Multilingual text-to-audio." data-fa="تبدیل متن به صوت در زبان‌های مختلف.">Multilingual text-to-audio.</p></div>
+          <div class="project-revenue"><small data-en="BUSINESS" data-fa="درآمد">BUSINESS</small><strong data-en="Free trial → usage, premium voices & export." data-fa="نسخه‌ی آزمایشی ← مصرف بیشتر، صدای پریمیوم و خروجی.">Free trial → paid usage.</strong></div>
+          <span class="project-go">↗</span>
+        </a>
       </div>
     </section>
 
-    <section class="section revenue-section" id="revenue">
-      <div class="wrap">
-        <div class="revenue-head">
-          <div>
-            <span class="kicker" data-en="REVENUE DISCIPLINE" data-fa="منطق درآمد">REVENUE DISCIPLINE</span>
-            <h2 data-en="Useful work should have a path to sustainability."
-                data-fa="کار مفید باید مسیر پایداری داشته باشد.">
-              Useful work should have a path to sustainability.
-            </h2>
-          </div>
-          <p data-en="Revenue is not bolted on after launch. We test the business model alongside the product: who pays, what they pay for, what it costs to deliver and whether the economics make sense."
-             data-fa="درآمد چیزی نیست که بعد از ساخت محصول به آن اضافه کنیم. مدل کسب‌وکار هم‌زمان با محصول آزمایش می‌شود: چه کسی پول می‌دهد، بابت چه چیزی، هزینه‌ی ارائه چقدر است و آیا اقتصاد پروژه منطقی است یا نه.">
-            Revenue is not bolted on after launch. We test the business model alongside the product.
-          </p>
-        </div>
-
-        <div class="revenue-grid">
-          <article><span>01</span><h3 data-en="Products" data-fa="محصول">Products</h3><p data-en="Subscriptions, premium features and paid tools." data-fa="اشتراک، امکانات پریمیوم و ابزارهای پولی.">Subscriptions, premium features and paid tools.</p></article>
-          <article><span>02</span><h3 data-en="Research" data-fa="پژوهش">Research</h3><p data-en="Paid reports, market intelligence and commissioned research." data-fa="گزارش پولی، تحلیل بازار و پژوهش سفارشی.">Paid reports, market intelligence and commissioned research.</p></article>
-          <article><span>03</span><h3 data-en="Evaluation" data-fa="ارزیابی">Evaluation</h3><p data-en="AI testing, language-market evaluation and custom benchmarks." data-fa="تست AI، ارزیابی بازار زبانی و بنچمارک سفارشی.">AI testing, language-market evaluation and custom benchmarks.</p></article>
-          <article><span>04</span><h3 data-en="Partnerships" data-fa="همکاری تجاری">Partnerships</h3><p data-en="Selective partnerships where the work and incentives are disclosed." data-fa="همکاری‌های انتخابی با کار و منافع شفاف.">Selective partnerships where the work and incentives are disclosed.</p></article>
-        </div>
-
-        <div class="revenue-rule">
-          <span data-en="THE RULE" data-fa="قاعده">THE RULE</span>
-          <strong data-en="No project gets serious time without a useful outcome and a believable economic path."
-                  data-fa="هیچ پروژه‌ای زمان جدی نمی‌گیرد مگر اینکه هم خروجی مفید داشته باشد و هم مسیر اقتصادی قابل‌باوری.">
-            No project gets serious time without a useful outcome and a believable economic path.
-          </strong>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap">
-      <div class="notes-head">
+    <section class="mode-section lime-section" id="revenue">
+      <div class="revenue-mode-grid">
         <div>
-          <span class="kicker" data-en="FIELD NOTES" data-fa="یادداشت‌های میدانی">FIELD NOTES</span>
-          <h2 data-en="Show the thinking, not just the result."
-              data-fa="فقط نتیجه را نشان نده؛ مسیر فکرکردن را هم ثبت کن.">
-            Show the thinking, not just the result.
+          <span class="mode-kicker" data-en="REVENUE" data-fa="درآمد">REVENUE</span>
+          <h2 data-en="Useful work should become sustainable work."
+              data-fa="کار مفید باید بتواند به کار پایدار تبدیل شود.">
+            Useful work should become sustainable work.
           </h2>
         </div>
-        <a class="text-link" href="notes.html" data-en="All notes ↗" data-fa="همه یادداشت‌ها ↗">All notes ↗</a>
-      </div>
-      <div class="note-list">
-        <a href="notes.html"><span>AI / RESEARCH</span><strong data-en="What Persian-language AI evaluation is still missing" data-fa="ارزیابی هوش مصنوعی فارسی هنوز چه چیزهایی کم دارد؟">What Persian-language AI evaluation is still missing</strong><b>↗</b></a>
-        <a href="notes.html"><span>PRODUCT</span><strong data-en="Revenue-share collaboration without creating a future mess" data-fa="همکاری با سهم درآمد، بدون ساختن دردسر برای آینده">Revenue-share collaboration without creating a future mess</strong><b>↗</b></a>
-        <a href="notes.html"><span>FIELD TEST</span><strong data-en="Cross-chain swap vs bridge: where the friction really is" data-fa="سواپ بین‌زنجیره‌ای یا بریج؛ اصطکاک واقعی کجاست؟">Cross-chain swap vs bridge: where the friction really is</strong><b>↗</b></a>
+        <div class="revenue-mode-copy">
+          <p data-en="We test the business model with the product: who pays, what they pay for, what it costs to deliver and whether the margin makes sense."
+             data-fa="مدل درآمد را همراه محصول آزمایش می‌کنیم: چه کسی پول می‌دهد، بابت چه چیزی، هزینه‌ی ارائه چقدر است و آیا اقتصاد پروژه منطقی است یا نه.">
+            We test the business model with the product.
+          </p>
+          <div class="revenue-pills"><span>PRODUCTS</span><span>RESEARCH</span><span>EVALUATION</span><span>PARTNERSHIPS</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="final-cta">
-      <div class="wrap final-cta-inner">
-        <div>
-          <span class="kicker" data-en="BUILD WITH ROMO7" data-fa="همکاری با Romo7">BUILD WITH ROMO7</span>
-          <h2 data-en="Bring a hard question, a useful skill or a real market."
-              data-fa="یک پرسش سخت، مهارت مفید یا بازار واقعی بیاور.">
-            Bring a hard question, a useful skill or a real market.
-          </h2>
-        </div>
-        <div>
-          <p data-en="If the work can create real value, we define scope, ownership and economics before serious work begins."
-             data-fa="اگر کار بتواند ارزش واقعی بسازد، قبل از شروع جدی محدوده، مالکیت و اقتصاد همکاری را روشن می‌کنیم.">
-            If the work can create real value, we define scope, ownership and economics before serious work begins.
-          </p>
-          <a class="btn primary" href="collaborate.html"><span data-en="See collaboration model" data-fa="دیدن مدل همکاری">See collaboration model</span><span>↗</span></a>
-        </div>
+    <section class="mode-final forest">
+      <div class="mode-final-inner">
+        <span class="mode-kicker" data-en="ROMO7" data-fa="ROMO7">ROMO7</span>
+        <h2 data-en="Research. Build. Prove. Earn."
+            data-fa="بررسی کن. بساز. ثابت کن. درآمد بساز.">
+          Research. Build. Prove. Earn.
+        </h2>
+        <a class="mode-btn lime-btn" href="collaborate.html" data-en="Build with Romo7" data-fa="با Romo7 همکاری کن">Build with Romo7</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <div><strong>ROMO7</strong><span data-en="AI + Research + Real Value" data-fa="هوش مصنوعی + پژوهش + ارزش واقعی">AI + Research + Real Value</span></div>
-    <div class="footer-nav"><a href="projects.html" data-en="Projects" data-fa="پروژه‌ها">Projects</a><a href="notes.html" data-en="Notes" data-fa="یادداشت‌ها">Notes</a><a href="collaborate.html" data-en="Collaborate" data-fa="همکاری">Collaborate</a></div>
+  <footer class="mode-footer">
+    <div><strong>Romo7</strong><span data-en="AI + Research + Real Value" data-fa="هوش مصنوعی + پژوهش + ارزش واقعی">AI + Research + Real Value</span></div>
+    <div><a href="projects.html" data-en="Projects" data-fa="پروژه‌ها">Projects</a><a href="notes.html" data-en="Notes" data-fa="یادداشت‌ها">Notes</a><a href="collaborate.html" data-en="Collaborate" data-fa="همکاری">Collaborate</a></div>
     <small>© <span id="year"></span> Romo7</small>
   </footer>
 
