@@ -8,6 +8,9 @@
   <title>Romo7 — AI + Research + Real Value</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/?lang=fa" />
+  <link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/?lang=en" />
 </head>
 <body class="mode-home">
   <div class="mode-announcement">
@@ -26,7 +29,10 @@
     </nav>
     <div class="mode-nav-actions">
       <button id="themeToggle" type="button" aria-label="Toggle theme">☼</button>
-      <button id="langToggle" type="button" aria-label="Switch language">FA</button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="?lang=fa" data-lang="fa" lang="fa" hreflang="fa">FA</a>
+        <a href="?lang=en" data-lang="en" lang="en" hreflang="en">EN</a>
+      </div>
       <a class="mode-nav-cta" href="collaborate.html" data-en="Collaborate" data-fa="همکاری">Collaborate</a>
     </div>
   </header>
