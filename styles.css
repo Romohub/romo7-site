@@ -4365,3 +4365,75 @@ html[lang="fa"] .v5-tabs span{
   font-family:"Vazirmatn",Tahoma,sans-serif;
   font-weight:560;
 }
+
+
+/* ===== Mobile content rhythm — V15 ===== */
+@media(max-width:760px){
+  .v5-section-head{
+    margin-bottom:24px!important;
+  }
+
+  .v5-tabs{
+    gap:6px!important;
+    margin-bottom:14px!important;
+  }
+
+  .v5-two-col article,
+  body[dir="rtl"] .v5-two-col article{
+    min-height:0!important;
+    padding:20px 0!important;
+  }
+  .v5-two-col h3{
+    margin-top:22px!important;
+  }
+
+  .v5-research-flow{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    margin-top:22px!important;
+  }
+  .v5-research-flow i{
+    display:none!important;
+  }
+  .v5-research-flow>div{
+    min-height:82px!important;
+    padding:15px!important;
+  }
+
+  .v8-project-card,
+  html[lang="fa"] .v8-project-card{
+    min-height:0!important;
+    padding:20px!important;
+  }
+  .v8-project-featured{
+    min-height:300px!important;
+  }
+  .v8-project-copy{
+    padding-top:34px!important;
+  }
+  .v8-project-copy p{
+    margin-top:10px!important;
+  }
+  .v8-revenue-box{
+    margin-top:22px!important;
+    padding:15px 16px!important;
+  }
+
+  .v5-revenue-grid{
+    gap:22px!important;
+    padding-top:22px!important;
+  }
+  .v5-revenue-grid p{
+    max-width:none!important;
+  }
+
+  .v5-final{
+    padding-inline:14px!important;
+  }
+}
+
+@media(max-width:360px){
+  .v5-research-flow{
+    grid-template-columns:1fr!important;
+  }
+}
