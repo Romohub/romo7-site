@@ -4248,8 +4248,8 @@ html[lang="fa"] .skip-link{
     left:10px;
   }
   html[lang="fa"] .mode-logo{
-    margin-inline-start:auto!important;
-    margin-inline-end:0!important;
+    margin-inline-start:0!important;
+    margin-inline-end:auto!important;
   }
 
   .mode-nav nav{
