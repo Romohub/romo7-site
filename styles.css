@@ -3154,3 +3154,334 @@ html[lang="fa"] .v5-cap-top span{
     transition:none!important;
   }
 }
+
+
+/* ===== Dark mode tuning — V10 ===== */
+/*
+  Dark mode uses deep green rather than pure black, warm off-white text,
+  softer separators, and reduced luminous surfaces for low-brightness screens.
+*/
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#091511;
+  --paper:#101f19;
+  --ink:#f0eedf;
+  --muted:#a4b2aa;
+  --line:rgba(240,238,223,.115);
+  --line-strong:rgba(240,238,223,.22);
+  --green:#c5e96d;
+  --green-soft:#18352b;
+  --navy:#acb9e4;
+  --amber:#dfad68;
+  --black:#f0eedf;
+  --white:#0b1713;
+}
+
+html[data-theme="dark"] body{
+  background:#091511;
+  color:#f0eedf;
+}
+
+/* Home: keep the Mode-like forest identity but lower glare and improve depth. */
+html[data-theme="dark"] body.mode-home{
+  --m-forest:#073b31;
+  --m-forest-2:#09483a;
+  --m-lime:#c4e868;
+  --m-lime-soft:#cfe985;
+  --m-cream:#f0eedf;
+  --m-cream-2:#dfe4cb;
+  --m-ink:#0d352b;
+  --m-text:#e7e8da;
+  --m-muted:#a8b4ad;
+  --m-line:rgba(240,238,223,.13);
+  --m-darkline:rgba(240,238,223,.16);
+
+  --v5-forest:#073b31;
+  --v5-forest-deep:#052e27;
+  --v5-lime:#c4e868;
+  --v5-cream:#f0eedf;
+  --v5-cream-2:#dfe4cb;
+  --v5-ink:#0d352b;
+  --v5-muted:#697c73;
+  --v5-line:rgba(13,53,43,.17);
+  background:#073b31;
+}
+
+/* Floating nav goes dark in dark mode instead of remaining a bright cream slab. */
+html[data-theme="dark"] .mode-nav{
+  background:rgba(7,42,35,.90)!important;
+  color:#f0eedf!important;
+  border-color:rgba(240,238,223,.12)!important;
+  box-shadow:0 12px 38px rgba(0,0,0,.20)!important;
+}
+html[data-theme="dark"] .mode-logo,
+html[data-theme="dark"] .mode-nav nav a{
+  color:#f0eedf!important;
+}
+html[data-theme="dark"] .mode-nav nav a:hover{
+  background:rgba(240,238,223,.075)!important;
+}
+html[data-theme="dark"] .mode-nav-actions button{
+  color:#f0eedf!important;
+  border-color:rgba(240,238,223,.15)!important;
+  background:rgba(255,255,255,.035)!important;
+}
+html[data-theme="dark"] .mode-nav-cta{
+  background:#c4e868!important;
+  color:#0d352b!important;
+  border-color:#c4e868!important;
+}
+
+/* Slightly softer announcement bar. */
+html[data-theme="dark"] .mode-announcement{
+  background:#bddf68;
+  color:#0d352b;
+}
+
+/* Product shell: warm charcoal-green instead of bright cream. */
+html[data-theme="dark"] .v5-product-shell{
+  background:#101f19;
+  color:#f0eedf;
+  border:1px solid rgba(240,238,223,.12);
+  box-shadow:0 18px 42px rgba(0,0,0,.20);
+}
+html[data-theme="dark"] .v5-product-bar{
+  border-bottom-color:rgba(240,238,223,.11);
+}
+html[data-theme="dark"] .v5-product-bar>span,
+html[data-theme="dark"] .v5-dash-head small,
+html[data-theme="dark"] .v5-metrics small,
+html[data-theme="dark"] .v5-chart-copy span{
+  color:#9eada5;
+}
+html[data-theme="dark"] .v5-product-grid>aside{
+  border-color:rgba(240,238,223,.10)!important;
+  background:#0d1a16;
+}
+html[data-theme="dark"] .v5-product-grid>aside span{
+  color:#9eada5;
+}
+html[data-theme="dark"] .v5-product-grid>aside .active{
+  background:#c4e868;
+  color:#0d352b;
+}
+html[data-theme="dark"] .v5-dashboard,
+html[data-theme="dark"] .v5-dash-head,
+html[data-theme="dark"] .v5-metrics{
+  border-color:rgba(240,238,223,.10)!important;
+}
+html[data-theme="dark"] .v5-dash-head>b{
+  color:#c4e868;
+  border-color:rgba(196,232,104,.24);
+  background:rgba(196,232,104,.045);
+}
+html[data-theme="dark"] .v5-metrics article{
+  border-color:rgba(240,238,223,.10)!important;
+}
+html[data-theme="dark"] .v5-metrics strong{
+  color:#e9e8dc;
+}
+
+/* Light/cream content sections become low-glare dark surfaces. */
+html[data-theme="dark"] .v5-section.cream{
+  background:#0c1915;
+  color:#f0eedf;
+}
+html[data-theme="dark"] .v5-section.cream .v5-label,
+html[data-theme="dark"] .v5-section.cream .v5-project-meta,
+html[data-theme="dark"] .v5-section.cream .v8-project-meta{
+  color:#92a39a;
+}
+html[data-theme="dark"] .v5-section.cream .v5-tabs button{
+  color:#a5b3ab;
+  border-color:rgba(240,238,223,.13);
+}
+html[data-theme="dark"] .v5-section.cream .v5-tabs button.active{
+  color:#0d352b;
+  background:#c4e868;
+  border-color:#c4e868;
+}
+
+/* Capability copy panel and workbench surfaces. */
+html[data-theme="dark"] .v5-capability{
+  background:#10201a;
+  border-color:rgba(240,238,223,.11);
+}
+html[data-theme="dark"] .v5-cap-copy{
+  border-color:rgba(240,238,223,.10)!important;
+}
+html[data-theme="dark"] .v5-cap-copy p{
+  color:#9eada5;
+}
+html[data-theme="dark"] .v8-workbench{
+  background:
+    radial-gradient(circle at 88% 10%,rgba(196,232,104,.09),transparent 30%),
+    radial-gradient(circle at 12% 90%,rgba(103,157,139,.08),transparent 34%),
+    linear-gradient(145deg,#062f28,#05241f 72%)!important;
+}
+html[data-theme="dark"] .v8-glass-card,
+html[data-theme="dark"] .v8-step-card{
+  border-color:rgba(240,238,223,.11)!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+}
+html[data-theme="dark"] .v8-step-card:hover{
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.027));
+}
+
+/* Projects: distinct surfaces without bright cards. */
+html[data-theme="dark"] .v8-project-card{
+  background:#10201a;
+  color:#f0eedf;
+  border-color:rgba(240,238,223,.11);
+}
+html[data-theme="dark"] .v8-project-featured{
+  background:
+    radial-gradient(circle at 86% 14%,rgba(196,232,104,.14),transparent 31%),
+    #13251e;
+}
+html[data-theme="dark"] .v8-project-small:nth-child(2){
+  background:#0f1e19;
+}
+html[data-theme="dark"] .v8-project-small:nth-child(3){
+  background:#12221c;
+}
+html[data-theme="dark"] .v8-project-copy p{
+  color:#a5b3ab;
+}
+html[data-theme="dark"] .v8-project-meta{
+  color:#93a39a;
+}
+html[data-theme="dark"] .v8-revenue-box{
+  background:#061f1a;
+  border:1px solid rgba(196,232,104,.10);
+}
+
+/* Revenue section: avoid a large luminous lime panel in dark mode. */
+html[data-theme="dark"] .v5-revenue{
+  background:#0a2f27;
+  color:#f0eedf;
+}
+html[data-theme="dark"] .revenue-head-v5 .v5-label{
+  color:#b6c3bc;
+}
+html[data-theme="dark"] .v5-revenue-grid{
+  border-top-color:rgba(240,238,223,.12);
+}
+html[data-theme="dark"] .v5-revenue-grid p{
+  color:#d9ddd4;
+}
+html[data-theme="dark"] .v5-revenue-grid span{
+  color:#c4e868;
+  border-color:rgba(196,232,104,.25);
+  background:rgba(196,232,104,.045);
+}
+
+/* Footer: keep it dark and quiet in dark mode. */
+html[data-theme="dark"] .mode-footer{
+  background:#081713;
+  color:#dfe2d8;
+  border-top:1px solid rgba(240,238,223,.10);
+}
+html[data-theme="dark"] .mode-footer strong,
+html[data-theme="dark"] .mode-footer a{
+  color:#f0eedf;
+}
+html[data-theme="dark"] .mode-footer small{
+  border-top-color:rgba(240,238,223,.10);
+}
+
+/* Inner pages: previous body-level variables prevented full dark-mode propagation. */
+html[data-theme="dark"] body:not(.mode-home){
+  --bg:#091511;
+  --paper:#101f19;
+  --ink:#f0eedf;
+  --muted:#a4b2aa;
+  --line:rgba(240,238,223,.115);
+  --line-strong:rgba(240,238,223,.22);
+  --green:#c4e868;
+  --black:#f0eedf;
+  --white:#0b1713;
+  background:#091511!important;
+  color:#f0eedf!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .topbar{
+  background:rgba(7,42,35,.90)!important;
+  color:#f0eedf!important;
+  border-color:rgba(240,238,223,.12)!important;
+  box-shadow:0 12px 38px rgba(0,0,0,.20)!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .logo,
+html[data-theme="dark"] body:not(.mode-home) .main-nav a{
+  color:#f0eedf!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .logo-mark{
+  background:#c4e868!important;
+  color:#0d352b!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .main-nav a:hover{
+  background:rgba(240,238,223,.07)!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .plain-control,
+html[data-theme="dark"] body:not(.mode-home) .lang-control{
+  color:#f0eedf!important;
+  border-color:rgba(240,238,223,.15)!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .case-card,
+html[data-theme="dark"] body:not(.mode-home) .research-rules,
+html[data-theme="dark"] body:not(.mode-home) .economics-v3{
+  background:#101f19!important;
+  border-color:rgba(240,238,223,.11)!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .case-columns,
+html[data-theme="dark"] body:not(.mode-home) .article-stack,
+html[data-theme="dark"] body:not(.mode-home) .process-list,
+html[data-theme="dark"] body:not(.mode-home) .collab-models{
+  border-color:rgba(240,238,223,.11)!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .case-state{
+  color:#c4e868!important;
+}
+html[data-theme="dark"] body:not(.mode-home) .case-columns p,
+html[data-theme="dark"] body:not(.mode-home) .article-stack p,
+html[data-theme="dark"] body:not(.mode-home) .collab-models p,
+html[data-theme="dark"] body:not(.mode-home) .process-list p{
+  color:#a4b2aa!important;
+}
+
+/* Focus visibility is especially important on dark surfaces. */
+html[data-theme="dark"] a:focus-visible,
+html[data-theme="dark"] button:focus-visible{
+  outline:2px solid #c4e868;
+  outline-offset:3px;
+}
+
+/* Low-brightness mobile: reduce glow and slightly increase secondary-text contrast. */
+@media(max-width:760px){
+  html[data-theme="dark"]{
+    --muted:#aab7b0;
+  }
+  html[data-theme="dark"] .mode-nav,
+  html[data-theme="dark"] body:not(.mode-home) .topbar{
+    box-shadow:0 8px 24px rgba(0,0,0,.16)!important;
+  }
+  html[data-theme="dark"] .v8-live-dot{
+    box-shadow:0 0 0 4px rgba(196,232,104,.055),0 0 10px rgba(196,232,104,.26);
+  }
+  html[data-theme="dark"] .v8-status-icon.active{
+    box-shadow:none;
+  }
+}
+
+/* High-contrast user preference gets clearer separators without changing layout. */
+@media(prefers-contrast:more){
+  html[data-theme="dark"]{
+    --line:rgba(240,238,223,.20);
+    --line-strong:rgba(240,238,223,.34);
+    --muted:#bac5bf;
+  }
+  html[data-theme="dark"] .v8-project-card,
+  html[data-theme="dark"] .v5-product-shell,
+  html[data-theme="dark"] .v5-capability{
+    border-color:rgba(240,238,223,.20)!important;
+  }
+}
