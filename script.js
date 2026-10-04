@@ -46,8 +46,12 @@
     localStorage.setItem('romo7-lang', isFa ? 'fa' : 'en');
   };
 
+  const queryLang = new URLSearchParams(window.location.search).get('lang');
   const savedLang = localStorage.getItem('romo7-lang');
-  applyLanguage(savedLang === 'fa' ? 'fa' : 'en');
+  const initialLang = queryLang === 'fa' || queryLang === 'en'
+    ? queryLang
+    : (savedLang === 'fa' ? 'fa' : 'en');
+  applyLanguage(initialLang);
 
   langToggle?.addEventListener('click', () => {
     applyLanguage(root.lang === 'fa' ? 'en' : 'fa');
