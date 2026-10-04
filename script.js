@@ -109,7 +109,10 @@
   const current = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.main-nav a, .mode-nav nav a').forEach((link) => {
     const href = (link.getAttribute('href') || '').split('#')[0];
-    if (href && href === current) link.classList.add('active');
+    if (href && href === current) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
   });
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
