@@ -4437,3 +4437,306 @@ html[lang="fa"] .v5-tabs span{
     grid-template-columns:1fr!important;
   }
 }
+
+
+/* ===== Romo7 social presence + Persian hero balance — V16 ===== */
+
+/* Persian desktop hero: use the empty left side as a quiet method signal, not decoration. */
+.fa-hero-signal{
+  display:none;
+}
+@media(min-width:981px){
+  html[lang="fa"] .v5-hero-inner{
+    display:grid!important;
+    grid-template-columns:minmax(250px,.58fr) minmax(0,1.42fr)!important;
+    grid-template-rows:auto auto;
+    column-gap:64px!important;
+    row-gap:0!important;
+    align-items:end!important;
+    direction:ltr!important;
+  }
+  html[lang="fa"] .v5-title-fa{
+    grid-column:2!important;
+    grid-row:1!important;
+    align-self:end;
+    justify-self:stretch;
+    direction:rtl!important;
+  }
+  html[lang="fa"] .v5-intro{
+    grid-column:2!important;
+    grid-row:2!important;
+    direction:rtl!important;
+    justify-self:stretch;
+  }
+  html[lang="fa"] .fa-hero-signal{
+    display:block;
+    grid-column:1!important;
+    grid-row:1 / 3!important;
+    align-self:end;
+    direction:rtl;
+    text-align:right;
+    min-height:208px;
+    padding:24px;
+    border:1px solid rgba(240,240,220,.19);
+    border-radius:18px;
+    background:
+      radial-gradient(circle at 18% 16%,rgba(201,239,103,.10),transparent 33%),
+      rgba(255,255,255,.035);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+  }
+  html[lang="fa"] .fa-hero-signal span{
+    display:block;
+    color:rgba(240,240,220,.56);
+    font:800 .6rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;
+    letter-spacing:.08em;
+    direction:ltr;
+    text-align:left;
+  }
+  html[lang="fa"] .fa-hero-signal strong{
+    display:block;
+    margin-top:42px;
+    color:var(--v5-lime);
+    font-family:"Estedad","Vazirmatn",Tahoma,sans-serif;
+    font-size:1.2rem;
+    font-weight:780;
+    line-height:1.8;
+  }
+  html[lang="fa"] .fa-hero-signal p{
+    margin:12px 0 0;
+    color:rgba(240,240,220,.72);
+    font-family:"Vazirmatn",Tahoma,sans-serif;
+    font-size:.78rem;
+    line-height:1.95;
+  }
+}
+
+/* Elsewhere / social section */
+.social-section{
+  padding:96px max(24px,calc((100vw - var(--v5-max))/2));
+  background:var(--v5-cream);
+  color:var(--v5-ink);
+  border-top:1px solid var(--v5-line);
+}
+.social-head{
+  max-width:820px;
+  margin-bottom:34px;
+}
+.social-head .v5-label{
+  display:block;
+  margin-bottom:11px;
+}
+.social-head h2{
+  margin:0;
+  max-width:780px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(2.4rem,4.7vw,5rem);
+  font-weight:500;
+  line-height:1;
+  letter-spacing:-.045em;
+}
+.social-head p{
+  max-width:620px;
+  margin:18px 0 0;
+  color:var(--v5-muted);
+  font-size:.92rem;
+  line-height:1.8;
+}
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+}
+.social-card{
+  position:relative;
+  min-height:180px;
+  padding:20px;
+  border:1px solid var(--v5-line);
+  border-radius:16px;
+  background:#f8f8e9;
+  color:var(--v5-ink);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:20px;
+  text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.social-card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(11,74,59,.34);
+  box-shadow:0 14px 34px rgba(20,60,49,.07);
+}
+.social-card>div{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.social-card span{
+  color:var(--v5-muted);
+  font-size:.62rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.social-card strong{
+  font-size:1.05rem;
+  line-height:1.3;
+}
+.social-card small{
+  max-width:240px;
+  color:var(--v5-muted);
+  font-size:.72rem;
+  line-height:1.65;
+}
+.social-card i{
+  position:absolute;
+  top:18px;
+  right:18px;
+  font-style:normal;
+  font-size:1rem;
+}
+.social-card-featured{
+  grid-column:span 2;
+  background:var(--v5-forest);
+  color:var(--v5-cream);
+  border-color:rgba(11,74,59,.34);
+}
+.social-card-featured span,
+.social-card-featured small{
+  color:rgba(240,240,220,.65);
+}
+.social-card-featured strong{
+  color:var(--v5-lime);
+  font-size:clamp(1.5rem,2.2vw,2.15rem);
+}
+.social-card-featured i{
+  color:var(--v5-lime);
+}
+
+/* Persian typography and arrow direction inside social cards. */
+html[lang="fa"] .social-section{
+  direction:rtl;
+}
+html[lang="fa"] .social-head h2{
+  font-family:"Estedad","Vazirmatn",Tahoma,sans-serif;
+  font-size:clamp(1.9rem,3.2vw,3.25rem);
+  font-weight:780;
+  line-height:1.5;
+  letter-spacing:0;
+}
+html[lang="fa"] .social-head p,
+html[lang="fa"] .social-card small{
+  font-family:"Vazirmatn",Tahoma,sans-serif;
+}
+html[lang="fa"] .social-card i{
+  right:auto;
+  left:18px;
+  direction:ltr;
+}
+
+/* Social identity is always reachable from every page. */
+.footer-social{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:6px 12px;
+}
+.footer-social a{
+  color:inherit;
+  opacity:.68;
+  font-size:.64rem;
+  font-weight:760;
+  text-decoration:none;
+  transition:opacity .18s ease;
+}
+.footer-social a:hover{
+  opacity:1;
+}
+.mode-footer .footer-social{
+  border-top:1px solid rgba(240,240,220,.10);
+  padding-top:16px;
+}
+.footer.wrap .footer-social{
+  width:100%;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+}
+
+/* Dark mode keeps the section low-glare. */
+html[data-theme="dark"] .social-section{
+  background:#0c1915;
+  color:#f0eedf;
+  border-top-color:rgba(240,238,223,.10);
+}
+html[data-theme="dark"] .social-head p{
+  color:#a4b2aa;
+}
+html[data-theme="dark"] .social-card{
+  background:#10201a;
+  color:#f0eedf;
+  border-color:rgba(240,238,223,.11);
+}
+html[data-theme="dark"] .social-card span,
+html[data-theme="dark"] .social-card small{
+  color:#9eada5;
+}
+html[data-theme="dark"] .social-card-featured{
+  background:
+    radial-gradient(circle at 12% 18%,rgba(196,232,104,.10),transparent 35%),
+    #062f28;
+}
+html[data-theme="dark"] .social-card-featured strong{
+  color:#c4e868;
+}
+
+@media(max-width:980px){
+  .social-section{
+    padding:78px 18px;
+  }
+  .social-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .social-card-featured{
+    grid-column:span 2;
+  }
+}
+
+@media(max-width:600px){
+  .social-section{
+    padding:58px 14px;
+  }
+  .social-head{
+    margin-bottom:24px;
+  }
+  .social-head h2{
+    font-size:clamp(2rem,10vw,3rem);
+  }
+  html[lang="fa"] .social-head h2{
+    font-size:clamp(1.55rem,7vw,2.05rem);
+  }
+  .social-head p{
+    font-size:.84rem;
+    line-height:1.85;
+  }
+  .social-grid{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .social-card,
+  .social-card-featured{
+    grid-column:auto;
+    min-height:138px;
+    padding:18px;
+  }
+  .footer-social{
+    gap:7px 11px;
+  }
+}
+
+@media print{
+  .social-section,
+  .footer-social,
+  .fa-hero-signal{
+    display:none!important;
+  }
+}
