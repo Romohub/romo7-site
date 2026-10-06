@@ -60,4 +60,9 @@
     <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/collaborate.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/collaborate.html" />
   </url>
+
+  <url>
+    <loc>https://romohub.github.io/romo7-site/en/research/persistent-ai-memory-lighthouse.html</loc>
+    <lastmod>2026-10-06</lastmod>
+  </url>
 </urlset>
