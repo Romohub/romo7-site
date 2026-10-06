@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Agents Need Memory That Survives the Session — Romo7 Research</title>
+  <meta name="description" content="A hands-on test of persistent AI agent memory using Lighthouse Memory, with a real cross-process remember/recall experiment and notes on portability, MCP, privacy, and deletion." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://romohub.github.io/romo7-site/en/research/persistent-ai-memory-lighthouse.html" />
+  <meta property="og:title" content="AI Agents Need Memory That Survives the Session" />
+  <meta property="og:description" content="A real cross-process test of persistent AI agent memory using Lighthouse Memory." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://romohub.github.io/romo7-site/en/research/persistent-ai-memory-lighthouse.html" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <style>
+    body{max-width:860px;margin:0 auto;padding:48px 24px;line-height:1.7}
+    article{max-width:760px;margin:auto}
+    h1{font-size:clamp(2rem,5vw,4rem);line-height:1.05;margin-bottom:1rem}
+    h2{margin-top:2.5rem}
+    .eyebrow,.meta{opacity:.65}
+    blockquote{margin:2rem 0;padding:1rem 1.25rem;border-left:3px solid currentColor}
+    code{overflow-wrap:anywhere}
+    .sources li{margin:.5rem 0}
+  </style>
+</head>
+<body>
+<article>
+  <p class="eyebrow">Romo7 Research · AI Infrastructure</p>
+  <h1>AI Agents Don’t Just Need Bigger Context Windows. They Need Memory That Survives the Session.</h1>
+  <p class="meta">Published 6 October 2026 · Hands-on research note</p>
+
+  <p>A lot of the current conversation about AI agents focuses on model quality: better reasoning, larger context windows, stronger tool use, cheaper inference. Those things matter. But while building workflows that are supposed to keep going across sessions, I kept running into a more basic problem: continuity.</p>
+
+  <p>An agent can be excellent inside one session and still become frustrating the moment the process restarts, a device disconnects, or a different client takes over. The model may be smart, but the workflow has amnesia.</p>
+
+  <p>That led me to test Lighthouse Memory, a memory layer designed around three explicit actions: remember, recall, and forget.</p>
+
+  <h2>The experiment</h2>
+  <p>I wanted a test that reflected a real workflow rather than a toy preference like “the user likes dark mode.” My actual requirement is this:</p>
+
+  <blockquote>When the computer disconnects, continue cloud-safe research and resume device-dependent work after reconnection without asking the user to repeat the task.</blockquote>
+
+  <p>I installed the official Lighthouse Memory SDK and used its batched engine with the local filesystem storage adapter. In one Node process, I called <code>remember()</code> with that workflow rule and forced immediate flushing. The SDK produced a content-addressed identifier (CID):</p>
+
+  <p><code>bafkreigkv56ttjnoijmstxekifmyhg7har7mbyqcssmpsr6wo3r4hmpauq</code></p>
+
+  <p>Then I ended that process. In a separate process, with no chat transcript carried over, I asked the memory layer: “What should the agent do if the computer disconnects?”</p>
+
+  <p>It returned the stored rule and the same CID.</p>
+
+  <p>This was a local-adapter test, so it does not prove decentralized network persistence. What it does demonstrate is the core behavior of Lighthouse’s SDK: state can live outside the active model process and be recovered by a later runtime.</p>
+
+  <h2>Context is not the same thing as memory</h2>
+  <p>A context window answers: “How much information can the model consider right now?” Persistent memory answers: “What useful information should still exist after this runtime is gone?” Those are different engineering problems.</p>
+
+  <p>You can make a context window enormous and still lose continuity when you start a fresh session. You can also keep dumping old transcripts into prompts, but that becomes expensive, noisy, and difficult to govern.</p>
+
+  <p>An external memory layer gives the agent explicit operations: store something worth keeping, retrieve related information later, and remove information that should no longer be retained.</p>
+
+  <h2>What Lighthouse adds beyond my local test</h2>
+  <p>Lighthouse documents its memory system as composable. The same high-level memory interface can use different engines, storage backends, and embedders. Its architecture also exposes memory tools through MCP for compatible AI clients.</p>
+
+  <p>The important idea is not “give one chatbot better history.” It is to make memory external to the model so different runtimes can access durable state.</p>
+
+  <h2>Verifiability is useful, but privacy matters more</h2>
+  <p>Lighthouse uses content-addressed blobs and CIDs. That gives persisted objects identifiers tied to their content, which is useful when provenance matters.</p>
+
+  <p>But persistent memory creates a harder question: what should never be remembered? Lighthouse’s documentation makes clear that privacy and deletion semantics depend on the chosen engine and backend. Plaintext storage should not be treated as a safe place for secrets or personal data, and <code>forget()</code> cannot be assumed to rewrite every underlying storage network in the same way.</p>
+
+  <p>The useful feature is not maximum retention. It is controlled retention.</p>
+
+  <h2>The bigger lesson</h2>
+  <p>After this test, I think the AI-agent conversation needs a cleaner separation between intelligence and continuity. A model can reason well and still be operationally unreliable if every new runtime starts from scratch.</p>
+
+  <p>A strong external memory layer should provide persistence across sessions and runtimes, relevant retrieval rather than transcript dumping, portability across tools and models, and understandable deletion and privacy rules.</p>
+
+  <p>My test was deliberately modest: local storage, two separate processes, one real workflow rule. It worked. The more important next test is the networked version: persist the memory through a remote backend, restore it from another machine or MCP client, and verify the same state there.</p>
+
+  <p>That is the point where “AI memory” stops being a convenience feature and starts looking like infrastructure.</p>
+
+  <h2>Sources</h2>
+  <ul class="sources">
+    <li><a href="https://docs.lighthouse.storage/memory/intro">Lighthouse Memory introduction</a></li>
+    <li><a href="https://docs.lighthouse.storage/memory/mcp/overview">Lighthouse MCP overview</a></li>
+    <li><a href="https://docs.lighthouse.storage/memory/sdk/engine-batched">Lighthouse batched engine</a></li>
+    <li><a href="https://www.lighthouse.storage/blogs/Composable%20Memory%20for%20AI%20Agents%20on%20S3%20R2%20and%20Open%20Source%20Models">Composable Memory for AI Agents</a></li>
+  </ul>
+</article>
+</body>
+</html>
