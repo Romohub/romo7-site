@@ -1,0 +1,95 @@
+name: Collaboration / Project brief
+description: Start a structured conversation with Romo7 about research, AI, product, automation, or distribution work.
+title: "[Collaboration] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out to Romo7.
+
+        **This issue is public. Do not include passwords, private keys, confidential documents, personal data, unreleased product secrets, or other sensitive information.**
+        If the work needs a private first conversation, use the X contact link on the collaboration page instead.
+
+  - type: input
+    id: project
+    attributes:
+      label: Project / organization
+      description: What project, company, community, or research effort is this for?
+      placeholder: Project name or a short description
+    validations:
+      required: true
+
+  - type: dropdown
+    id: work_type
+    attributes:
+      label: What kind of help do you need?
+      options:
+        - Research / evaluation
+        - AI product or workflow
+        - Automation
+        - Persian language / AI
+        - Product testing / feedback
+        - Distribution / content
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and desired outcome
+      description: Describe the real problem, what success looks like, and any constraints.
+      placeholder: What are you trying to achieve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Expected deliverables
+      description: What concrete output would make this collaboration useful?
+      placeholder: Research memo, prototype, evaluation, automation, content package, etc.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: compensation
+    attributes:
+      label: Preferred compensation model
+      options:
+        - Fixed pay
+        - Project revenue share
+        - Hybrid (fixed pay + upside)
+        - Open to discussion
+    validations:
+      required: true
+
+  - type: input
+    id: budget
+    attributes:
+      label: Budget or economic range (optional)
+      description: A range is enough. Leave blank if the economics still need to be defined.
+      placeholder: e.g. $500–$1,000 or revenue-share proposal
+
+  - type: input
+    id: timeline
+    attributes:
+      label: Timeline
+      placeholder: e.g. 2 weeks / by 30 Oct 2026 / flexible
+    validations:
+      required: true
+
+  - type: textarea
+    id: links
+    attributes:
+      label: Public context / links
+      description: Add only public, non-sensitive links that help explain the project.
+      placeholder: Website, docs, public repo, public post, etc.
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Public issue confirmation
+      options:
+        - label: I understand this submission is public and I have not included confidential or sensitive information.
+          required: true
