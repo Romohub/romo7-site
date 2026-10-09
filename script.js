@@ -112,6 +112,7 @@
       if (!config.enabled || !cfAnalyticsToken) return;
 
       const beacon = document.createElement('script');
+      beacon.type = 'module';
       beacon.defer = true;
       beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
       beacon.dataset.cfBeacon = JSON.stringify({ token: cfAnalyticsToken });
