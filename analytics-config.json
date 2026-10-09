@@ -1,4 +1,4 @@
 {
-  "enabled": false,
-  "cloudflareWebAnalyticsToken": ""
+  "enabled": true,
+  "cloudflareWebAnalyticsToken": "49abc186439348c6ac12ab0b92215934"
 }
