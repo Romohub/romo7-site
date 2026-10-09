@@ -99,15 +99,28 @@
   if (year) year.textContent = new Date().getFullYear();
 
   // Optional, privacy-friendly Cloudflare Web Analytics.
-  // Add <meta name="cf-web-analytics-token" content="..."> when a token is available.
-  const cfAnalyticsToken = document.querySelector('meta[name="cf-web-analytics-token"]')?.content?.trim();
-  if (cfAnalyticsToken) {
-    const beacon = document.createElement('script');
-    beacon.defer = true;
-    beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-    beacon.dataset.cfBeacon = JSON.stringify({ token: cfAnalyticsToken });
-    document.head.appendChild(beacon);
-  }
+  // The token lives in one shared config file so analytics can be enabled
+  // site-wide without editing every HTML page.
+  const loadAnalytics = async () => {
+    try {
+      const scriptUrl = document.currentScript?.src || new URL('script.js', window.location.href).href;
+      const configUrl = new URL('analytics-config.json', scriptUrl);
+      const response = await fetch(configUrl, { cache: 'no-store' });
+      if (!response.ok) return;
+      const config = await response.json();
+      const cfAnalyticsToken = String(config.cloudflareWebAnalyticsToken || '').trim();
+      if (!config.enabled || !cfAnalyticsToken) return;
+
+      const beacon = document.createElement('script');
+      beacon.defer = true;
+      beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      beacon.dataset.cfBeacon = JSON.stringify({ token: cfAnalyticsToken });
+      document.head.appendChild(beacon);
+    } catch (_) {
+      // Analytics must never interfere with the site.
+    }
+  };
+  loadAnalytics();
 
   const revealItems = [...document.querySelectorAll('.reveal')];
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
