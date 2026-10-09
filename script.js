@@ -98,6 +98,17 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
+  // Optional, privacy-friendly Cloudflare Web Analytics.
+  // Add <meta name="cf-web-analytics-token" content="..."> when a token is available.
+  const cfAnalyticsToken = document.querySelector('meta[name="cf-web-analytics-token"]')?.content?.trim();
+  if (cfAnalyticsToken) {
+    const beacon = document.createElement('script');
+    beacon.defer = true;
+    beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    beacon.dataset.cfBeacon = JSON.stringify({ token: cfAnalyticsToken });
+    document.head.appendChild(beacon);
+  }
+
   const revealItems = [...document.querySelectorAll('.reveal')];
   if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const observer = new IntersectionObserver((entries) => {
