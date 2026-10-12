@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "source_name": "fictional-input.csv",
+  "method": "UTF-8 BOM-aware CSV; trim outer whitespace for exact whole-row comparison",
+  "transparency": "Automated structural checks only; no human or domain validation. Input is unchanged.",
+  "required_fields": [
+    "id",
+    "name"
+  ],
+  "header": [
+    "id",
+    "name"
+  ],
+  "header_issues": [],
+  "row_count": 6,
+  "blank_row_count": 1,
+  "flagged_row_count": 5,
+  "duplicate_row_count": 1,
+  "rows": [
+    {
+      "record": 1,
+      "source_line_start": 2,
+      "source_line_end": 2,
+      "column_count": 2,
+      "issues": []
+    },
+    {
+      "record": 2,
+      "source_line_start": 3,
+      "source_line_end": 3,
+      "column_count": 2,
+      "issues": [
+        {
+          "duplicate_of_record": 1
+        }
+      ]
+    },
+    {
+      "record": 3,
+      "source_line_start": 4,
+      "source_line_end": 4,
+      "column_count": 0,
+      "issues": [
+        "blank_row",
+        {
+          "column_count": {
+            "expected": 2,
+            "actual": 0
+          }
+        },
+        {
+          "missing_required_values": [
+            "id",
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "record": 4,
+      "source_line_start": 5,
+      "source_line_end": 5,
+      "column_count": 2,
+      "issues": [
+        {
+          "missing_required_values": [
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "record": 5,
+      "source_line_start": 6,
+      "source_line_end": 6,
+      "column_count": 3,
+      "issues": [
+        {
+          "column_count": {
+            "expected": 2,
+            "actual": 3
+          }
+        }
+      ]
+    },
+    {
+      "record": 6,
+      "source_line_start": 7,
+      "source_line_end": 7,
+      "column_count": 1,
+      "issues": [
+        {
+          "column_count": {
+            "expected": 2,
+            "actual": 1
+          }
+        },
+        {
+          "missing_required_values": [
+            "name"
+          ]
+        }
+      ]
+    }
+  ],
+  "parse_error": null
+}

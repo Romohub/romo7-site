@@ -1,0 +1,67 @@
+# Romo7 — Public technical documentation audit sample
+
+**Subject:** OpenRouter routing, privacy and spend controls  
+**As of:** 11 October 2026, Asia/Tehran; public pages retrieved during this session  
+**Status:** Unsolicited portfolio exercise. No client commission, payment, affiliation or product access.
+
+This example shows a bounded service: trace technical claims to official documentation, identify wording that can obscure a documented exception, and propose clearer copy. Three clarification opportunities were identified across six checks. They are documentation findings, not reproduced software defects.
+
+## Method and evidence
+
+Read the official pages below, compare headline statements with detailed scope and defaults, and separate a documented fact from a possible reader interpretation. To reproduce, open each URL, search the named section or field, and compare the stated facts. Page text can change; the locators describe the version retrieved on the date above. No API requests, accounts, credentials, paid inference, transactions or client data were used.
+
+| ID | Official source | Section or locator |
+|---|---|---|
+| S1 | https://openrouter.ai/docs/guides/features/zdr | Opening definition; Caching; plugin and tool exclusions |
+| S2 | https://openrouter.ai/docs/guides/routing/model-fallbacks | How it works; Fallback behavior; Pricing |
+| S3 | https://openrouter.ai/docs/guides/routing/provider-selection | Requiring Providers to Support All Parameters; Default parameter preferences |
+| S4 | https://openrouter.ai/docs/guides/best-practices/spend-controls | The Two Layers; BYOK and Budget Accounting |
+| S5 | https://openrouter.ai/docs/guides/best-practices/capping-shared-agent-keys | Step 3: A Credit Limit on Each Agent Key |
+
+## Findings and proposed clarification
+
+### F1 — Put the caching exception next to the ZDR definition
+
+**Documented fact:** S1 opens with a broad no-storage definition, then explicitly allows implicit prompt caching in provider memory under its ZDR classification. It also excludes enabled plugins and tools from inference-routing ZDR enforcement.
+
+**Finding:** The introductory definition is broader than the later caching exception. A reader who stops at the definition could interpret ZDR as eliminating every temporary copy. That reader effect is an inference; this review does not establish noncompliance or provider misconduct.
+
+**Suggested clarification:** “ZDR routing selects inference endpoints classified as having no retained prompt or completion data. This classification permits implicit in-memory prompt caching. Enabled tools and plugins have separate retention policies.”
+
+**Recheck:** In S1, compare the opening definition with Caching, then check the tool exclusions immediately below the opening paragraph. The proposed copy must preserve both exceptions.
+
+### F2 — Add a parameter-support warning to the fallback quickstart
+
+**Documented fact:** S2 explains automatic model failover. S3 states that `require_parameters` defaults to `false`; unsupported parameters may be ignored. For `response_format`, provider preferences do not eliminate an entire fallback model when none of its providers supports the parameter.
+
+**Finding:** The fallback quickstart does not locally explain this parameter-support caveat. A developer can add a fallback without realizing that required response formatting needs a separate routing constraint. This is a cross-reference improvement, not evidence that a request failed.
+
+**Suggested clarification:** “If every fallback must support your requested parameters, set `provider.require_parameters` to `true` and choose compatible models. Otherwise unsupported parameters may be ignored; a fallback list alone does not require parameter compatibility.”
+
+**Recheck:** Search S3 for `require_parameters` and the following Default parameter preferences section; compare that explanation with S2's failover quickstart. No live response-format validation was performed.
+
+### F3 — Qualify the pooled budget example with BYOK accounting
+
+**Documented fact:** S4 introduces workspace budgets as pooled spend caps. Its later BYOK section says guardrails normally count credit spend, workspace and guardrail BYOK switches are separate, and recorded BYOK inference cost may differ from the upstream invoice. S5 also states that a key's `include_byok_in_limit` default is `false`.
+
+**Finding:** The pooled-cap example can be read as covering the whole provider bill before the BYOK conditions are encountered. Add the accounting caveat beside that example. This review does not establish any actual overspend or billing error.
+
+**Suggested clarification:** “These examples cap the spend included by each control. If you use BYOK, enable its accounting separately at the workspace, guardrail and key layers you rely on. OpenRouter's recorded BYOK cost may differ from your provider invoice.”
+
+**Recheck:** Compare S4's The Two Layers example with BYOK and Budget Accounting; confirm S5's key toggle default. Do not describe the cap as an exact ceiling on an external provider invoice.
+
+## Six-check result
+
+| Check | Result | Evidence |
+|---|---|---|
+| C1: ZDR definition includes caching exception locally | Clarification proposed | F1; S1 opening and Caching |
+| C2: Tool retention scope is separately documented | Confirmed documented | S1 tool exclusions; no missing-policy allegation |
+| C3: Fallback quickstart explains strict parameter support locally | Cross-reference proposed | F2; S2 versus S3 |
+| C4: Fallback pricing identifies the ultimately used model | Confirmed documented | S2 Pricing; no pricing-conflict allegation |
+| C5: Pooled budget example includes BYOK accounting caveat locally | Clarification proposed | F3; S4 versus S5 |
+| C6: Key BYOK default is explicitly documented | Confirmed documented | S5 Step 3; `include_byok_in_limit` |
+
+These are qualitative documentary checks. An independent AI agent re-opened all five official sources and checked the six statements against them. This is not human review, a model benchmark, a product pass rate or a security certification.
+
+
+AI assistance disclosed. Documentary portfolio example only; no client data or live product testing.
