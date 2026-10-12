@@ -1,5 +1,5 @@
 name: Collaboration / Project brief
-description: Start a structured conversation with Romo7 about research, AI, product, automation, or distribution work.
+description: Request a bounded paid pilot or scoped collaboration in research, AI QA, data checks, or automation.
 title: "[Collaboration] "
 body:
   - type: markdown
@@ -7,7 +7,7 @@ body:
       value: |
         Thanks for reaching out to Romo7.
 
-        **This issue is public. Do not include passwords, private keys, confidential documents, personal data, unreleased product secrets, or other sensitive information.**
+        **This issue is public and requires a GitHub account. Do not include passwords, private keys, customer datasets, confidential documents, personal data, unreleased product details or other sensitive information.**
         If the work needs a private first conversation, use the X contact link on the collaboration page instead.
 
   - type: input
@@ -24,9 +24,11 @@ body:
     attributes:
       label: What kind of help do you need?
       options:
-        - Research / evaluation
-        - AI product or workflow
-        - Automation
+        - AI agent / RAG regression QA (fixed-scope paid pilot)
+        - Technical research / evidence-backed documentation
+        - CSV structural data quality check
+        - Agency / white-label research support
+        - Automation / AI product or workflow
         - Persian language / AI
         - Product testing / feedback
         - Distribution / content
