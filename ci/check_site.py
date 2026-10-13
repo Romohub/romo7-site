@@ -38,6 +38,8 @@ for required in (
     "https://romohub.github.io/romo7-site/fa/",
     "https://romohub.github.io/romo7-site/en/collaborate.html",
     "https://romohub.github.io/romo7-site/fa/collaborate.html",
+    "https://romohub.github.io/romo7-site/en/ai-qa.html",
+    "https://romohub.github.io/romo7-site/fa/ai-qa.html",
     "https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html",
     "https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html",
 ):
@@ -50,6 +52,21 @@ if not lastmods:
 for value in lastmods:
     if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
         errors.append(f"sitemap.xml has invalid lastmod date: {value}")
+
+# Sales readiness must be backed by real case-study evidence and a visible inquiry route.
+for lang in ("en", "fa"):
+    page = ROOT / lang / "ai-qa.html"
+    if not page.exists():
+        errors.append(f"Missing PAIB landing page for {lang}")
+        continue
+    html = page.read_text(encoding="utf-8")
+    for required in ("https://github.com/Romohub/paib/blob/main/RESULTS.md",
+                     "https://github.com/Romohub/romo7-site/issues/new?template=collaboration.yml",
+                     "https://x.com/trita_a", 'href="#contact"'):
+        if required not in html:
+            errors.append(f"Missing PAIB proof link in {lang} landing: {required}")
+    if "mailto:" in html or "<form" in html:
+        errors.append(f"{lang} PAIB page must not claim untested automatic lead submission.")
 
 issue_form = ROOT / ".github" / "ISSUE_TEMPLATE" / "collaboration.yml"
 if not issue_form.exists():
