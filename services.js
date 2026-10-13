@@ -7,8 +7,15 @@
   const status = document.getElementById('briefStatus');
   const fa = () => document.documentElement.lang === 'fa';
   const say = (en, persian) => fa() ? persian : en;
+  const allowedServices = new Set(['research','localization','video','other']);
+  const requestedService = new URLSearchParams(window.location.search).get('service');
+  if (allowedServices.has(requestedService)) {
+    form.elements.service.value = requestedService;
+  }
   document.querySelectorAll('.service-request-link').forEach(link => {
-    link.addEventListener('click', () => { form.elements.service.value = link.dataset.service; });
+    link.addEventListener('click', () => {
+      if (allowedServices.has(link.dataset.service)) form.elements.service.value = link.dataset.service;
+    });
   });
   form.addEventListener('submit', event => {
     event.preventDefault();
