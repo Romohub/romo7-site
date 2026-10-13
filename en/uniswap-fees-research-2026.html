@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where Uniswap Fees Really Go — Romo7 Research</title>
+<meta name="description" content="A sourced bilingual desk-research sample: Uniswap Labs interface fees, liquidity-provider fees, protocol fees and UNI burns.">
+<link rel="canonical" href="https://romohub.github.io/romo7-site/en/uniswap-fees-research-2026.html">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:type" content="article"><meta property="og:title" content="Where Uniswap Fees Really Go — Romo7">
+<meta property="og:url" content="https://romohub.github.io/romo7-site/en/uniswap-fees-research-2026.html">
+<style>
+.research-brief{max-width:800px;margin:4rem auto 6rem;padding:0 1.5rem;line-height:1.8;font-size:1.08rem}
+.research-brief h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.15;margin:1.2rem 0}
+.research-brief h2{font-size:1.5rem;margin:2.3rem 0 1rem}
+.research-brief .tag{letter-spacing:.12em;font-size:.75rem;text-transform:uppercase;opacity:.75}
+.research-brief .callout{border-left:3px solid #7cdbbd;padding:1rem 1.3rem;background:rgba(110,225,181,.07);margin:1.8rem 0}
+.research-brief a{color:#80d6bf;text-underline-offset:3px}
+.research-brief ul{padding-left:1.5rem}
+.research-brief .meta{font-size:.9rem;opacity:.75}
+</style>
+</head>
+<body>
+<main class="research-brief">
+<nav><a href="./notes.html">← Romo7 Research Notes</a> · <a href="../fa/uniswap-fees-research-2026.html" lang="fa">فارسی</a></nav>
+<p class="tag">Web3 / Source-based research / Portfolio sample</p>
+<h1>Where Uniswap Fees Really Go</h1>
+<p class="meta">Romo7 · Reviewed 14 October 2026 · Public documentation review, not live trading or smart-contract auditing</p>
+<p>One common explanation of decentralized exchanges gets the economics wrong: it treats every swap fee as revenue for the company behind the user interface. Uniswap is a useful case study because the <strong>protocol, Uniswap Labs, and liquidity providers are different actors</strong>.</p>
+<h2>Three distinct fee flows</h2>
+<p><strong>1. Labs interface fees.</strong> Uniswap Labs' official support page says the interface fee has been <strong>0%</strong> since 27 December 2025. That is a statement about the Labs web interface and wallet, not a claim that every swap is free. Gas and protocol swap fees can still apply. <a href="https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees">Official Labs fee explanation</a>.</p>
+<p><strong>2. Liquidity-provider swap fees.</strong> Pools charge fees to compensate liquidity providers for the capital they contribute. Fees depend on protocol version and pool configuration. In v3 and v4, a concentrated-liquidity position outside its price range does not earn trading fees while out of range. <a href="https://developers.uniswap.org/docs/get-started/concepts/fees">Uniswap developer docs</a>.</p>
+<p><strong>3. Governance-controlled protocol fees.</strong> The late-2025 UNIfication governance change activated a fee mechanism on v2 pools and selected v3 pools. On enabled v2 pools, the documented 0.30% swap fee is split into <strong>0.25% for LPs and 0.05% for the protocol</strong>. Current configurations are governance-controlled and may change. <a href="https://developers.uniswap.org/docs/protocols/protocol-fee/concepts/fees">Official protocol fee configuration</a>.</p>
+<div class="callout"><strong>The accounting distinction:</strong> a fee accruing to Uniswap protocol contracts is not automatically Uniswap Labs corporate revenue, and protocol fee receipts are not a cash dividend paid to UNI holders.</div>
+<h2>How the UNI mechanism fits</h2>
+<p>Official documentation describes onchain collectors and contracts that release accumulated fee assets when eligible participants burn UNI. This creates a protocol-mediated UNI burn mechanism rather than a direct pro-rata revenue claim for each token holder. This brief does not estimate a price effect or investment return. <a href="https://developers.uniswap.org/docs/ecosystem/governance/uni">UNI token and governance documentation</a>; <a href="https://developers.uniswap.org/docs/protocols/protocol-fee/overview">protocol fee flow</a>.</p>
+<h2>Risk is part of the explanation</h2>
+<p>For traders, price impact, slippage, lookalike tokens, unsafe permissions and network costs matter. For liquidity providers, market risk, impermanent loss, inactive out-of-range positions and smart-contract risk can affect outcomes. A token warning on an interface is helpful information, not a guarantee of safety. See <a href="https://support.uniswap.org/hc/en-us/articles/8671539602317-What-is-price-impact">price impact</a>, <a href="https://support.uniswap.org/hc/en-us/articles/8723118437133-What-are-token-warnings">token warnings</a> and <a href="https://support.uniswap.org/hc/en-us/articles/37113550065549-What-are-the-risks-when-providing-liquidity">LP risks</a>.</p>
+<h2>What remains unknown</h2>
+<p>Uniswap Labs' current consolidated corporate net profit, the economic impact of burns on token prices, and how all pool configurations may change in the future are <strong>not established by this desk review</strong>. A live financial audit or transaction-by-transaction verification would require separate work.</p>
+<h2>What this sample demonstrates</h2>
+<p>Public-source technical research, claim-to-source checking, distinction between protocol and business economics, and clear explanations of risks. The piece is <strong>AI-assisted desk research and an independent portfolio example</strong>, not a commissioned client assignment, investment recommendation, endorsement or hands-on test.</p>
+<p><a href="./collaborate.html#paid-services">Discuss a scoped research or documentation project →</a></p>
+</main></body></html>
