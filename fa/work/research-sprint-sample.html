@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-static-lang="fa" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#074b3a" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <title>نمونه پژوهش متمرکز — حافظه پایدار عامل‌های هوش مصنوعی | Romo7</title>
+  <meta name="description" content="نمونه واقعی Research Sprint در Romo7: آزمون دو پردازه‌ای حافظه پایدار عامل هوش مصنوعی، همراه با شواهد، محدودیت‌ها و پیشنهاد اجرایی." />
+  <link rel="canonical" href="https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html" />
+  <link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+  <link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html" />
+  <link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../styles.css?v=20261014-proof" />
+  <meta property="og:title" content="نمونه پژوهش متمرکز — حافظه پایدار عامل‌های هوش مصنوعی | Romo7" />
+  <meta property="og:description" content="یک آزمون واقعی دو پردازه‌ای، همراه با شواهد، محدودیت‌ها و پیشنهاد اجرایی." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html" />
+  <meta property="og:image" content="https://romohub.github.io/romo7-site/assets/og-card.png" />
+</head>
+<body class="proof-deliverable-page">
+  <a class="skip-link" href="#main-content">رفتن به محتوای اصلی</a>
+  <header class="topbar proof-topbar">
+    <a class="logo" href="../"><span class="logo-mark">R7</span><span>ROMO7</span></a>
+    <nav class="main-nav" aria-label="ناوبری اصلی">
+      <a href="../#services">خدمات</a>
+      <a href="../#proof">نمونه‌کار</a>
+      <a href="../#about">درباره</a>
+      <a href="../projects.html">محصولات</a>
+      <a href="../notes.html">یادداشت‌ها</a>
+    </nav>
+    <div class="top-actions">
+      <button id="themeToggle" class="plain-control" type="button">☼</button>
+      <div class="lang-switch" role="group" aria-label="زبان">
+        <a href="../../fa/work/research-sprint-sample.html" data-lang="fa" lang="fa" hreflang="fa" class="active" aria-current="true">FA</a>
+        <a href="../../en/work/research-sprint-sample.html" data-lang="en" lang="en" hreflang="en">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="proof-deliverable">
+    <section class="proof-deliverable-hero">
+      <div>
+        <span class="kicker">پژوهش متمرکز / نمونه خروجی</span>
+        <h1>آیا عامل هوش مصنوعی بعد از پایان اجرای فعلی هم می‌تواند یک قاعده کاری را به یاد بیاورد؟</h1>
+        <p>این نمونه بر اساس یک آزمون واقعی ساخته شده و سفارش مشتری نیست. هدفش این است که نشان دهد یک Research Sprint کوچک در Romo7 چه شکلی دارد: یک سؤال مشخص، منابع قابل‌بررسی، آزمون، محدودیت‌ها و پیشنهاد اجرایی.</p>
+      </div>
+      <aside class="proof-deliverable-facts">
+        <div><small>پرسش</small><strong>حافظه پایدار عامل AI</strong></div>
+        <div><small>روش</small><strong>دو پردازه جداگانه Node</strong></div>
+        <div><small>منابع</small><strong>۴ منبع رسمی/عمومی</strong></div>
+        <div><small>وضعیت</small><strong>آزمون واقعی · نه کار مشتری</strong></div>
+      </aside>
+    </section>
+
+    <section class="proof-deliverable-section">
+      <span class="proof-num">01</span>
+      <div>
+        <span class="kicker">پرسش</span>
+        <h2>آیا وضعیت مفید یک عامل می‌تواند بیرون از جلسه چت زنده بماند؟</h2>
+        <p>نیاز عملی این بود: اگر کامپیوتر قطع شد، کارهای امنِ ابری ادامه پیدا کنند و کارهای وابسته به دستگاه بعد از اتصال دوباره از همان‌جا از سر گرفته شوند؛ بدون اینکه کاربر مجبور باشد تسک را دوباره توضیح بدهد.</p>
+        <p>آزمون بررسی کرد آیا می‌شود این قاعده را بیرون از پردازه فعال مدل ذخیره کرد و در اجرای بعدی دوباره به دست آورد.</p>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section proof-deliverable-dark">
+      <span class="proof-num">02</span>
+      <div>
+        <span class="kicker">چه چیزی آزمایش شد</span>
+        <h2>یک آزمون کوچک که نتیجه‌اش قابل‌تفکیک باشد.</h2>
+        <ol class="proof-steps">
+          <li><span>01</span><p>SDK رسمی Lighthouse Memory نصب شد و موتور batched با ذخیره‌ساز فایل محلی به کار رفت.</p></li>
+          <li><span>02</span><p>یک قاعده واقعی کاری با <code>remember()</code> ذخیره و batch فوراً flush شد.</p></li>
+          <li><span>03</span><p>شناسه محتوایی (CID) ثبت شد و پردازه Node اول پایان یافت.</p></li>
+          <li><span>04</span><p>در یک پردازه جدا، بدون انتقال transcript قبلی، پرسیده شد عامل بعد از قطع کامپیوتر باید چه کند.</p></li>
+          <li><span>05</span><p>لایه حافظه همان قاعده ذخیره‌شده و همان CID را برگرداند.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section">
+      <span class="proof-num">03</span>
+      <div>
+        <span class="kicker">شواهد</span>
+        <h2>این آزمون دقیقاً چه چیزی را پشتیبانی می‌کند؟</h2>
+        <div class="evidence-table" role="table" aria-label="جدول شواهد">
+          <div class="evidence-row evidence-head" role="row"><span>ادعا</span><span>شاهد</span><span>نتیجه</span></div>
+          <div class="evidence-row" role="row"><span>اطلاعات بعد از پایان اجرای اول باقی ماند.</span><span>پردازه دوم قاعده ذخیره‌شده را بازیابی کرد.</span><strong>مشاهده شد</strong></div>
+          <div class="evidence-row" role="row"><span>همان شیء ذخیره‌شده بازیابی شد.</span><span>آیتم بازیابی‌شده همان CID را داشت.</span><strong>مشاهده شد</strong></div>
+          <div class="evidence-row" role="row"><span>حافظه خارجی می‌تواند مسئله continuity را جدا از context حل کند.</span><span>بازیابی بدون انتقال context پردازه قبلی انجام شد.</span><strong>آزمون پشتیبانی می‌کند</strong></div>
+          <div class="evidence-row" role="row"><span>ماندگاری شبکه‌ای یا غیرمتمرکز ثابت شد.</span><span>آزمون فقط با ذخیره‌ساز فایل محلی انجام شد.</span><strong class="proof-limit">ثابت نشد</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section proof-deliverable-accent">
+      <span class="proof-num">04</span>
+      <div>
+        <span class="kicker">پیشنهاد اجرایی</span>
+        <h2>قواعد عملیاتی مهم را بیرون از جلسه مدل نگه دارید؛ نه اینکه همه‌چیز را برای همیشه حفظ کنید.</h2>
+        <p>برای ورک‌فلوهای عاملی که پیوستگی لازم دارند، وضعیت مهم عملیاتی باید بیرون از جلسه فعال مدل نگه‌داری شود. فقط چیزهایی ذخیره شوند که واقعاً ارزش نگه‌داری دارند، اطلاعات محرمانه در backend ساده و plaintext قرار نگیرند و رفتار حذف داده قبل از استفاده واقعی آزمایش شود.</p>
+        <p>آزمون بعدیِ معنادار برای محصول، بازیابی چنددستگاهی یا remote backend است: ذخیره روی یک ماشین یا client، بازیابی از دیگری، و سپس اندازه‌گیری کیفیت retrieval، latency و رفتار deletion.</p>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section">
+      <span class="proof-num">05</span>
+      <div>
+        <span class="kicker">محدودیت‌ها</span>
+        <h2>از این آزمون چه ادعاهایی نمی‌کنم؟</h2>
+        <ul class="proof-limits">
+          <li>ماندگاری روی شبکه غیرمتمرکز اثبات نشده است.</li>
+          <li>بازیابی روی دستگاه دوم آزمایش نشده است.</li>
+          <li>latency، هزینه یا retrieval در مقیاس بزرگ بنچمارک نشده است.</li>
+          <li>آزمون روی یک قاعده کاری انجام شده، نه مجموعه داده تولیدی.</li>
+          <li>حریم خصوصی و نحوه حذف داده به backend انتخاب‌شده وابسته است.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-sources">
+      <div>
+        <span class="kicker">منابع</span>
+        <h2>منابع عمومی استفاده‌شده در آزمون.</h2>
+      </div>
+      <div class="proof-source-list">
+        <a href="https://docs.lighthouse.storage/memory/intro" target="_blank" rel="noopener noreferrer">معرفی Lighthouse Memory ↗</a>
+        <a href="https://docs.lighthouse.storage/memory/mcp/overview" target="_blank" rel="noopener noreferrer">مستندات Lighthouse MCP ↗</a>
+        <a href="https://docs.lighthouse.storage/memory/sdk/engine-batched" target="_blank" rel="noopener noreferrer">مستندات Batched Engine ↗</a>
+        <a href="https://www.lighthouse.storage/blogs/Composable%20Memory%20for%20AI%20Agents%20on%20S3%20R2%20and%20Open%20Source%20Models" target="_blank" rel="noopener noreferrer">Composable Memory for AI Agents ↗</a>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-cta">
+      <div><span class="kicker">چنین خروجی‌ای لازم داری؟</span><h2>یک سؤال. منبع. شواهد. پیشنهاد اجرایی.</h2></div>
+      <a class="btn primary" href="../collaborate.html?service=research#service-request">درخواست پژوهش متمرکز</a>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div><strong>ROMO7</strong><span>پژوهش + بومی‌سازی + ویدیو</span></div>
+    <div class="footer-nav"><a href="../projects.html">پروژه‌ها</a><a href="../notes.html">یادداشت‌ها</a><a href="../collaborate.html">خدمات</a></div>
+    <div class="footer-social" aria-label="شبکه‌های اجتماعی"><a href="https://github.com/Romohub" target="_blank" rel="me noopener noreferrer">GitHub</a><a href="https://x.com/trita_a" target="_blank" rel="me noopener noreferrer">X</a><a href="https://warpcast.com/romo7" target="_blank" rel="me noopener noreferrer">Farcaster</a></div>
+    <small>© <span id="year"></span> Romo7</small>
+  </footer>
+  <script src="../../script.js"></script>
+</body>
+</html>
