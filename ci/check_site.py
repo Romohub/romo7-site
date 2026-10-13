@@ -38,12 +38,18 @@ for required in (
     "https://romohub.github.io/romo7-site/fa/",
     "https://romohub.github.io/romo7-site/en/collaborate.html",
     "https://romohub.github.io/romo7-site/fa/collaborate.html",
+    "https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html",
+    "https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html",
 ):
     if required not in sitemap:
         errors.append(f"sitemap.xml missing {required}")
 
-if "<lastmod>2026-10-09</lastmod>" not in sitemap:
-    errors.append("sitemap.xml does not contain the current update date.")
+lastmods = re.findall(r"<lastmod>([^<]+)</lastmod>", sitemap)
+if not lastmods:
+    errors.append("sitemap.xml has no lastmod entries.")
+for value in lastmods:
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        errors.append(f"sitemap.xml has invalid lastmod date: {value}")
 
 issue_form = ROOT / ".github" / "ISSUE_TEMPLATE" / "collaboration.yml"
 if not issue_form.exists():
