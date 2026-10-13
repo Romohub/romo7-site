@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr" data-theme="dark">
+<html lang="en" dir="ltr" data-static-lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0d0f12"><meta name="robots" content="index,follow,max-image-preview:large">
@@ -52,6 +52,13 @@
 .r7-sales .disclaimer{font-size:.82rem;max-width:880px}
 .r7-sales footer{padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
 @media(max-width:820px){.r7-sales .sales-top,.r7-sales .case-grid{grid-template-columns:1fr;gap:26px}.r7-sales .cards,.r7-sales .link-list{grid-template-columns:1fr}.r7-sales .sales-top{padding-top:45px}.r7-sales .sales-section{padding:50px 0}.r7-sales .offer-panel{padding:22px}}
+html[data-theme="light"] .r7-sales{--ink:#17392d;--muted:#426052;--panel:#d9e9d6;--line:rgba(27,67,50,.23);--accent:#1f6241;background:#edf3e9}
+html[data-theme="light"] .r7-sales h1,html[data-theme="light"] .r7-sales h2,html[data-theme="light"] .r7-sales h3{color:#17372b}
+html[data-theme="light"] .r7-sales .action.primary{background:#245b3b;color:#fff}
+html[data-theme="light"] .r7-sales .action.secondary{color:#17372b}
+html[data-theme="light"] .r7-sales .evidence-table td{color:#274438}
+html[data-theme="light"] .r7-sales .paper{background:#d9e9d6}
+html[data-theme="light"] .r7-sales .tile{background:rgba(26,92,62,.05)}
 @media(prefers-reduced-motion:reduce){.r7-sales *{scroll-behavior:auto!important}}
 </style>
 </head>
@@ -60,7 +67,7 @@
 <header class="topbar">
 <a class="logo" href="./"><span class="logo-mark">R7</span><span>ROMO7</span></a>
 <nav class="main-nav" aria-label="Primary navigation"><a href="./">Home</a><a href="collaborate.html">Services</a><a href="#evidence">Proof</a></nav>
-<div class="top-actions"><button id="themeToggle" class="plain-control" type="button" aria-label="Toggle theme">☼</button><div class="lang-switch" role="group" aria-label="Language"><a href="../fa/ai-qa.html" lang="fa" hreflang="fa" >FA</a><a href="../en/ai-qa.html" lang="en" hreflang="en" class="active" aria-current="true">EN</a></div></div>
+<div class="top-actions"><button id="themeToggle" class="plain-control" type="button" aria-label="Toggle theme">☼</button><div class="lang-switch" role="group" aria-label="Language"><a href="../fa/ai-qa.html" data-lang="fa" lang="fa" hreflang="fa" >FA</a><a href="../en/ai-qa.html" data-lang="en" lang="en" hreflang="en" class="active" aria-current="true">EN</a></div></div>
 </header>
 <main id="main-content" class="r7-sales">
 <section class="shell sales-top">
