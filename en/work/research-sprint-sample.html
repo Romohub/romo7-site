@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-static-lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#074b3a" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <title>Research Sprint Sample — Persistent AI Memory | Romo7</title>
+  <meta name="description" content="A real Romo7 research-sprint sample: a two-process test of persistent AI agent memory, with evidence, limitations and a practical recommendation." />
+  <link rel="canonical" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+  <link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+  <link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html" />
+  <link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../styles.css?v=20261014-proof" />
+  <meta property="og:title" content="Research Sprint Sample — Persistent AI Memory | Romo7" />
+  <meta property="og:description" content="A real two-process research test with evidence, limits and a practical recommendation." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+  <meta property="og:image" content="https://romohub.github.io/romo7-site/assets/og-card.png" />
+</head>
+<body class="proof-deliverable-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="topbar proof-topbar">
+    <a class="logo" href="../"><span class="logo-mark">R7</span><span>ROMO7</span></a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="../#services">Services</a>
+      <a href="../#proof">Work</a>
+      <a href="../#about">About</a>
+      <a href="../projects.html">Products</a>
+      <a href="../notes.html">Notes</a>
+    </nav>
+    <div class="top-actions">
+      <button id="themeToggle" class="plain-control" type="button">☼</button>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="../../fa/work/research-sprint-sample.html" data-lang="fa" lang="fa" hreflang="fa">FA</a>
+        <a href="../../en/work/research-sprint-sample.html" data-lang="en" lang="en" hreflang="en" class="active" aria-current="true">EN</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="proof-deliverable">
+    <section class="proof-deliverable-hero">
+      <div>
+        <span class="kicker">RESEARCH SPRINT / SAMPLE DELIVERABLE</span>
+        <h1>Can an AI agent remember a workflow after its runtime disappears?</h1>
+        <p>This is a portfolio sample built from a real hands-on test. It shows the shape of a small paid Romo7 Research Sprint: one focused question, source-linked evidence, a test, limits and an actionable recommendation.</p>
+      </div>
+      <aside class="proof-deliverable-facts">
+        <div><small>QUESTION</small><strong>Persistent agent memory</strong></div>
+        <div><small>METHOD</small><strong>2 separate Node processes</strong></div>
+        <div><small>SOURCES</small><strong>4 official/public references</strong></div>
+        <div><small>STATUS</small><strong>Real test · not client work</strong></div>
+      </aside>
+    </section>
+
+    <section class="proof-deliverable-section">
+      <span class="proof-num">01</span>
+      <div>
+        <span class="kicker">THE QUESTION</span>
+        <h2>Can useful agent state survive outside the chat session?</h2>
+        <p>The practical requirement was simple: if a computer disconnects, cloud-safe work should continue and device-dependent work should resume later without asking the user to repeat the task.</p>
+        <p>The test focused on whether that rule could be stored outside the active model process and recovered by a later runtime.</p>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section proof-deliverable-dark">
+      <span class="proof-num">02</span>
+      <div>
+        <span class="kicker">WHAT I TESTED</span>
+        <h2>A small experiment designed to fail cleanly.</h2>
+        <ol class="proof-steps">
+          <li><span>01</span><p>Installed the official Lighthouse Memory SDK and used the batched engine with a local filesystem adapter.</p></li>
+          <li><span>02</span><p>Stored one real workflow rule with <code>remember()</code> and forced the batch to flush.</p></li>
+          <li><span>03</span><p>Recorded the returned content-addressed identifier (CID), then ended that Node process.</p></li>
+          <li><span>04</span><p>Started a separate process with no chat transcript carried over and asked what the agent should do after a computer disconnects.</p></li>
+          <li><span>05</span><p>The memory layer returned the stored workflow rule and the same CID.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section">
+      <span class="proof-num">03</span>
+      <div>
+        <span class="kicker">EVIDENCE</span>
+        <h2>What the test actually supports — and what it does not.</h2>
+        <div class="evidence-table" role="table" aria-label="Evidence table">
+          <div class="evidence-row evidence-head" role="row"><span>Claim</span><span>Evidence</span><span>Confidence</span></div>
+          <div class="evidence-row" role="row"><span>State survived the first runtime.</span><span>A second Node process recalled the stored rule.</span><strong>Observed</strong></div>
+          <div class="evidence-row" role="row"><span>The same persisted object was recovered.</span><span>The recalled item returned the same CID.</span><strong>Observed</strong></div>
+          <div class="evidence-row" role="row"><span>External memory can address continuity separately from context.</span><span>Recall worked without carrying the previous chat/process context forward.</span><strong>Supported by test</strong></div>
+          <div class="evidence-row" role="row"><span>Remote/decentralized persistence is proven.</span><span>The experiment used a local filesystem adapter only.</span><strong class="proof-limit">Not proven</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section proof-deliverable-accent">
+      <span class="proof-num">04</span>
+      <div>
+        <span class="kicker">RECOMMENDATION</span>
+        <h2>Use external memory for durable operational rules — not as an excuse to remember everything.</h2>
+        <p>For agent workflows that need continuity, keep important operational state outside the active model session. Store only what is worth retaining, avoid secrets or sensitive data in plaintext backends, and test deletion semantics before production use.</p>
+        <p>The next production-relevant test is multi-device or remote-backend recovery: persist on one machine or client, restore from another, then measure retrieval quality, latency and deletion behavior.</p>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-section">
+      <span class="proof-num">05</span>
+      <div>
+        <span class="kicker">LIMITS</span>
+        <h2>What I would not claim from this test.</h2>
+        <ul class="proof-limits">
+          <li>No proof of decentralized-network persistence.</li>
+          <li>No multi-device recovery test.</li>
+          <li>No latency, cost or large-memory retrieval benchmark.</li>
+          <li>One workflow rule, not a broad production dataset.</li>
+          <li>Privacy and deletion behavior depend on the selected storage backend.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-sources">
+      <div>
+        <span class="kicker">SOURCES</span>
+        <h2>Public references used in the test.</h2>
+      </div>
+      <div class="proof-source-list">
+        <a href="https://docs.lighthouse.storage/memory/intro" target="_blank" rel="noopener noreferrer">Lighthouse Memory introduction ↗</a>
+        <a href="https://docs.lighthouse.storage/memory/mcp/overview" target="_blank" rel="noopener noreferrer">Lighthouse MCP overview ↗</a>
+        <a href="https://docs.lighthouse.storage/memory/sdk/engine-batched" target="_blank" rel="noopener noreferrer">Batched engine documentation ↗</a>
+        <a href="https://www.lighthouse.storage/blogs/Composable%20Memory%20for%20AI%20Agents%20on%20S3%20R2%20and%20Open%20Source%20Models" target="_blank" rel="noopener noreferrer">Composable Memory for AI Agents ↗</a>
+      </div>
+    </section>
+
+    <section class="proof-deliverable-cta">
+      <div><span class="kicker">NEED THIS SHAPE OF WORK?</span><h2>One question. Sources. Evidence. Recommendation.</h2></div>
+      <a class="btn primary" href="../collaborate.html?service=research#service-request">Request a Research Sprint</a>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <div><strong>ROMO7</strong><span>Research + Localization + Video</span></div>
+    <div class="footer-nav"><a href="../projects.html">Projects</a><a href="../notes.html">Notes</a><a href="../collaborate.html">Services</a></div>
+    <div class="footer-social" aria-label="Social profiles"><a href="https://github.com/Romohub" target="_blank" rel="me noopener noreferrer">GitHub</a><a href="https://x.com/trita_a" target="_blank" rel="me noopener noreferrer">X</a><a href="https://warpcast.com/romo7" target="_blank" rel="me noopener noreferrer">Farcaster</a></div>
+    <small>© <span id="year"></span> Romo7</small>
+  </footer>
+  <script src="../../script.js"></script>
+</body>
+</html>
