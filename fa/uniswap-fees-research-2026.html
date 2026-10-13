@@ -1,0 +1,28 @@
+<!doctype html><html lang="fa" dir="rtl" data-theme="dark"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کارمزدهای یونی‌سواپ به کجا می‌روند؟ — پژوهش Romo7</title>
+<meta name="description" content="نمونه پژوهش منبع‌دار درباره کارمزد رابط Labs، کارمزد تأمین‌کنندگان نقدینگی، پروتکل و سازوکار سوزاندن UNI.">
+<link rel="canonical" href="https://romohub.github.io/romo7-site/fa/uniswap-fees-research-2026.html">
+<link rel="stylesheet" href="../styles.css"><style>
+article{max-width:800px;margin:4rem auto;padding:0 1.5rem 6rem;line-height:2;font-size:1.1rem}
+h1{font-size:clamp(2rem,5vw,3rem);line-height:1.5}h2{margin:2rem 0 1rem;font-size:1.55rem}
+a{color:#80d6bf;text-underline-offset:3px}.meta{opacity:.7;font-size:.9rem}.callout{border-right:3px solid #7cdbbd;padding:1rem 1.2rem;background:rgba(110,225,181,.07)}
+</style></head><body><article>
+<nav><a href="./notes.html">یادداشت‌های Romo7</a> · <a href="../en/uniswap-fees-research-2026.html" lang="en">English</a></nav>
+<p class="meta">وب۳ / نمونه‌کار پژوهش منبع‌دار — بازبینی در ۱۴ اکتبر ۲۰۲۶</p>
+<h1>کارمزدهای یونی‌سواپ واقعاً به کجا می‌روند؟</h1>
+<p>در توضیح صرافی‌های غیرمتمرکز، یک اشتباه رایج این است که تمام کارمزدهای معامله را درآمد شرکتی بدانیم که رابط کاربری را ساخته است. در یونی‌سواپ، <strong>پروتکل، شرکت Uniswap Labs و تأمین‌کنندهٔ نقدینگی سه نقش متفاوت‌اند.</strong></p>
+<h2>سه جریان کارمزد</h2>
+<p><strong>۱. کارمزد رابط Labs:</strong> طبق راهنمای رسمی، از ۲۷ دسامبر ۲۰۲۵ کارمزد استفاده از رابط و کیف‌پول Uniswap Labs برابر <strong>صفر درصد</strong> اعلام شده است. اما این به معنی رایگان‌بودن معامله نیست؛ کارمزد استخر و هزینهٔ شبکه همچنان ممکن است وجود داشته باشد. <a href="https://support.uniswap.org/hc/en-us/articles/20131678274957-What-are-Uniswap-Labs-fees">منبع رسمی Labs</a>.</p>
+<p><strong>۲. کارمزد تأمین‌کنندگان نقدینگی:</strong> استخر برای انجام سواپ کارمزد دریافت می‌کند و بخشی به کسانی تعلق می‌گیرد که دارایی در استخر قرار داده‌اند. در نقدینگی متمرکز نسخه‌های ۳ و ۴، موقعیتی که قیمت از محدوده‌اش خارج شود تا بازگشت قیمت کارمزد تازه‌ای دریافت نمی‌کند. <a href="https://developers.uniswap.org/docs/get-started/concepts/fees">مستندات توسعه‌دهندگان</a>.</p>
+<p><strong>۳. کارمزد پروتکل:</strong> پس از تصمیم حاکمیتی UNIfication در دسامبر ۲۰۲۵، سازوکار کارمزد پروتکل روی استخرهای نسخهٔ ۲ و بخشی از نسخهٔ ۳ فعال شد. در استخر فعال نسخهٔ ۲، کارمزد <strong>۰٫۳۰ درصد</strong> معامله به <strong>۰٫۲۵ درصد سهم LP</strong> و <strong>۰٫۰۵ درصد سهم پروتکل</strong> تقسیم می‌شود. این پارامترها حاکمیتی‌اند و می‌توانند تغییر کنند. <a href="https://developers.uniswap.org/docs/protocols/protocol-fee/concepts/fees">جدول رسمی تقسیم کارمزد</a>.</p>
+<p class="callout"><strong>نکتهٔ مهم:</strong> کارمزدی که در قراردادهای پروتکل جمع می‌شود، خودبه‌خود سود شرکت Uniswap Labs نیست؛ دارندگان UNI نیز صرفاً با نگهداری توکن، مستقیماً سهمی از این درآمد دریافت نمی‌کنند.</p>
+<h2>نقش UNI در این سازوکار</h2>
+<p>طبق مستندات رسمی، کارمزدهای پروتکل در قراردادهای آنچین جمع می‌شوند و کاربران واجد شرایط با سوزاندن مقدار مقرر UNI می‌توانند دارایی مشخصی را از سازوکار آزادسازی دریافت کنند. این مسیر، سازوکار سوزاندن توکن است و نه پرداخت سود نقدی متناسب به هر دارندهٔ UNI. دربارهٔ تأثیر آن بر قیمت توکن هیچ پیش‌بینی‌ای نمی‌کنیم. <a href="https://developers.uniswap.org/docs/ecosystem/governance/uni">راهنمای UNI</a> و <a href="https://developers.uniswap.org/docs/protocols/protocol-fee/overview">جریان کارمزد</a>.</p>
+<h2>ریسک‌ها را حذف نکنیم</h2>
+<p>برای معامله‌گران، تأثیر سفارش بر قیمت، لغزش، توکن جعلی، مجوزهای ناامن و هزینهٔ شبکه مهم‌اند. برای تأمین‌کنندگان نقدینگی، نوسان بازار، زیان ناپایدار، خروج قیمت از محدوده و خطر قرارداد هوشمند هم وجود دارد. هشدار توکن در رابط می‌تواند مفید باشد، اما تضمین امنیت نیست. منابع: <a href="https://support.uniswap.org/hc/en-us/articles/8671539602317-What-is-price-impact">تأثیر قیمت</a>، <a href="https://support.uniswap.org/hc/en-us/articles/8723118437133-What-are-token-warnings">هشدارهای توکن</a>، <a href="https://support.uniswap.org/hc/en-us/articles/37113550065549-What-are-the-risks-when-providing-liquidity">ریسک نقدینگی</a>.</p>
+<h2>چه چیزهایی هنوز تأیید نشده‌اند؟</h2>
+<p>سود خالص به‌روز شرکت Labs، اثر قطعی سوزاندن UNI بر قیمت و وضعیت آیندهٔ همهٔ استخرها از این بررسی اسنادی نتیجه نمی‌شوند. آن‌ها را باید «تأییدنشده» گذاشت؛ برای بررسی عمیق‌تر به داده‌های مالی و تراکنش‌های واقعی نیاز است.</p>
+<p class="meta">این نوشته نمونه‌کار مستقل و پژوهش اسنادی با کمک هوش مصنوعی است؛ نه سفارش مشتری، آزمون عملی معامله، حسابرسی امنیتی، تأیید رسمی یونی‌سواپ یا توصیهٔ سرمایه‌گذاری.</p>
+<p><a href="./collaborate.html#paid-services">درخواست پژوهش یا بررسی مستندات ←</a></p>
+</article></body></html>
