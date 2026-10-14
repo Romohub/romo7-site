@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import html
 import json
 import os
 import re
@@ -99,6 +100,15 @@ try:
         errors.append("analytics-config.json missing cloudflareWebAnalyticsToken.")
 except Exception as exc:
     errors.append(f"analytics-config.json invalid: {exc}")
+
+summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+if summary_path:
+    status = "FAILED" if errors else "PASSED"
+    with open(summary_path, "a", encoding="utf-8") as summary:
+        summary.write(f"## Static site validation: {status}\n\n")
+        summary.write(f"Checked {len(html_files)} HTML files. Found {len(errors)} errors.\n\n")
+        if errors:
+            summary.write("<pre>" + html.escape("\n".join(errors)) + "</pre>\n")
 
 if errors:
     print("Site checks failed:")
