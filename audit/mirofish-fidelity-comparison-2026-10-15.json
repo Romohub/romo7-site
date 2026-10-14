@@ -1,0 +1,61 @@
+{
+  "started_at": "2026-10-14T21:30:19.893433+00:00",
+  "status": "COMPLETED",
+  "owner": "Codex / Remote Desktop Commander",
+  "model": "qwen3.5:4b",
+  "new_paid_api_charges_usd": 0,
+  "external_post_published": false,
+  "full_pipeline_completed": false,
+  "cases": [
+    {
+      "case": "original_mixed_en",
+      "expected": "Local simulation test.",
+      "changed_task_placement": false,
+      "status": "COMPLETE",
+      "posts": [
+        "Local simulation test. You are not a real buyer; do not claim purchases or customer demand..You are a other, 30 years old, with an MBTI personality type of INTJ from Fictional."
+      ],
+      "create_post_actions": 1,
+      "exact_content_pass": false,
+      "private_context_leak": true,
+      "elapsed_seconds": 20.39
+    },
+    {
+      "case": "separated_en",
+      "expected": "Local simulation test.",
+      "changed_task_placement": true,
+      "status": "COMPLETE",
+      "posts": [
+        "Local simulation test."
+      ],
+      "create_post_actions": 1,
+      "exact_content_pass": true,
+      "private_context_leak": false,
+      "elapsed_seconds": 2.56
+    },
+    {
+      "case": "separated_fa",
+      "expected": "این یک آزمون محلی است.",
+      "changed_task_placement": true,
+      "status": "COMPLETE",
+      "posts": [
+        "این یک آزمون محلی است."
+      ],
+      "create_post_actions": 1,
+      "exact_content_pass": true,
+      "private_context_leak": false,
+      "elapsed_seconds": 3.81
+    }
+  ],
+  "corrected_cases_pass": true,
+  "independent_database_verification": {
+    "separated_en": true,
+    "separated_fa": true
+  },
+  "conclusion": "Separating task from persona fixed exact fidelity in two controlled examples. This is a scripted QA mode, not validation of organic simulation behavior.",
+  "sample_limit": "Two corrected cases, one control; no general reliability claim",
+  "blocker": "Full pipeline and broader scenario quality untested",
+  "next_action": "Run a small independent scenario suite before product or business use",
+  "priority": "normal",
+  "deadline": null
+}

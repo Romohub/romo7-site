@@ -4,6 +4,8 @@ from datetime import datetime, timezone
 root=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path(__file__).resolve().parent
 upstream=root/"upstream"
 evidence=root/"evidence"
+if (evidence/"reddit_simulation.db").exists():
+    raise SystemExit("Existing experiment database preserved; use a fresh experiment root.")
 os.environ.update(LLM_PROVIDER="ollama",OLLAMA_MODEL="qwen3.5:4b",OLLAMA_BASE_URL="http://127.0.0.1:11434",OASIS_CLI_SEMAPHORE="1")
 sys.path.insert(0,str(upstream))
 random.seed(7)
@@ -17,6 +19,11 @@ async def run():
     spec.loader.exec_module(mod)
     mod._shutdown_event=asyncio.Event()
     mod.RedditSimulationRunner.AVAILABLE_ACTIONS=[mod.ActionType.CREATE_POST]
+    config=json.loads((evidence/"simulation_config.json").read_text(encoding="utf-8"))
+    if "controlled_post_content" in config:
+        from controlled_task import make_controlled_action
+        from oasis.social_agent.agent import SocialAgent
+        SocialAgent.perform_action_by_llm=make_controlled_action(config["controlled_post_content"])
     runner=mod.RedditSimulationRunner(str(evidence/"simulation_config.json"),wait_for_commands=False)
     await asyncio.wait_for(runner.run(max_rounds=1),timeout=300)
 try:
@@ -42,6 +49,11 @@ try:
         result.update(status="ENGINE_ROUND_PASS",real_simulation_completed=True,rounds_completed=1,recorded_posts=posts)
     else:
         result.update(status="NO_RECORDED_POST",rounds_completed_unknown=True)
+    task=json.loads((evidence/"simulation_config.json").read_text(encoding="utf-8"))
+    if "controlled_post_content" in task:
+        result["exact_content_pass"]=(posts==1 and samples.get("post", [{}])[0].get("content")==task["controlled_post_content"])
+        if not result["exact_content_pass"]:
+            result["status"]="CONTENT_FIDELITY_FAILED"
 except BaseException as exc:
     result.update(status="FAILED",error_type=type(exc).__name__,error=str(exc),elapsed_seconds=round(time.monotonic()-t,2))
     (evidence/"engine-traceback.txt").write_text(traceback.format_exc(),encoding="utf-8")
