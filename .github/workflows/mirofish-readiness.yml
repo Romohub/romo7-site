@@ -29,6 +29,14 @@ jobs:
         with:
           enable-cache: false
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install pinned official Codex CLI (no credentials or inference)
+        run: |
+          npm install --prefix "$RUNNER_TEMP/mirofish-codex" --no-audit --no-fund @openai/codex@0.130.0
+          echo "$RUNNER_TEMP/mirofish-codex/node_modules/.bin" >> "$GITHUB_PATH"
+
       - name: Verify bounded public experiment input
         run: |
           python - <<'PY'
@@ -106,7 +114,40 @@ jobs:
           set -e
           echo "Doctor exit code: $doctor_exit"
           cat ../experiments/mirofish/evidence/doctor.txt
-          printf '{"engine":"GianniDerieuw/mirofish","ref":"3e98e776cdfc9556c12ace82a60e9d3da5bd41e7","real_simulation_completed":false,"rounds_executed":0,"llm_calls":0,"new_paid_api_charges":0,"docker_or_llm_credentials_supplied":false,"doctor_exit_code":%s,"doctor_executable_lookup_corrected":true,"authentication_verified":false,"reason":"No verified authorized free Codex/Claude CLI model provider; deliberately did not run social simulation."}\n' "$doctor_exit" > ../experiments/mirofish/evidence/run-manifest.json
+          export MIROFISH_DOCTOR_EXIT="$doctor_exit"
+          python - <<'PY'
+          import json, os, shutil, subprocess
+          from pathlib import Path
+          doctor_exit = int(os.environ["MIROFISH_DOCTOR_EXIT"])
+          assert doctor_exit == 0, "Installed Codex executable must pass the corrected doctor"
+          assert shutil.which("codex"), "Official Codex executable missing"
+          version = subprocess.run(["codex", "--version"], capture_output=True, text=True, timeout=20, check=True).stdout.strip()
+          assert "0.130.0" in version, "Codex pin mismatch"
+          # Status only: never start login, transfer credentials, or request inference.
+          status = subprocess.run(["codex", "login", "status"], capture_output=True, text=True, timeout=20)
+          if status.returncode not in (0, 1):
+              raise RuntimeError("Codex login status command failed unexpectedly")
+          authenticated = status.returncode == 0
+          manifest = {
+              "engine": "GianniDerieuw/mirofish",
+              "ref": "3e98e776cdfc9556c12ace82a60e9d3da5bd41e7",
+              "codex_version": version,
+              "doctor_exit_code": doctor_exit,
+              "doctor_executable_lookup_corrected": True,
+              "login_status_exit_code": status.returncode,
+              "stored_authentication_detected": authenticated,
+              "model_access_verified": False,
+              "real_simulation_completed": False,
+              "rounds_executed": 0, "llm_calls": 0, "new_paid_api_charges": 0,
+              "docker_or_llm_credentials_supplied": False,
+              "gate": "BLOCKED_UNVERIFIED_MODEL" if authenticated else "BLOCKED_AUTH",
+              "reason": "No authorized model response verified; model-free workflow never performs inference."
+          }
+          evidence = Path("../experiments/mirofish/evidence")
+          (evidence / "codex-version.txt").write_text(version + "\n", encoding="utf-8")
+          (evidence / "run-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+          print("CODEX_EXECUTABLE_VERIFIED; gate=" + manifest["gate"] + "; model_calls=0")
+          PY
           test -s ../experiments/mirofish/evidence/cli-help.txt
           test -s ../experiments/mirofish/evidence/runs-list.json
           test -s ../experiments/mirofish/evidence/run-manifest.json
