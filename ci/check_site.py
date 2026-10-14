@@ -61,12 +61,29 @@ for lang in ("en", "fa"):
         continue
     html = page.read_text(encoding="utf-8")
     for required in ("https://github.com/Romohub/paib/blob/main/RESULTS.md",
-                     "https://github.com/Romohub/romo7-site/issues/new?template=collaboration.yml",
+                     "https://github.com/Romohub/romo7-site/issues/new?template=ai-qa.yml",
                      "https://x.com/trita_a", 'href="#contact"'):
         if required not in html:
             errors.append(f"Missing PAIB proof link in {lang} landing: {required}")
     if "mailto:" in html or "<form" in html:
         errors.append(f"{lang} PAIB page must not claim untested automatic lead submission.")
+
+for homepage in ("index.html", "en/index.html", "fa/index.html"):
+    html = (ROOT / homepage).read_text(encoding="utf-8")
+    target = "en/ai-qa.html#contact" if homepage == "index.html" else "ai-qa.html#contact"
+    if target not in html:
+        errors.append(f"{homepage} missing primary qualified AI QA sales CTA")
+    if "48 benchmark cases" not in html and "۴۸ سناریوی بنچمارک" not in html:
+        errors.append(f"{homepage} does not surface the verifiable PAIB evidence")
+
+ai_qa_issue_form = ROOT / ".github" / "ISSUE_TEMPLATE" / "ai-qa.yml"
+if not ai_qa_issue_form.exists():
+    errors.append("Dedicated non-confidential AI QA inquiry issue form is missing.")
+else:
+    issue_text = ai_qa_issue_form.read_text(encoding="utf-8")
+    for required in ("No work", "confidential", "authorized test environment"):
+        if required.lower() not in issue_text.lower():
+            errors.append(f"AI QA issue template lacks safety language: {required}")
 
 issue_form = ROOT / ".github" / "ISSUE_TEMPLATE" / "collaboration.yml"
 if not issue_form.exists():
