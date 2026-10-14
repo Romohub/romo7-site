@@ -1,0 +1,78 @@
+{
+  "started_at": "2026-10-14T20:22:41.956657+00:00",
+  "status": "ENGINE_ROUND_PASS",
+  "engine": "pinned MiroFish RedditSimulationRunner / OASIS",
+  "upstream_ref": "3e98e776cdfc9556c12ace82a60e9d3da5bd41e7",
+  "adapter_ref": "e342084d599be9e566769c5aac962bcb194f3bed",
+  "synthetic_agents": 1,
+  "max_rounds": 1,
+  "real_simulation_completed": true,
+  "full_pipeline_completed": false,
+  "new_paid_api_charges_usd": 0,
+  "external_post_published": false,
+  "table_counts": {
+    "user": 1,
+    "sqlite_sequence": 2,
+    "post": 1,
+    "follow": 0,
+    "mute": 0,
+    "like": 0,
+    "dislike": 0,
+    "report": 0,
+    "trace": 2,
+    "rec": 0,
+    "comment": 0,
+    "comment_like": 0,
+    "comment_dislike": 0,
+    "product": 0,
+    "chat_group": 0,
+    "group_members": 0,
+    "group_messages": 0
+  },
+  "sample_local_actions": {
+    "post": [
+      {
+        "post_id": 1,
+        "user_id": 0,
+        "original_post_id": null,
+        "content": "Local simulation test. You are not a real buyer; do not claim purchases or customer demand..You are a other, 30 years old, with an MBTI personality type of INTJ from Fictional.",
+        "quote_content": null,
+        "created_at": "2026-10-15 00:18:34.770891",
+        "num_likes": 0,
+        "num_dislikes": 0,
+        "num_shares": 0,
+        "num_reports": 0
+      }
+    ],
+    "trace": [
+      {
+        "user_id": 0,
+        "created_at": "2026-10-14 23:54:38.352951",
+        "action": "sign_up",
+        "info": "{\"name\": \"fictional_qa_0\", \"user_name\": null, \"bio\": \"Synthetic test account, not a real buyer.\"}"
+      },
+      {
+        "user_id": 0,
+        "created_at": "2026-10-15 00:18:37.754031",
+        "action": "create_post",
+        "info": "{\"content\": \"Local simulation test. You are not a real buyer; do not claim purchases or customer demand..You are a other, 30 years old, with an MBTI personality type of INTJ from Fictional.\", \"post_id\": 1}"
+      }
+    ]
+  },
+  "elapsed_seconds": 138.76,
+  "rounds_completed": 1,
+  "recorded_posts": 1,
+  "owner": "Codex / Remote Desktop Commander",
+  "priority": "normal",
+  "deadline": null,
+  "content_quality_pass": false,
+  "independent_database_check": {
+    "post_count": 1,
+    "create_post_actions": 1,
+    "exact_content_pass": false
+  },
+  "electricity_cost_usd": "not measured",
+  "blocker": "Engine works, but synthetic persona/instructions leaked into generated post; full ontology/graph/profile/report pipeline untested",
+  "next_action": "Validate instruction fidelity and scenario quality before treating simulation output as product-testing evidence",
+  "real_buyer_observations": 0
+}
