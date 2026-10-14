@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -103,6 +104,10 @@ if errors:
     print("Site checks failed:")
     for error in errors:
         print(f"- {error}")
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            # Escape workflow-command data so filenames/messages stay literal.
+            message = error.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+            print(f"::error title=Static site validation::{message}")
     sys.exit(1)
 
 print(f"Site checks passed ({len(html_files)} HTML files checked).")
