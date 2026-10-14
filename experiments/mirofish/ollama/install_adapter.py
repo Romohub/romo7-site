@@ -35,6 +35,20 @@ def install(root):
     for rel, source in prepared.items():
         (root / rel).write_text(source, encoding='utf-8')
     shutil.copyfile(Path(__file__).with_name('romo_ollama.py'), root / 'app/utils/romo_ollama.py')
+    oasis = root / 'app/utils/oasis_llm.py'
+    if oasis.exists():
+        source = oasis.read_text(encoding='utf-8')
+        old = "    model = config.get('llm_model') or provider"
+        new = ('    if provider == "ollama":\n'
+               '        from .romo_oasis_factory import create_local_oasis_model\n'
+               '        return create_local_oasis_model()\n\n' + old)
+        if new not in source:
+            if source.count(old) != 1:
+                raise ValueError('Pinned OASIS factory changed')
+            source = source.replace(old, new, 1)
+        ast.parse(source)
+        oasis.write_text(source, encoding='utf-8')
+        shutil.copyfile(Path(__file__).with_name('romo_oasis_factory.py'), root / 'app/utils/romo_oasis_factory.py')
 
 
 if __name__ == '__main__':

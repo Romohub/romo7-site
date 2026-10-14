@@ -23,6 +23,9 @@ for rel in ('app/config.py', 'app/cli.py', 'app/utils/llm_client.py'):
     shutil.copyfile(source_root / rel, target)
 install(root)
 install(root)  # repeated preparation must not duplicate the dispatch branch
+if (source_root / 'app/utils/oasis_llm.py').exists():
+    shutil.copyfile(source_root / 'app/utils/oasis_llm.py', root / 'app/utils/oasis_llm.py')
+    install(root)
 for name, path in (('app', root/'app'), ('app.utils', root/'app/utils')):
     mod = types.ModuleType(name)
     mod.__path__ = [str(path)]
@@ -98,6 +101,25 @@ class AdapterTests(unittest.TestCase):
     def test_rejects_wrong_response_model(self):
         Handler.result['model'] = 'unexpected'
         with self.assertRaises(ValueError): self.client.chat([])
+    def test_native_oasis_backend_configuration(self):
+        if not (root / 'app/utils/oasis_llm.py').exists(): self.fail('OASIS source missing')
+        import ast
+        from app.utils.romo_oasis_factory import create_local_oasis_model
+        backend = types.ModuleType('camel.models.ollama_model')
+        backend.OllamaModel = lambda **kwargs: kwargs
+        with patch.dict(sys.modules, {'camel.models.ollama_model': backend}):
+            tree = ast.parse((root / 'app/utils/oasis_llm.py').read_text())
+            fn = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == 'create_oasis_model')
+            ns = dict(os=os, Config=Config, logger=logging.getLogger('test'), Dict=dict, Any=object, __package__='app.utils')
+            exec(compile(ast.fix_missing_locations(ast.Module(body=[fn],type_ignores=[])), '<factory>', 'exec'), ns)
+            result = ns['create_oasis_model']({})
+            self.assertEqual(result['model_type'], 'qwen3.5:4b')
+            self.assertTrue(result['url'].endswith('/v1'))
+            self.assertEqual(result['max_retries'], 0)
+    def test_native_backend_rejects_remote_url(self):
+        from app.utils.romo_oasis_factory import create_local_oasis_model
+        os.environ['OLLAMA_BASE_URL'] = 'https://remote.example'
+        with self.assertRaises(ValueError): create_local_oasis_model()
 
 
 if __name__ == '__main__':

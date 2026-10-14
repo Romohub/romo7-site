@@ -101,6 +101,10 @@ jobs:
         working-directory: mirofish-upstream
         run: uv sync --frozen
 
+      - name: Verify native CAMEL Ollama tool bridge (HTTP fixture only)
+        working-directory: mirofish-upstream
+        run: uv run --no-sync python ../experiments/mirofish/ollama/verify_camel_bridge.py
+
       - name: Exercise actual MiroFish CLI and report exact model-access gate
         working-directory: mirofish-upstream
         env:

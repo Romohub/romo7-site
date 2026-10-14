@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-14",
+  "owner": "Codex / Remote Desktop Commander",
+  "status": "NATIVE_TOOL_SHAPE_VERIFIED_EXACT_TEXT_FAILED",
+  "upstream_ref": "3e98e776cdfc9556c12ace82a60e9d3da5bd41e7",
+  "model": "qwen3.5:4b",
+  "native_tool_call": {
+    "name": "create_post",
+    "arguments": {
+      "text": "Romo7 local simulation test"
+    }
+  },
+  "expected_text": "Romo7 local simulation test.",
+  "exact_text_pass": false,
+  "done": true,
+  "elapsed_seconds": 12.69,
+  "eval_count": 30,
+  "api_cost_usd": 0,
+  "external_post_published": false,
+  "full_simulation_completed": false,
+  "environment_probe": {
+    "camel": false,
+    "oasis": false,
+    "torch": false,
+    "dotenv": false,
+    "scope": "uv run --no-project default Python environment only; not an inventory of all device environments"
+  },
+  "blocker": "Full engine not installed in probed environment; actual native CAMEL model call and full simulation remain unverified",
+  "next_action": "Validate native CAMEL tool forwarding in CI, then prepare a separate engine environment and run one bounded synthetic round"
+}
