@@ -1,0 +1,85 @@
+name: Romo7 MiroFish model-free readiness
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/mirofish-readiness.yml"
+      - "experiments/mirofish/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mirofish-readiness
+  cancel-in-progress: true
+
+jobs:
+  readiness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: false
+
+      - name: Verify bounded public experiment input
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          seed = Path("experiments/mirofish/romo7-brief.md").read_text(encoding="utf-8")
+          assert all(f"**{x} —" in seed for x in "ABC"), "Three offer definitions missing"
+          assert all(f"P{i}:" in seed for i in range(1,7)), "Six synthetic personas missing"
+          assert "not observed buyers" in seed.lower() and "BLOCKED_MODEL" in seed
+          assert "Do not run test attacks" in seed
+          print("SEED_VALID: 3 offers, 6 fictional roles, <=10 rounds, no real-client data")
+          PY
+
+      - name: Checkout pinned upstream MiroFish CLI fork
+        run: |
+          git clone -q https://github.com/GianniDerieuw/mirofish.git mirofish-upstream
+          cd mirofish-upstream
+          git checkout -q 3e98e776cdfc9556c12ace82a60e9d3da5bd41e7
+          test "$(git rev-parse HEAD)" = "3e98e776cdfc9556c12ace82a60e9d3da5bd41e7"
+          python -m compileall -q app
+          echo "FORK_PINNED_AND_COMPILED=$(git rev-parse --short HEAD)"
+
+      - name: Install pinned fork dependencies (no model credentials or billable endpoints)
+        working-directory: mirofish-upstream
+        run: uv sync --frozen
+
+      - name: Exercise actual MiroFish CLI and report exact model-access gate
+        working-directory: mirofish-upstream
+        env:
+          LLM_PROVIDER: codex-cli
+          NO_COLOR: "1"
+        run: |
+          mkdir -p ../experiments/mirofish/evidence
+          uv run --no-sync mirofish --help > ../experiments/mirofish/evidence/cli-help.txt
+          uv run --no-sync mirofish --version > ../experiments/mirofish/evidence/version.txt
+          uv run --no-sync mirofish runs list --json > ../experiments/mirofish/evidence/runs-list.json
+          set +e
+          uv run --no-sync mirofish doctor > ../experiments/mirofish/evidence/doctor.txt 2>&1
+          doctor_exit=$?
+          set -e
+          echo "Doctor exit code: $doctor_exit"
+          cat ../experiments/mirofish/evidence/doctor.txt
+          printf '{"engine":"GianniDerieuw/mirofish","ref":"3e98e776cdfc9556c12ace82a60e9d3da5bd41e7","real_simulation_completed":false,"rounds_executed":0,"llm_calls":0,"new_paid_api_charges":0,"docker_or_llm_credentials_supplied":false,"doctor_exit_code":%s,"reason":"No verified authorized free Codex/Claude CLI model provider; deliberately did not run social simulation."}\n' "$doctor_exit" > ../experiments/mirofish/evidence/run-manifest.json
+          test -s ../experiments/mirofish/evidence/cli-help.txt
+          test -s ../experiments/mirofish/evidence/runs-list.json
+          test -s ../experiments/mirofish/evidence/run-manifest.json
+          echo "CLI_SMOKE_PASS; REAL_SIMULATION_BLOCKED_MODEL (intentional zero-spend gate)"
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mirofish-romo7-readiness
+          path: experiments/mirofish/evidence/
+          if-no-files-found: warn
+          retention-days: 7
