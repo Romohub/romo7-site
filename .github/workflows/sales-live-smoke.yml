@@ -1,0 +1,44 @@
+name: Public sales page smoke
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/sales-live-smoke.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Verify published landing and contact links over HTTPS
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://romohub.github.io/romo7-site"
+          for spec in "en/|Independent Persian AI QA" "fa/|ارزیابی مستقل چت" "en/ai-qa.html|template=ai-qa.yml" "fa/ai-qa.html|template=ai-qa.yml"; do
+            rel="${spec%%|*}"
+            expected="${spec#*|}"
+            ok=0
+            for attempt in $(seq 1 20); do
+              file="$(mktemp)"
+              code="$(curl -sS -L --connect-timeout 8 --max-time 15 -w '%{http_code}' -o "$file" "$base/$rel?smoke=20261014")" || code="CURL_ERROR"
+              if [ "$code" = "200" ] && grep -Fq "$expected" "$file"; then
+                echo "PASS $rel HTTP 200 expected content found"
+                ok=1
+                rm -f "$file"
+                break
+              fi
+              echo "Retry $attempt $rel: HTTP $code or stale content"
+              rm -f "$file"
+              sleep 5
+            done
+            if [ "$ok" != "1" ]; then
+              echo "::error::Live public page failed to show approved copy: $rel"
+              exit 1
+            fi
+          done
+          echo "LIVE_SALES_SMOKE_PASS"
