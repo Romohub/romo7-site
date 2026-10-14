@@ -50,6 +50,42 @@ jobs:
           python -m compileall -q app
           echo "FORK_PINNED_AND_COMPILED=$(git rev-parse --short HEAD)"
 
+      - name: Correct and test upstream doctor executable lookup
+        run: |
+          python - <<'PY'
+          import ast
+          import shutil
+          from pathlib import Path
+          from types import SimpleNamespace
+          from unittest.mock import patch
+          cli = Path("mirofish-upstream/app/cli.py")
+          source = cli.read_text(encoding="utf-8")
+          old = "return shutil.which(provider) is not None"
+          new = 'return shutil.which({"codex-cli": "codex", "claude-cli": "claude"}[provider]) is not None'
+          assert source.count(old) == 1, "Pinned upstream doctor changed; review compatibility patch"
+          source = source.replace(old, new)
+          cli.write_text(source, encoding="utf-8")
+          tree = ast.parse(source)
+          fn = next(node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == "cmd_doctor")
+          module = ast.fix_missing_locations(ast.Module(body=[fn], type_ignores=[]))
+          # Execute the actual patched function with only its lightweight helpers.
+          import runpy
+          helpers = runpy.run_path("mirofish-upstream/app/_agent_cli.py")
+          import os, sys
+          for provider, binary in (("codex-cli", "codex"), ("claude-cli", "claude")):
+              ns = dict(os=os, sys=sys, shutil=shutil, __file__=str(cli.resolve()),
+                        Config=SimpleNamespace(LLM_PROVIDER=provider),
+                        DoctorCheck=helpers["DoctorCheck"], doctor_runner=helpers["doctor_runner"])
+              exec(compile(module, str(cli), "exec"), ns)
+              with patch.dict(os.environ, {"LLM_PROVIDER": provider}):
+                  with patch.object(shutil, "which", side_effect=lambda name: "/test/" + binary if name == binary else None):
+                      assert ns["cmd_doctor"]() == 0, provider + " actual executable was not detected"
+                  with patch.object(shutil, "which", return_value=None):
+                      assert ns["cmd_doctor"]() == 1, provider + " missing executable did not fail"
+          print("DOCTOR_LOOKUP_TESTS_PASS: 2 providers x present/missing; no model called")
+          PY
+          python -m compileall -q mirofish-upstream/app
+
       - name: Install pinned fork dependencies (no model credentials or billable endpoints)
         working-directory: mirofish-upstream
         run: uv sync --frozen
@@ -70,7 +106,7 @@ jobs:
           set -e
           echo "Doctor exit code: $doctor_exit"
           cat ../experiments/mirofish/evidence/doctor.txt
-          printf '{"engine":"GianniDerieuw/mirofish","ref":"3e98e776cdfc9556c12ace82a60e9d3da5bd41e7","real_simulation_completed":false,"rounds_executed":0,"llm_calls":0,"new_paid_api_charges":0,"docker_or_llm_credentials_supplied":false,"doctor_exit_code":%s,"reason":"No verified authorized free Codex/Claude CLI model provider; deliberately did not run social simulation."}\n' "$doctor_exit" > ../experiments/mirofish/evidence/run-manifest.json
+          printf '{"engine":"GianniDerieuw/mirofish","ref":"3e98e776cdfc9556c12ace82a60e9d3da5bd41e7","real_simulation_completed":false,"rounds_executed":0,"llm_calls":0,"new_paid_api_charges":0,"docker_or_llm_credentials_supplied":false,"doctor_exit_code":%s,"doctor_executable_lookup_corrected":true,"authentication_verified":false,"reason":"No verified authorized free Codex/Claude CLI model provider; deliberately did not run social simulation."}\n' "$doctor_exit" > ../experiments/mirofish/evidence/run-manifest.json
           test -s ../experiments/mirofish/evidence/cli-help.txt
           test -s ../experiments/mirofish/evidence/runs-list.json
           test -s ../experiments/mirofish/evidence/run-manifest.json
