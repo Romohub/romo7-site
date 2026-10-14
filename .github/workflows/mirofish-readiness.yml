@@ -62,7 +62,7 @@ jobs:
         run: |
           mkdir -p ../experiments/mirofish/evidence
           uv run --no-sync mirofish --help > ../experiments/mirofish/evidence/cli-help.txt
-          uv run --no-sync mirofish --version > ../experiments/mirofish/evidence/version.txt
+          python -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])" > ../experiments/mirofish/evidence/version.txt
           uv run --no-sync mirofish runs list --json > ../experiments/mirofish/evidence/runs-list.json
           set +e
           uv run --no-sync mirofish doctor > ../experiments/mirofish/evidence/doctor.txt 2>&1
