@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-10-14T19:52:50.177650+00:00",
+  "upstream_ref": "3e98e776cdfc9556c12ace82a60e9d3da5bd41e7",
+  "adapter_ref": "a2360a156632ebc272e4a0e12f1af6c52a22345b",
+  "model": "qwen3.5:4b",
+  "real_simulation_completed": false,
+  "simulation_rounds": 0,
+  "new_paid_api_charges_usd": 0,
+  "mocked_model": false,
+  "package_bootstrap": "namespace only; no framework bootstrap",
+  "source_hashes": {
+    "app/config.py": "33de5db3c418c9b084901f08795398c25b68acb67b59f426b5d93b88b8c919c1",
+    "app/utils/llm_client.py": "223d9e1bbdfd6414e24fbe1683f86b6e0be03d88cd45558f7c26378182ef8b22",
+    "app/utils/romo_ollama.py": "fb2bc22ac70fe36b50d4b21f2e7d88c9cf28b3e5ce0c4bf580d05990e7fb7a99"
+  },
+  "status": "LIVE_CLIENT_PASS",
+  "model_calls_attempted": 1,
+  "response": {
+    "ok": true,
+    "provider": "ollama",
+    "scope": "mirofish_llm_client"
+  },
+  "elapsed_seconds": 16.78,
+  "model_calls_completed": 1,
+  "owner": "Codex / Remote Desktop Commander",
+  "priority": "normal",
+  "deadline": null,
+  "blocker": "Full simulation dependency stack and downstream model routing have not yet been validated",
+  "next_action": "Inspect downstream simulation model routing, then attempt a bounded full-pipeline run only if local provider support is confirmed"
+}
