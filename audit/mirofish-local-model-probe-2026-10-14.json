@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-14",
+  "owner": "Codex / Remote Desktop Commander",
+  "task": "MiroFish existing model access probe",
+  "priority": "normal",
+  "deadline": null,
+  "status": "BLOCKED_PROVIDER_ADAPTER",
+  "device_dependency": true,
+  "verified": {
+    "device_command_execution": true,
+    "codex_on_path": false,
+    "claude_version": "2.1.246",
+    "claude_logged_in": false,
+    "ollama_model": "qwen3.5:4b",
+    "local_model_response": {
+      "done": true,
+      "ok": true,
+      "provider": "ollama",
+      "eval_count": 11,
+      "total_duration_seconds": 18.45
+    }
+  },
+  "expense": {
+    "new_paid_api_charges_usd": 0,
+    "electricity_cost": "not measured"
+  },
+  "evidence": {
+    "summary_on_device": "C:\\Users\\mrroj\\AppData\\Local\\Temp\\romo-mirofish-probe\\summary.json",
+    "response_on_device": "C:\\Users\\mrroj\\AppData\\Local\\Temp\\romo-mirofish-probe\\response.json",
+    "endpoint": "http://127.0.0.1:11434/api/generate",
+    "prompt": "Return only this JSON object: {\"ok\":true,\"provider\":\"ollama\"}"
+  },
+  "mirofish": {
+    "upstream_ref": "3e98e776cdfc9556c12ace82a60e9d3da5bd41e7",
+    "simulation_completed": false,
+    "simulation_rounds": 0,
+    "local_provider_adapter_implemented": false,
+    "quality_validated": false
+  },
+  "blocker": "Pinned MiroFish LLM client supports codex-cli and claude-cli only; neither has verified authenticated model access here.",
+  "next_action": "Implement and test an Ollama provider adapter in an isolated experiment, then exercise the real MiroFish LLM client; do not represent this direct model probe as a completed MiroFish simulation."
+}
