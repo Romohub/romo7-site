@@ -36,9 +36,26 @@
     lines.push(say('Please confirm scope, availability and payment terms before starting.', 'لطفاً محدوده، ظرفیت و شرایط پرداخت را قبل از شروع تأیید کنید.'));
     output.value = lines.join('\n\n');
     document.getElementById('briefResult').hidden = false;
-    status.textContent = say('Prepared locally. Nothing has been sent. Copy the brief, then open the public GitHub request form or contact Romo7 privately on X.', 'متن روی دستگاه آماده شد؛ چیزی ارسال نشده است. متن را کپی کنید و فرم عمومی گیت‌هاب را باز کنید یا در X تماس خصوصی بگیرید.');
+    status.textContent = say('Prepared locally; nothing sent. Opening the GitHub request form will also try to copy this brief for you. Paste only non-confidential content, or use Copy brief first.', 'متن فقط روی دستگاه آماده شد و چیزی ارسال نشده است. هنگام بازکردن فرم گیت‌هاب، کپی متن هم امتحان می‌شود؛ فقط اطلاعات غیرمحرمانه را در فرم وارد کنید یا ابتدا دکمهٔ کپی را بزنید.');
     output.focus();
   });
+  const publicRequestLink = document.querySelector('#briefResult a[href*="issues/new?template=collaboration.yml"]');
+  if (publicRequestLink) {
+    // A user click opens GitHub as before. Copy only the already-prepared
+    // local text, never auto-submit a public issue or transmit form fields.
+    publicRequestLink.addEventListener('click', () => {
+      if (!output.value) return;
+      if (!navigator.clipboard || !navigator.clipboard.writeText) {
+        status.textContent = say('Clipboard unavailable: use Copy brief, then paste into GitHub.', 'دسترسی به کلیپ‌بورد ممکن نیست؛ ابتدا متن را کپی و سپس در گیت‌هاب وارد کنید.');
+        return;
+      }
+      navigator.clipboard.writeText(output.value).then(() => {
+        status.textContent = say('Brief copied; paste it into the GitHub request form. Nothing was submitted automatically.', 'متن کپی شد؛ آن را در فرم گیت‌هاب وارد کنید. هیچ درخواست خودکاری ارسال نشد.');
+      }).catch(() => {
+        status.textContent = say('Auto-copy was blocked by the browser; use Copy brief and paste manually.', 'مرورگر کپی خودکار را نپذیرفت؛ از دکمهٔ کپی استفاده کنید و متن را دستی وارد کنید.');
+      });
+    });
+  }
   document.getElementById('copyBrief').addEventListener('click', async () => {
     try {
       if (!navigator.clipboard) throw new Error('Clipboard unavailable');
