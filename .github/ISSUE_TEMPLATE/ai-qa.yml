@@ -1,0 +1,63 @@
+name: Persian AI QA — pilot inquiry
+description: Ask about a fixed-scope, 10-case Persian chatbot / RAG / agent QA pilot. Public details only.
+title: "[AI QA Inquiry] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Public inquiry — no work is booked by creating this issue.** This form is public and requires a GitHub account.
+        Do NOT share credentials, private prompts, customer records, proprietary datasets, unpublished vulnerabilities, secrets or personal data.
+        For confidential scoping, open a private conversation via the X link on the [AI QA page](https://romohub.github.io/romo7-site/en/ai-qa.html#contact).
+        We will confirm authorization, scope, residence/eligibility and permitted payment before any testing.
+  - type: input
+    id: organization
+    attributes:
+      label: Project or team
+      description: Use a public project name or simply say "private project".
+      placeholder: Name or private project
+    validations:
+      required: true
+  - type: dropdown
+    id: product
+    attributes:
+      label: What needs testing?
+      options:
+        - Persian chatbot or support bot
+        - Document-grounded RAG assistant
+        - Tool-using AI agent
+        - Other AI feature
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What would you like to learn?
+      description: Describe one public, non-sensitive behavior or failure concern; do not include a private prompt or a working exploit.
+      placeholder: For example, whether the bot safely escalates questions that it cannot answer from public documentation.
+    validations:
+      required: true
+  - type: input
+    id: public_link
+    attributes:
+      label: Public product or documentation link (optional)
+      description: Do not paste a private login, access token, pre-signed URL or private API endpoint.
+      placeholder: https://example.com/docs
+  - type: dropdown
+    id: test_access
+    attributes:
+      label: Is there a safe, authorized test environment?
+      options:
+        - Yes — public or authorized demo (share scope later)
+        - Can prepare a safe test environment
+        - Not yet / need guidance
+    validations:
+      required: true
+  - type: checkboxes
+    id: public_confirmation
+    attributes:
+      label: Public issue and authorization acknowledgement
+      options:
+        - label: I understand this is public and contains no confidential, personal or security-sensitive details.
+          required: true
+        - label: I understand testing starts only after written permission and mutually accepted terms.
+          required: true
