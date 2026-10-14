@@ -58,6 +58,9 @@ jobs:
           python -m compileall -q app
           echo "FORK_PINNED_AND_COMPILED=$(git rev-parse --short HEAD)"
 
+      - name: Test experimental Ollama adapter (HTTP fixtures, no live model)
+        run: python experiments/mirofish/ollama/test_adapter.py mirofish-upstream
+
       - name: Correct and test upstream doctor executable lookup
         run: |
           python - <<'PY'
