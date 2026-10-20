@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atlas of Stories record envelope",
+  "description": "Shared conventions for structured records in Romo7 Atlas. Specialized schemas can extend this envelope.",
+  "type": "object",
+  "required": [
+    "id",
+    "entity_type",
+    "preferred_name",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+([.-][a-z0-9]+)*$",
+      "description": "Stable unique ID; never reuse after deletion."
+    },
+    "entity_type": {
+      "enum": [
+        "tradition",
+        "character",
+        "narrative",
+        "motif",
+        "place",
+        "source",
+        "relation"
+      ]
+    },
+    "preferred_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "names": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "script": {
+            "type": "string"
+          },
+          "name_type": {
+            "enum": [
+              "preferred",
+              "local",
+              "transliteration",
+              "alternate",
+              "historical",
+              "exonym"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "periods": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rights": {
+      "type": "object",
+      "properties": {
+        "content_license": {
+          "type": "string"
+        },
+        "media_license": {
+          "type": "string"
+        },
+        "attribution": {
+          "type": "string"
+        },
+        "access_notes": {
+          "type": "string"
+        },
+        "permission_status": {
+          "enum": [
+            "not_applicable",
+            "unknown",
+            "required",
+            "granted",
+            "restricted",
+            "denied"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "status": {
+      "enum": [
+        "planned",
+        "in_research",
+        "needs_review",
+        "reviewed"
+      ]
+    },
+    "editorial_notes": {
+      "type": "string"
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "additionalProperties": true
+}
