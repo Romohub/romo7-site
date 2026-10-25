@@ -28,7 +28,10 @@ for path in html_files:
         clean = urlsplit(href).path
         if not clean:
             continue
-        target = (path.parent / clean).resolve()
+        if clean.startswith("/"):
+            target = (ROOT / clean.lstrip("/")).resolve()
+        else:
+            target = (path.parent / clean).resolve()
         if clean.endswith("/"):
             target = target / "index.html"
         if not target.exists():
@@ -61,21 +64,21 @@ for lang in ("en", "fa"):
     if not page.exists():
         errors.append(f"Missing PAIB landing page for {lang}")
         continue
-    html = page.read_text(encoding="utf-8")
+    page_html = page.read_text(encoding="utf-8")
     for required in ("https://github.com/Romohub/paib/blob/main/RESULTS.md",
                      "https://github.com/Romohub/romo7-site/issues/new?template=ai-qa.yml",
                      "https://x.com/trita_a", 'href="#contact"'):
-        if required not in html:
+        if required not in page_html:
             errors.append(f"Missing PAIB proof link in {lang} landing: {required}")
-    if "mailto:" in html or "<form" in html:
+    if "mailto:" in page_html or "<form" in page_html:
         errors.append(f"{lang} PAIB page must not claim untested automatic lead submission.")
 
 for homepage in ("index.html", "en/index.html", "fa/index.html"):
-    html = (ROOT / homepage).read_text(encoding="utf-8")
+    page_html = (ROOT / homepage).read_text(encoding="utf-8")
     target = "en/ai-qa.html#contact" if homepage == "index.html" else "ai-qa.html#contact"
-    if target not in html:
+    if target not in page_html:
         errors.append(f"{homepage} missing primary qualified AI QA sales CTA")
-    if "48 benchmark cases" not in html and "۴۸ سناریوی بنچمارک" not in html:
+    if "48 benchmark cases" not in page_html and "۴۸ سناریوی بنچمارک" not in page_html:
         errors.append(f"{homepage} does not surface the verifiable PAIB evidence")
 
 ai_qa_issue_form = ROOT / ".github" / "ISSUE_TEMPLATE" / "ai-qa.yml"
