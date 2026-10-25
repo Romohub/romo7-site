@@ -80,7 +80,8 @@ body.field-site{margin:0;background:var(--paper);color:var(--ink);font-family:va
 .field-section:nth-of-type(2){animation-delay:.04s}.field-section:nth-of-type(3){animation-delay:.08s}
 @keyframes field-in{from{opacity:.2;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 [dir=rtl] body.field-site{font-family:'Vazirmatn',var(--sans);line-height:1.9}
-[dir=rtl] .field-hero h1,[dir=rtl] .field-section h2,[dir=rtl] .field-card h3,[dir=rtl] .field-service h3,[dir=rtl] .field-method h2,[dir=rtl] .field-note h3,[dir=rtl] .field-cta h2{letter-spacing:0;line-height:1.35}
+[dir=rtl] .field-hero h1,[dir=rtl] .field-section h2,[dir=rtl] .field-card h3,[dir=rtl] .field-service h3,[dir=rtl] .field-method h2,[dir=rtl] .field-note h3,[dir=rtl] .field-cta h2,[dir=rtl] .field-scribble{font-family:'Vazirmatn',sans-serif;letter-spacing:0;line-height:1.55}
+[dir=rtl] .field-hero h1{font-size:clamp(42px,7vw,86px)}
 [dir=rtl] .field-kicker:before{order:2}
 [dir=rtl] .field-card-link span:last-child{transform:scaleX(-1)}
 [dir=rtl] .field-card:hover .field-card-link span:last-child{transform:scaleX(-1) translate(3px,-3px)}
