@@ -334,3 +334,51 @@ body.field-secondary-page{margin:0;background:var(--paper);color:var(--ink);font
  .field-secondary-page .case-columns{grid-template-columns:1fr;gap:14px}
 }
 @media(prefers-reduced-motion:reduce){.field-secondary-page *{scroll-behavior:auto!important;transition:none!important}}
+
+
+/* Strong, explicit overrides for legacy page themes beneath the shared shell. */
+html body.field-secondary-page{background:#f6f2e9!important;color:#20211d!important}
+body.field-secondary-page .topbar{background:#f5f1e8ed!important;color:#20211d!important}
+body.field-secondary-page .page-hero-v3{background:#f6f2e9!important;color:#20211d!important}
+body.field-secondary-page .page-hero-v3 h1,
+body.field-secondary-page .page-hero-v3 p{color:#20211d!important}
+body.field-secondary-page .page-hero-v3 .kicker,
+body.field-secondary-page .section .kicker{color:#6d6b62!important}
+body.field-secondary-page .case-card{background:#eee7d9!important;border-color:#d7d0c3!important;color:#20211d!important}
+body.field-secondary-page .case-card p,
+body.field-secondary-page .case-card h2,
+body.field-secondary-page .case-card h3{color:#20211d!important}
+body.field-secondary-page .service-card{background:#eee7d9!important;border-color:#d7d0c3!important;color:#20211d!important}
+body.field-secondary-page .service-card h3,
+body.field-secondary-page .service-card p{color:#20211d!important}
+body.field-secondary-page .service-card p:not(.service-price){color:#59574f!important}
+body.field-secondary-page .service-card .service-price{color:#20211d!important}
+body.field-secondary-page .service-request{background:#eee7d9!important;color:#20211d!important}
+body.field-secondary-page .collab-models article{background:#eee7d9!important;color:#20211d!important}
+body.field-secondary-page .collab-models h2{color:#20211d!important}
+body.field-secondary-page .footer{color:#59574f!important}
+
+/* The Persian AI QA landing page now uses the same studio identity. */
+body.field-secondary-page .r7-sales{--ink:#20211d;--muted:#59574f;--panel:#eee7d9;--line:#d7d0c3;--accent:#d9f05a;background:#f6f2e9!important;color:#20211d!important}
+body.field-secondary-page .r7-sales h1,
+body.field-secondary-page .r7-sales h2,
+body.field-secondary-page .r7-sales h3{color:#20211d!important}
+body.field-secondary-page .r7-sales p{color:#59574f!important}
+body.field-secondary-page .r7-sales .eyebrow,
+body.field-secondary-page .r7-sales .section-kicker{color:#5b651f!important}
+body.field-secondary-page .r7-sales .offer-panel,
+body.field-secondary-page .r7-sales .tile,
+body.field-secondary-page .r7-sales .contact-area{background:#eee7d9!important;border-color:#d7d0c3!important;color:#20211d!important}
+body.field-secondary-page .r7-sales .offer-panel h2,
+body.field-secondary-page .r7-sales .offer-panel p,
+body.field-secondary-page .r7-sales .tile p,
+body.field-secondary-page .r7-sales .tile h3,
+body.field-secondary-page .r7-sales .contact-area h2,
+body.field-secondary-page .r7-sales .contact-area p{color:#20211d!important}
+body.field-secondary-page .r7-sales .action.primary{background:#d9f05a!important;color:#20211d!important;border:1px solid #20211d}
+body.field-secondary-page .r7-sales .action.secondary{background:transparent!important;color:#20211d!important;border:1px solid #20211d}
+body.field-secondary-page .r7-sales .evidence-table td{color:#20211d!important}
+body.field-secondary-page .r7-sales .paper{background:#d9f05a!important;color:#20211d!important}
+body.field-secondary-page .r7-sales .paper h3,
+body.field-secondary-page .r7-sales .paper p{color:#20211d!important}
+body.field-secondary-page .r7-sales .link-list a{border-color:#d7d0c3!important;color:#20211d!important}
