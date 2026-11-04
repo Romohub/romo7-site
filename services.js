@@ -7,7 +7,7 @@
   const status = document.getElementById('briefStatus');
   const fa = () => document.documentElement.lang === 'fa';
   const say = (en, persian) => fa() ? persian : en;
-  const allowedServices = new Set(['research','localization','video','other']);
+  const allowedServices = new Set(['research','localization','video','ai_qa','other']);
   const requestedService = new URLSearchParams(window.location.search).get('service');
   if (allowedServices.has(requestedService)) {
     form.elements.service.value = requestedService;
