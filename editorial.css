@@ -1,5 +1,5 @@
 /* Romo7 / Field Notes — an intentionally human, editorial layer */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap');
 :root{--paper:#f6f2e9;--paper2:#eee7d9;--ink:#20211d;--muted:#6d6b62;--line:#d7d0c3;--acid:#d9f05a;--blue:#234fe5;--orange:#e46b43;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--mono:'DM Mono',monospace;--max:1180px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:90px;background:var(--paper)}
@@ -264,3 +264,6 @@ body.reveal-ready .field-section.is-visible,body.reveal-ready .field-manifesto.i
   body.reveal-ready .field-section,body.reveal-ready .field-manifesto{opacity:1;transform:none}
   .field-manifesto .word{color:var(--ink)}
 }
+
+.field-skip{position:absolute;top:-60px;left:16px;z-index:100;background:var(--acid);color:var(--ink);padding:10px 14px;border-radius:6px;font-size:13px;font-weight:600}
+.field-skip:focus{top:12px}
