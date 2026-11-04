@@ -2,22 +2,22 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f6f2e9">
+<meta name="theme-color" content="#f5f1e8">
 <title>Romo7 — Curious by nature. Useful on purpose.</title>
 <meta name="description" content="An independent studio for Persian AI testing, evidence-led research, small tools and ideas worth trying.">
 <link rel="canonical" href="https://romo7.tech/">
 <link rel="alternate" hreflang="en" href="https://romo7.tech/en/"><link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/"><link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/">
 <meta property="og:title" content="Romo7 — Curious by nature. Useful on purpose."><meta property="og:description" content="Research, experiments and small useful things. Made with curiosity, checked against reality."><meta property="og:type" content="website"><meta property="og:url" content="https://romo7.tech/">
-<link rel="stylesheet" href="/editorial.css?v=20261026">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/editorial.css?v=20261105">
 </head>
-<body class="field-site">
+<body class="field-site">\n<a class="field-skip" href="#main-content">Skip to content</a>\n
 <div class="field-topline"><div class="field-wrap"><span class="field-status"><i class="field-dot"></i> Independent studio · Working in public</span><span>Research / Language / Small tools</span></div></div>
 <header class="field-nav"><div class="field-wrap">
 <a class="field-wordmark" href="/" aria-label="Romo7 home"><span class="field-mark">r7</span>romo7</a>
 <nav class="field-navlinks" aria-label="Main navigation"><a href="#work">Selected work</a><a href="#practice">What I do</a><a href="/en/notes.html">Field notes</a><a href="/en/projects.html">Projects</a></nav>
 <div class="field-navright"><div class="field-lang"><a class="active" href="/?lang=en" lang="en" aria-current="page">EN</a><a href="/fa/" lang="fa">فا</a></div><a class="field-contact" href="/en/collaborate.html#service-request">Say hello ↗</a></div>
 </div></header>
-<main>
+<main id="main-content">
 <section class="field-hero"><div class="field-wrap field-hero-grid">
 <div><div class="field-kicker">A small independent practice · Est. by curiosity</div>
 <h1>I make useful things out of questions that <em>won’t leave me alone.</em></h1>
@@ -33,7 +33,7 @@
 <article class="field-card"><div class="field-card-top"><span>03 · Audio + language</span><span class="field-chip">Experiment</span></div><div><h3>Podify</h3><p>Playing with the distance between a page and a listening experience, with multilingual and Persian use in mind.</p></div><a class="field-card-link" href="/en/projects.html"><span>See project notes</span><span>↗</span></a></article>
 <article class="field-card"><div class="field-card-top"><span>04 · Research desk</span><span class="field-chip">Notes in public</span></div><div><h3>Follow the evidence, not the hype.</h3><p>Short investigations into AI tools, product decisions and Web3 when there’s a concrete question worth answering. Sources included; uncertainty left visible.</p></div><a class="field-card-link" href="/en/notes.html"><span>Read the field notes</span><span>↗</span></a></article>
 </div></div></section>
-<section class="field-section" id="practice"><div class="field-wrap">
+<section class="field-manifesto"><div class="field-wrap"><div class="field-manifesto-label">A studio note / 01</div><h2><span class="word">Curiosity</span><span class="word">opens</span><span class="word">the door.</span><br><span class="word">Evidence</span><span class="word">decides</span><span class="word">what</span><span class="word">stays.</span></h2></div></section>\n<section class="field-section" id="practice"><div class="field-wrap">
 <div class="field-section-head"><div class="field-section-number">02 / The practice</div><h2>Three ways a question becomes something useful.</h2><p class="field-section-intro">Small, clearly scoped work. No mystery process, inflated promises or pretend case studies.</p></div>
 <div class="field-services">
 <article class="field-service"><small>01 / TEST</small><h3>Persian AI quality checks</h3><p>Structured test cases for chatbots and agents, with reproducible examples, severity and a written retest.</p></article>
@@ -49,4 +49,29 @@
 <section class="field-section"><div class="field-wrap"><div class="field-cta"><div class="field-label">Have a real question?</div><h2>Let’s make something clearer, more useful, or both.</h2><p>Tell me what you’re trying to figure out. A small, well-defined project is a good place to start.</p><a class="field-cta-link" href="/en/collaborate.html#service-request">Tell me what you need ↗</a></div></div></section>
 </main>
 <footer class="field-footer"><div class="field-wrap"><div class="field-footer-top"><a class="field-footer-word" href="/en/">romo7 / field notes</a><div class="field-footer-links"><a href="/en/projects.html">Projects</a><a href="/en/notes.html">Notes</a><a href="https://x.com/trita_a" rel="me noopener">X ↗</a><a href="/fa/">فارسی</a></div></div><div class="field-footer-bottom"><span>Independent by design. Curious on purpose.</span><span>© <span id="year">2026</span> Romo7</span></div></div></footer>
-</body></html>
+<script>
+(function(){
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!('IntersectionObserver' in window) || reduce) return;
+  document.body.classList.add('reveal-ready');
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
+  document.querySelectorAll('.field-section, .field-manifesto').forEach(el => revealObserver.observe(el));
+  const words = document.querySelectorAll('.field-manifesto .word');
+  const wordObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-lit');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.85, rootMargin: '0px 0px -18% 0px' });
+  words.forEach(word => wordObserver.observe(word));
+})();
+</script>\n</body></html>
