@@ -38,16 +38,22 @@ for path in html_files:
             errors.append(f"{rel}: missing internal target {href}")
 
 sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-for required in (
-    "https://romohub.github.io/romo7-site/en/",
-    "https://romohub.github.io/romo7-site/fa/",
-    "https://romohub.github.io/romo7-site/en/collaborate.html",
-    "https://romohub.github.io/romo7-site/fa/collaborate.html",
-    "https://romohub.github.io/romo7-site/en/ai-qa.html",
-    "https://romohub.github.io/romo7-site/fa/ai-qa.html",
-    "https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html",
-    "https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html",
+cname_file = ROOT / "CNAME"
+if cname_file.exists():
+    site_origin = "https://" + cname_file.read_text(encoding="utf-8").strip().strip("/")
+else:
+    site_origin = "https://romohub.github.io/romo7-site"
+for required_path in (
+    "/en/",
+    "/fa/",
+    "/en/collaborate.html",
+    "/fa/collaborate.html",
+    "/en/ai-qa.html",
+    "/fa/ai-qa.html",
+    "/en/work/research-sprint-sample.html",
+    "/fa/work/research-sprint-sample.html",
 ):
+    required = site_origin + required_path
     if required not in sitemap:
         errors.append(f"sitemap.xml missing {required}")
 
