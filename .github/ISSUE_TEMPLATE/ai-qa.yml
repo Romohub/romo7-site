@@ -7,7 +7,7 @@ body:
       value: |
         **Public inquiry — no work is booked by creating this issue.** This form is public and requires a GitHub account.
         Do NOT share credentials, private prompts, customer records, proprietary datasets, unpublished vulnerabilities, secrets or personal data.
-        For confidential scoping, open a private conversation via the X link on the [AI QA page](https://romohub.github.io/romo7-site/en/ai-qa.html#contact).
+        For confidential scoping, open a private conversation via the X link on the [AI QA page](https://romo7.tech/en/ai-qa.html#contact).
         We will confirm authorization, scope, residence/eligibility and permitted payment before any testing.
   - type: input
     id: organization
