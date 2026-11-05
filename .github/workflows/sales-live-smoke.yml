@@ -2,10 +2,6 @@ name: Public sales page smoke
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/sales-live-smoke.yml
 
 permissions:
   contents: read
@@ -15,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
+      - name: Check out the published site source
+        uses: actions/checkout@v4
+
       - name: Verify published landing and contact links over HTTPS
         shell: bash
         run: |
@@ -27,7 +26,7 @@ jobs:
             ok=0
             for attempt in $(seq 1 20); do
               file="$(mktemp)"
-              code="$(curl -sS -L --connect-timeout 8 --max-time 15 -w '%{http_code}' -o "$file" "$base/$rel?smoke=20261014")" || code="CURL_ERROR"
+              code="$(curl -sS -L --connect-timeout 8 --max-time 15 -w '%{http_code}' -o "$file" "$base/$rel?smoke=20261105")" || code="CURL_ERROR"
               if [ "$code" = "200" ] && grep -Fq "$expected" "$file"; then
                 echo "PASS $rel HTTP 200 expected content found"
                 ok=1
