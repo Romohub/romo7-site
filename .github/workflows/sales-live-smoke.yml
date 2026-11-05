@@ -3,6 +3,7 @@ name: Public sales page smoke
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths:
       - .github/workflows/sales-live-smoke.yml
 
@@ -18,7 +19,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          base="https://romohub.github.io/romo7-site"
+          domain="$(tr -d '\r\n ' < CNAME)"
+          base="https://${domain}"
           for spec in "en/|Independent Persian AI QA" "fa/|ارزیابی مستقل چت" "en/ai-qa.html|template=ai-qa.yml" "fa/ai-qa.html|template=ai-qa.yml"; do
             rel="${spec%%|*}"
             expected="${spec#*|}"
