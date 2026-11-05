@@ -292,7 +292,7 @@ body.field-secondary-page{margin:0;background:var(--paper);color:var(--ink);font
 .field-secondary-page .services-v18,.field-secondary-page .collab-models,.field-secondary-page .collab-process,.field-secondary-page .economics-v3{margin-top:56px}
 .field-secondary-page .services-v18>h2,.field-secondary-page .section-mini-head h2,.field-secondary-page .economics-v3 h2{font:600 clamp(30px,4.4vw,52px)/1.12 var(--sans);letter-spacing:-.055em;color:var(--ink);margin:16px 0;text-wrap:balance}
 .field-secondary-page .services-v18>p,.field-secondary-page .collab-process p,.field-secondary-page .economics-v3 p{color:var(--muted);line-height:1.75}
-.field-secondary-page .services-grid{gap:14px;margin-top:30px}
+.field-secondary-page .services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
 .field-secondary-page .service-card,.field-secondary-page .case-card{background:var(--paper2);border:1px solid var(--line);border-radius:5px;box-shadow:none;transition:transform .45s cubic-bezier(.22,1,.36,1),border-color .3s,background .3s}
 .field-secondary-page .service-card{padding:clamp(22px,3vw,34px)}
 .field-secondary-page .service-card:hover,.field-secondary-page .case-card:hover{transform:translateY(-5px);border-color:var(--ink);box-shadow:none}
@@ -300,6 +300,8 @@ body.field-secondary-page{margin:0;background:var(--paper);color:var(--ink);font
 .field-secondary-page .service-card h3,.field-secondary-page .case-title h2{font:600 clamp(24px,2.5vw,34px)/1.13 var(--sans);letter-spacing:-.05em;color:var(--ink);text-wrap:balance}
 .field-secondary-page .service-price{color:var(--ink);font:600 20px var(--mono)}
 .field-secondary-page .service-card p:not(.service-price),.field-secondary-page .case-columns p{font-size:14px;line-height:1.8;color:#59574f}
+.field-secondary-page .service-proof-link{display:inline-block;margin:12px 0 0;color:var(--muted);font-size:12px;text-underline-offset:4px}
+.field-secondary-page .service-proof-link:hover{color:var(--ink)}
 .field-secondary-page .service-request-link,.field-secondary-page .btn.primary{display:inline-flex;align-items:center;justify-content:center;background:var(--acid);color:var(--ink);border:1px solid var(--ink);border-radius:5px;padding:12px 16px;font-weight:650;text-decoration:none;transition:transform .25s,background .25s}
 .field-secondary-page .service-request-link:hover,.field-secondary-page .btn.primary:hover{transform:translateY(-2px);background:var(--ink);color:var(--paper)}
 .field-secondary-page .econ-note,.field-secondary-page .request-note{font-size:13px;color:var(--muted);line-height:1.8}
