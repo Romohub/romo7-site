@@ -24,7 +24,7 @@ jobs:
           set -euo pipefail
           domain="$(tr -d '\r\n ' < CNAME)"
           base="https://${domain}"
-          for spec in "en/|Independent Persian AI QA" "fa/|ارزیابی مستقل چت" "en/ai-qa.html|template=ai-qa.yml" "fa/ai-qa.html|template=ai-qa.yml"; do
+          for spec in "en/|Curious by nature. Useful on purpose." "fa/|از سؤال‌هایی که رهایم نمی‌کنند" "en/ai-qa.html|template=ai-qa.yml" "fa/ai-qa.html|template=ai-qa.yml"; do
             rel="${spec%%|*}"
             expected="${spec#*|}"
             ok=0
