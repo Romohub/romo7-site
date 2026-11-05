@@ -2,111 +2,111 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://romohub.github.io/romo7-site/en/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/" />
+    <loc>https://romo7.tech/en/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/" />
   </url>
   <url>
-    <loc>https://romohub.github.io/romo7-site/fa/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/" />
-  </url>
-
-  <url>
-    <loc>https://romohub.github.io/romo7-site/en/projects.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/projects.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/projects.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/projects.html" />
-  </url>
-  <url>
-    <loc>https://romohub.github.io/romo7-site/fa/projects.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/projects.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/projects.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/projects.html" />
+    <loc>https://romo7.tech/fa/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/" />
   </url>
 
   <url>
-    <loc>https://romohub.github.io/romo7-site/en/notes.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/notes.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/notes.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/notes.html" />
+    <loc>https://romo7.tech/en/projects.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/projects.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/projects.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/projects.html" />
   </url>
   <url>
-    <loc>https://romohub.github.io/romo7-site/fa/notes.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/notes.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/notes.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/notes.html" />
-  </url>
-
-  <url>
-    <loc>https://romohub.github.io/romo7-site/en/collaborate.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/collaborate.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/collaborate.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/collaborate.html" />
-  </url>
-  <url>
-    <loc>https://romohub.github.io/romo7-site/fa/collaborate.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/collaborate.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/collaborate.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/collaborate.html" />
+    <loc>https://romo7.tech/fa/projects.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/projects.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/projects.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/projects.html" />
   </url>
 
   <url>
-    <loc>https://romohub.github.io/romo7-site/en/research/persistent-ai-memory-lighthouse.html</loc>
-    <lastmod>2026-10-14</lastmod>
+    <loc>https://romo7.tech/en/notes.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/notes.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/notes.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/notes.html" />
+  </url>
+  <url>
+    <loc>https://romo7.tech/fa/notes.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/notes.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/notes.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/notes.html" />
   </url>
 
   <url>
-    <loc>https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+    <loc>https://romo7.tech/en/collaborate.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/collaborate.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/collaborate.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/collaborate.html" />
   </url>
   <url>
-    <loc>https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/work/research-sprint-sample.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/work/research-sprint-sample.html" />
+    <loc>https://romo7.tech/fa/collaborate.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/collaborate.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/collaborate.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/collaborate.html" />
+  </url>
+
+  <url>
+    <loc>https://romo7.tech/en/research/persistent-ai-memory-lighthouse.html</loc>
+    <lastmod>2026-11-05</lastmod>
+  </url>
+
+  <url>
+    <loc>https://romo7.tech/en/work/research-sprint-sample.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/work/research-sprint-sample.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/work/research-sprint-sample.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/work/research-sprint-sample.html" />
   </url>
   <url>
-    <loc>https://romohub.github.io/romo7-site/en/uniswap-fees-research-2026.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/uniswap-fees-research-2026.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/uniswap-fees-research-2026.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/uniswap-fees-research-2026.html" />
+    <loc>https://romo7.tech/fa/work/research-sprint-sample.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/work/research-sprint-sample.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/work/research-sprint-sample.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/work/research-sprint-sample.html" />
   </url>
   <url>
-    <loc>https://romohub.github.io/romo7-site/fa/uniswap-fees-research-2026.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/uniswap-fees-research-2026.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/uniswap-fees-research-2026.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/uniswap-fees-research-2026.html" />
+    <loc>https://romo7.tech/en/uniswap-fees-research-2026.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/uniswap-fees-research-2026.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/uniswap-fees-research-2026.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/uniswap-fees-research-2026.html" />
   </url>
   <url>
-    <loc>https://romohub.github.io/romo7-site/en/ai-qa.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/ai-qa.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/ai-qa.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/ai-qa.html" />
+    <loc>https://romo7.tech/fa/uniswap-fees-research-2026.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/uniswap-fees-research-2026.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/uniswap-fees-research-2026.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/uniswap-fees-research-2026.html" />
   </url>
   <url>
-    <loc>https://romohub.github.io/romo7-site/fa/ai-qa.html</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="en" href="https://romohub.github.io/romo7-site/en/ai-qa.html" />
-    <xhtml:link rel="alternate" hreflang="fa" href="https://romohub.github.io/romo7-site/fa/ai-qa.html" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://romohub.github.io/romo7-site/en/ai-qa.html" />
+    <loc>https://romo7.tech/en/ai-qa.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/ai-qa.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/ai-qa.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/ai-qa.html" />
+  </url>
+  <url>
+    <loc>https://romo7.tech/fa/ai-qa.html</loc>
+    <lastmod>2026-11-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://romo7.tech/en/ai-qa.html" />
+    <xhtml:link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/ai-qa.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/ai-qa.html" />
   </url>
   <url>
     <loc>https://romo7.tech/atlas/</loc>
