@@ -73,7 +73,7 @@ for lang in ("en", "fa"):
     page_html = page.read_text(encoding="utf-8")
     for required in ("https://github.com/Romohub/paib/blob/main/RESULTS.md",
                      "https://github.com/Romohub/romo7-site/issues/new?template=ai-qa.yml",
-                     "https://x.com/trita_a", 'href="#contact"'):
+                     "https://x.com/Romo7X", 'href="#contact"'):
         if required not in page_html:
             errors.append(f"Missing PAIB proof link in {lang} landing: {required}")
     if "mailto:" in page_html or "<form" in page_html:
