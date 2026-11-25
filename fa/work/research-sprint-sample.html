@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#faf7f0">
-<title>نمونه پژوهش متمرکز — حافظه پایدار عامل‌های هوش مصنوعی | Romo7</title>
+<title>نمونه پژوهش متمرکز | حافظه پایدار عامل‌های هوش مصنوعی | Romo7</title>
 <meta name="description" content="نمونه واقعی Research Sprint در Romo7: آزمون دو پردازه‌ای حافظه پایدار عامل هوش مصنوعی، همراه با شواهد، محدودیت‌ها و پیشنهاد اجرایی.">
 <link rel="canonical" href="https://romo7.tech/fa/work/research-sprint-sample.html">
 <link rel="alternate" hreflang="en" href="https://romo7.tech/en/work/research-sprint-sample.html">
 <link rel="alternate" hreflang="fa" href="https://romo7.tech/fa/work/research-sprint-sample.html">
 <link rel="alternate" hreflang="x-default" href="https://romo7.tech/en/work/research-sprint-sample.html">
-<meta property="og:title" content="نمونه پژوهش متمرکز — حافظه پایدار عامل‌های هوش مصنوعی | Romo7">
+<meta property="og:title" content="نمونه پژوهش متمرکز | حافظه پایدار عامل‌های هوش مصنوعی | Romo7">
 <meta property="og:description" content="یک آزمون واقعی دو پردازه‌ای، همراه با شواهد، محدودیت‌ها و پیشنهاد اجرایی.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://romo7.tech/fa/work/research-sprint-sample.html">
@@ -29,8 +29,8 @@
 <main id="main-content">
 <article class="article">
 <span class="kicker">پژوهش متمرکز / نمونه خروجی</span>
-<h1>آیا عامل هوش مصنوعی بعد از پایان اجرای فعلی هم می‌تواند یک قاعده کاری را به یاد بیاورد؟</h1>
-<p>این نمونه بر اساس یک آزمون واقعی ساخته شده و سفارش مشتری نیست. هدفش این است که نشان دهد یک Research Sprint کوچک در Romo7 چه شکلی دارد: یک سؤال مشخص، منابع قابل‌بررسی، آزمون، محدودیت‌ها و پیشنهاد اجرایی.</p>
+<h1>ایجنت بعد از تمام شدن اجرا هم قاعده کاری را یادش می‌ماند؟</h1>
+<p>این نمونه سفارش مشتری نیست؛ یک تست واقعی است تا ببینی خروجی یک پژوهش کوچک در Romo7 چه شکلی دارد: سؤال روشن، منبع، تست، محدودیت و پیشنهاد عملی.</p>
 
 <div class="facts">
 <div><small>پرسش</small><strong>حافظه پایدار عامل AI</strong></div>
@@ -42,15 +42,15 @@
 <section class="proof-sec">
 <span class="proof-num">۰۱</span>
 <span class="kicker">پرسش</span>
-<h2>آیا وضعیت مفید یک عامل می‌تواند بیرون از جلسه چت زنده بماند؟</h2>
-<p>نیاز عملی این بود: اگر کامپیوتر قطع شد، کارهای امنِ ابری ادامه پیدا کنند و کارهای وابسته به دستگاه بعد از اتصال دوباره از همان‌جا از سر گرفته شوند؛ بدون اینکه کاربر مجبور باشد تسک را دوباره توضیح بدهد.</p>
-<p>آزمون بررسی کرد آیا می‌شود این قاعده را بیرون از پردازه فعال مدل ذخیره کرد و در اجرای بعدی دوباره به دست آورد.</p>
+<h2>اطلاعات مفید می‌تواند بیرون از چت بماند؟</h2>
+<p>نیاز ساده بود: اگر کامپیوتر قطع شد، کارهای امن ابری ادامه پیدا کنند و کارهای وابسته به دستگاه بعد از وصل شدن دوباره از همان‌جا ادامه پیدا کنند؛ بدون اینکه کاربر مجبور باشد کار را دوباره توضیح بدهد.</p>
+<p>تست بررسی کرد می‌شود این قاعده را بیرون از اجرای فعال مدل نگه داشت و در اجرای بعدی دوباره پیدایش کرد یا نه.</p>
 </section>
 
 <section class="proof-sec">
 <span class="proof-num">۰۲</span>
 <span class="kicker">چه چیزی آزمایش شد</span>
-<h2>یک آزمون کوچک که نتیجه‌اش قابل‌تفکیک باشد.</h2>
+<h2>یک تست کوچک با نتیجه روشن.</h2>
 <ol class="proof-steps">
 <li><span>۰۱</span><p>SDK رسمی Lighthouse Memory نصب شد و موتور batched با ذخیره‌ساز فایل محلی به کار رفت.</p></li>
 <li><span>۰۲</span><p>یک قاعده واقعی کاری با <code>remember()</code> ذخیره و batch فوراً flush شد.</p></li>
@@ -63,7 +63,7 @@
 <section class="proof-sec">
 <span class="proof-num">۰۳</span>
 <span class="kicker">شواهد</span>
-<h2>این آزمون دقیقاً چه چیزی را پشتیبانی می‌کند؟</h2>
+<h2>این تست دقیقاً چه چیزی را نشان می‌دهد؟</h2>
 <div class="evidence-rows" role="table" aria-label="جدول شواهد">
 <div class="evidence-row evidence-head" role="row"><span>ادعا</span><span>شاهد</span><span>نتیجه</span></div>
 <div class="evidence-row" role="row"><span>اطلاعات بعد از پایان اجرای اول باقی ماند.</span><span>پردازه دوم قاعده ذخیره‌شده را بازیابی کرد.</span><strong>مشاهده شد</strong></div>
@@ -76,7 +76,7 @@
 <section class="proof-sec">
 <span class="proof-num">۰۴</span>
 <span class="kicker">پیشنهاد اجرایی</span>
-<h2>قواعد عملیاتی مهم را بیرون از جلسه مدل نگه دارید؛ نه اینکه همه‌چیز را برای همیشه حفظ کنید.</h2>
+<h2>قاعده‌های مهم را بیرون از جلسه مدل نگه دار؛ نه اینکه همه‌چیز را برای همیشه حفظ کنی.</h2>
 <p>برای ورک‌فلوهای عاملی که پیوستگی لازم دارند، وضعیت مهم عملیاتی باید بیرون از جلسه فعال مدل نگه‌داری شود. فقط چیزهایی ذخیره شوند که واقعاً ارزش نگه‌داری دارند، اطلاعات محرمانه در backend ساده و plaintext قرار نگیرند و رفتار حذف داده قبل از استفاده واقعی آزمایش شود.</p>
 <p>آزمون بعدیِ معنادار برای محصول، بازیابی چنددستگاهی یا remote backend است: ذخیره روی یک ماشین یا client، بازیابی از دیگری، و سپس اندازه‌گیری کیفیت retrieval، latency و رفتار deletion.</p>
 </section>
@@ -108,14 +108,14 @@
 <div class="cta-band">
 <span class="kicker">پایلوت ثابت ۷۵ دلاری</span>
 <h2>یک سؤال. منبع. شواهد. پیشنهاد اجرایی.</h2>
-<p>جلسه لازم نیست. محدوده مکتوب، گزارش منبع‌دار، جدول شواهد و پیشنهاد اجرایی؛ با هدف تحویل ظرف ۴۸ ساعت پس از توافق.</p>
+<p>جلسه لازم نیست. محدوده را مکتوب مشخص می‌کنیم، گزارش با منبع می‌دهم، شواهد را کنار هم می‌گذارم و پیشنهاد عملی می‌نویسم؛ با هدف تحویل ۴۸ ساعته بعد از توافق.</p>
 <a class="btn primary" href="../collaborate.html?service=research#service-request">درخواست Research Sprint با قیمت ۷۵ دلار</a>
 </div>
 </article>
 </main>
 
 <footer>
-<span>کنجکاو به‌طبع. مفید به‌قصد.</span>
+<span>کنجکاوم؛ دنبال چیزهای مفید.</span>
 <span class="footer-links"><a href="../projects.html">پروژه‌ها</a><a href="../notes.html">یادداشت‌ها</a><a href="https://x.com/Romo7X" rel="me noopener">X ↗</a><a href="https://t.me/Romo7_base" rel="me noopener">تلگرام ↗</a><a href="../../en/work/research-sprint-sample.html" lang="en">English</a></span>
 <span>© ۲۰۲۶ Romo7</span>
 </footer>
