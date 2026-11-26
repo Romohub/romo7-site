@@ -22,7 +22,7 @@
     const input = form.elements.input;
     input.setCustomValidity('');
     if (input.value && !/^https?:\/\//i.test(input.value)) {
-      input.setCustomValidity(say('Use a public HTTP or HTTPS link.', 'یک لینک عمومی با http یا https وارد کن.'));
+      input.setCustomValidity(say('Use a public HTTP or HTTPS link.', 'یک لینک عمومی با http یا https وارد کنید.'));
     }
     if (!form.reportValidity()) return;
     const field = name => form.elements[name].value.trim();
@@ -36,7 +36,7 @@
     lines.push(say('Please confirm scope, availability and payment terms before starting.', 'لطفاً قبل از شروع، محدوده کار، امکان انجام و شرایط پرداخت را تأیید کنید.'));
     output.value = lines.join('\n\n');
     document.getElementById('briefResult').hidden = false;
-    status.textContent = say('Prepared locally; nothing sent. Opening the GitHub request form will also try to copy this brief for you. Paste only non-confidential content, or use Copy brief first.', 'متن روی دستگاه آماده شد و چیزی ارسال نشده است. اگر فرم GitHub را باز کنی، تلاش می‌کنم متن را کپی کنم؛ فقط اطلاعات غیرمحرمانه را وارد کن یا اول دکمه کپی را بزن.');
+    status.textContent = say('Prepared locally; nothing sent. Opening the GitHub request form will also try to copy this brief for you. Paste only non-confidential content, or use Copy brief first.', 'متن روی دستگاه شما آماده شد و چیزی ارسال نشده است. با باز کردن فرم GitHub، تلاش می‌شود متن خودکار کپی شود؛ فقط اطلاعات غیرمحرمانه را وارد کنید یا ابتدا دکمه کپی را بزنید.');
     output.focus();
   });
   const publicRequestLink = document.querySelector('#briefResult a[href*="issues/new?template=collaboration.yml"]');
@@ -46,13 +46,13 @@
     publicRequestLink.addEventListener('click', () => {
       if (!output.value) return;
       if (!navigator.clipboard || !navigator.clipboard.writeText) {
-        status.textContent = say('Clipboard unavailable: use Copy brief, then paste into GitHub.', 'کلیپ‌بورد در دسترس نیست؛ متن را کپی کن و در GitHub بچسبان.');
+        status.textContent = say('Clipboard unavailable: use Copy brief, then paste into GitHub.', 'کلیپ‌بورد در دسترس نیست؛ متن را کپی کنید و در GitHub بچسبانید.');
         return;
       }
       navigator.clipboard.writeText(output.value).then(() => {
-        status.textContent = say('Brief copied; paste it into the GitHub request form. Nothing was submitted automatically.', 'متن کپی شد؛ در فرم GitHub بچسبانش. چیزی خودکار ارسال نشد.');
+        status.textContent = say('Brief copied; paste it into the GitHub request form. Nothing was submitted automatically.', 'متن کپی شد؛ آن را در فرم GitHub بچسبانید. چیزی به‌طور خودکار ارسال نشده است.');
       }).catch(() => {
-        status.textContent = say('Auto-copy was blocked by the browser; use Copy brief and paste manually.', 'مرورگر کپی خودکار را قبول نکرد؛ از دکمه کپی استفاده کن.');
+        status.textContent = say('Auto-copy was blocked by the browser; use Copy brief and paste manually.', 'مرورگر اجازه کپی خودکار نداد؛ از دکمه کپی استفاده کنید.');
       });
     });
   }
@@ -60,10 +60,10 @@
     try {
       if (!navigator.clipboard) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(output.value);
-      status.textContent = say('Copied. Open the public GitHub form and paste only non-confidential information; or start privately on X.', 'کپی شد. فرم عمومی GitHub را باز کن و فقط متن غیرمحرمانه را بچسبان؛ یا در X خصوصی شروع کن.');
+      status.textContent = say('Copied. Open the public GitHub form and paste only non-confidential information; or start privately on X.', 'کپی شد. فرم عمومی GitHub را باز کنید و فقط متن غیرمحرمانه را بچسبانید؛ یا گفت‌وگوی خصوصی را در ایکس شروع کنید.');
     } catch (_) {
       output.focus(); output.select();
-      status.textContent = say('Select and copy the prepared text manually.', 'متن آماده را خودت انتخاب و کپی کن.');
+      status.textContent = say('Select and copy the prepared text manually.', 'لطفاً متن آماده را انتخاب و کپی کنید.');
     }
   });
 })();
