@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>ایمیل تأیید شد · دفتر</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/home.css?v=20261127">
+<style>
+  main { max-width: 34em; margin: 0 auto; padding: 72px 0; text-align: center; }
+  h1 { font-family: 'Lalezar', 'Vazirmatn', sans-serif; font-weight: 400; font-size: clamp(36px, 8vw, 56px); line-height: 1.3; }
+  p { color: var(--muted); margin-top: 14px; }
+  .actions { justify-content: center; }
+  .en { direction: ltr; font-family: 'DM Sans', sans-serif; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<main>
+  <div id="ok">
+    <h1>ایمیل شما تأیید شد</h1>
+    <p>حالا به اپ دفتر برگردید و با همان ایمیل و رمز وارد شوید.</p>
+    <p class="actions"><a class="btn primary" id="open" href="tech.romo7.diaryapp://auth-callback">باز کردن اپ دفتر</a></p>
+    <p class="en">Your email is confirmed. Go back to the Daftar app and sign in with the same email and password.</p>
+  </div>
+  <div id="err" hidden>
+    <h1>این لینک دیگر معتبر نیست</h1>
+    <p>ممکن است قبلاً استفاده شده یا منقضی شده باشد. اگر حسابتان تأیید شده، در اپ وارد شوید؛ وگرنه دوباره ثبت‌نام کنید تا لینک تازه بیاید.</p>
+    <p class="en">This link was already used or has expired. If your account is confirmed, just sign in in the app; otherwise sign up again to get a new link.</p>
+  </div>
+</main>
+</div>
+<script>
+// Supabase sends the user here after verifying the email (Site URL).
+// Tokens arrive in the fragment; pass them on to the app's deep link so
+// the app can sign in directly, then drop them from the address bar.
+(function () {
+  var hash = location.hash || '';
+  var params = new URLSearchParams(hash.slice(1) || location.search.slice(1));
+  if (params.get('error') || params.get('error_code')) {
+    document.getElementById('ok').hidden = true;
+    document.getElementById('err').hidden = false;
+  } else if (hash.indexOf('access_token') !== -1) {
+    var link = 'tech.romo7.diaryapp://auth-callback' + hash;
+    document.getElementById('open').href = link;
+    if (/Android|iPhone|iPad/i.test(navigator.userAgent)) location.href = link;
+  }
+  if (hash) history.replaceState(null, '', location.pathname);
+})();
+</script>
+</body>
+</html>
