@@ -42,12 +42,13 @@
   if (params.get('error') || params.get('error_code')) {
     document.getElementById('ok').hidden = true;
     document.getElementById('err').hidden = false;
-  } else if (hash.indexOf('access_token') !== -1) {
-    var link = 'tech.romo7.diaryapp://auth-callback' + hash;
+  } else if (hash.indexOf('access_token') !== -1 || params.get('code')) {
+    // implicit flow (#access_token=…) or PKCE (?code=…)
+    var link = 'tech.romo7.diaryapp://auth-callback' + (params.get('code') ? location.search : hash);
     document.getElementById('open').href = link;
     if (/Android|iPhone|iPad/i.test(navigator.userAgent)) location.href = link;
   }
-  if (hash) history.replaceState(null, '', location.pathname);
+  if (hash || location.search) history.replaceState(null, '', location.pathname);
 })();
 </script>
 </body>
